@@ -1,0 +1,26 @@
+<h1>Listing ventures</h1>
+
+<table>
+  <tr>
+    <th>Description</th>
+    <th>Name</th>
+    <th>Tag</th>
+    <th>Url</th>
+  </tr>
+
+<% for venture in @ventures %>
+  <tr>
+    <td><%=h venture.description %></td>
+    <td><%=h venture.name %></td>
+    <td><%=h venture.tag %></td>
+    <td><%=h venture.url %></td>
+    <td><%= link_to 'Show', venture %></td>
+    <td><%= link_to 'Edit', edit_venture_path(venture) %></td>
+    <td><%= link_to 'Destroy', venture, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New venture', new_venture_path %>

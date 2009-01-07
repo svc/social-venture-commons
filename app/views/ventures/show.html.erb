@@ -1,0 +1,23 @@
+<p>
+  <b>Description:</b>
+  <%=h @venture.description %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%=h @venture.name %>
+</p>
+
+<p>
+  <b>Tag:</b>
+  <%=h @venture.tag %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%=h @venture.url %>
+</p>
+
+
+<%= link_to 'Edit', edit_venture_path(@venture) %> |
+<%= link_to 'Back', ventures_path %>

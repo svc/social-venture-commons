@@ -1,0 +1,24 @@
+<h1>Listing skill_tags</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>User</th>
+    <th>Need</th>
+  </tr>
+
+<% for skill_tag in @skill_tags %>
+  <tr>
+    <td><%=h skill_tag.name %></td>
+    <td><%=h skill_tag.user %></td>
+    <td><%=h skill_tag.need %></td>
+    <td><%= link_to 'Show', skill_tag %></td>
+    <td><%= link_to 'Edit', edit_skill_tag_path(skill_tag) %></td>
+    <td><%= link_to 'Destroy', skill_tag, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New skill_tag', new_skill_tag_path %>

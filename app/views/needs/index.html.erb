@@ -1,0 +1,28 @@
+<h1>Listing needs</h1>
+
+<table>
+  <tr>
+    <th>Description</th>
+    <th>Name</th>
+    <th>Tag</th>
+    <th>Venture</th>
+    <th>User</th>
+  </tr>
+
+<% for need in @needs %>
+  <tr>
+    <td><%=h need.description %></td>
+    <td><%=h need.name %></td>
+    <td><%=h need.tag %></td>
+    <td><%=h need.venture %></td>
+    <td><%=h need.user %></td>
+    <td><%= link_to 'Show', need %></td>
+    <td><%= link_to 'Edit', edit_need_path(need) %></td>
+    <td><%= link_to 'Destroy', need, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New need', new_need_path %>

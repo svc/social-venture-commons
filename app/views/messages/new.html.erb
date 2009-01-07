@@ -1,0 +1,55 @@
+<h1>New message</h1>
+
+<% form_for(@message) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :t_id %><br />
+    <%= f.text_field :t_id %>
+  </p>
+  <p>
+    <%= f.label :published %><br />
+    <%= f.text_field :published %>
+  </p>
+  <p>
+    <%= f.label :link %><br />
+    <%= f.text_field :link %>
+  </p>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+  </p>
+  <p>
+    <%= f.label :t_updated %><br />
+    <%= f.text_field :t_updated %>
+  </p>
+  <p>
+    <%= f.label :authorname %><br />
+    <%= f.text_field :authorname %>
+  </p>
+  <p>
+    <%= f.label :authorurl %><br />
+    <%= f.text_field :authorurl %>
+  </p>
+  <p>
+    <%= f.label :user %><br />
+    <%= f.text_field :user %>
+  </p>
+  <p>
+    <%= f.label :venture %><br />
+    <%= f.text_field :venture %>
+  </p>
+  <p>
+    <%= f.label :need %><br />
+    <%= f.text_field :need %>
+  </p>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', messages_path %>
