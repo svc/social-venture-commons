@@ -1,0 +1,26 @@
+/* -----------------------------------------------------------------------
+
+
+ Blueprint CSS Framework 0.8
+ http://blueprintcss.org
+
+   * Copyright (c) 2007-Present. See LICENSE for more info.
+   * See README for instructions on how to use Blueprint.
+   * For credits and origins, see AUTHORS.
+   * This is a compressed file. See the sources in the 'src' directory.
+
+----------------------------------------------------------------------- */
+
+/* ie.css */
+body {text-align:center;}
+.vtcontainer {text-align:left;}
+* html .vtcolumn, * html div.vtspan-1, * html div.vtspan-2, * html div.vtspan-3, * html div.vtspan-4, * html div.vtspan-5, * html div.vtspan-6, * html div.vtspan-7, * html div.vtspan-8, * html div.vtspan-9, * html div.vtspan-10, * html div.vtspan-11, * html div.vtspan-12, * html div.vtspan-13, * html div.vtspan-14, * html div.vtspan-15, * html div.vtspan-16, * html div.vtspan-17, * html div.vtspan-18, * html div.vtspan-19, * html div.vtspan-20, * html div.vtspan-21, * html div.vtspan-22, * html div.vtspan-23, * html div.vtspan-24 {overflow-x:hidden;}
+* html legend {margin:-18px -8px 16px 0;padding:0;}
+ol {margin-left:2em;}
+sup {vertical-align:text-top;}
+sub {vertical-align:text-bottom;}
+html>body p code {*white-space:normal;}
+hr {margin:-8px auto 11px;}
+.vtclearfix, .vtcontainer {display:inline-block;}
+* html .vtclearfix, * html .vtcontainer {height:1%;}
+fieldset {padding-top:0;}
