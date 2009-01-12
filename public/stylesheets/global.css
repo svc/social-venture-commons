@@ -1,3 +1,7 @@
 .wireframe {
   background-color: #DDD;
 }
+
+#additional-content div {
+  margin-bottom: 1.5em;
+}

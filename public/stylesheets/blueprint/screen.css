@@ -84,7 +84,7 @@ caption {background:#eee;}
 .vtspan-5 {width:480px;}
 .vtspan-6 {width:578px;}
 .vtspan-7 {width:676px;}
-.vtspan-8, div.vtspan-8 {width:774px;margin:0;}
+.vtspan-8, div.vtspan-8 {width:774px;margin-left:0;margin-right:0;}
 input.vtspan-1, textarea.vtspan-1, select.vtspan-1 {width:88px!important;}
 input.vtspan-2, textarea.vtspan-2, select.vtspan-2 {width:166px!important;}
 input.vtspan-3, textarea.vtspan-3, select.vtspan-3 {width:264px!important;}
