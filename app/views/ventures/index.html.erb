@@ -1,26 +1,82 @@
-<h1>Listing ventures</h1>
+<div id="twitter" class="vtprepend-top vtspan-4 wireframe">
+	<h2>Please log in with you Twitter account</h2>
+	<%- form_tag('users/login') do -%>
+	
+		<div class="vtspan-2">
+			<%= label_tag('user_name', 'User Name') %><br>
+			<%= text_field_tag('user_name') %>
+		</div>
+		<div class="vtspan-2 vtlast">
+			<%= label_tag('password', 'Password') %><br>
+			<%= password_field_tag('password') %>
+		</div>
+	
+		<p><%= submit_tag('Login') %></p>
+	
+		<p class="vtsmall vtquiet">We do not store your user name or password, it is used only to retrieve data from the Twitter API</p>
+	<%- end -%>
+</div>
+<div id="actions" class="vtprepend-top vtspan-4 wireframe vtlast">
+	<h2>Log in to Ventwits so you can:</h2>
+	<ul>
+		<li>Create new Ventures and manage Needs</li>
+		<li>Participate in on going Ventures</li>
+		<li>Fulfil Needs and help others see their vision come to life</li>
+		<li>Become part of a vibrant community of talented professionals</li>
+	</ul>
+</div>
 
-<table>
-  <tr>
-    <th>Description</th>
-    <th>Name</th>
-    <th>Tag</th>
-    <th>Url</th>
-  </tr>
+<div id="twitter-feed" class="vtprepend-top vtspan-5 wireframe">
+	<h2>Latest conversations</h2>
+	<div class="twitter-posts">
+		<div class="tweet">
+			<%= image_tag('test_avatars/emenel.jpg') %>
+			emenel: some functional html wireframes are in progress today for ^ventwits
+			43 minutes ago · Reply · View Tweet
+		</div>
+		<div class="tweet">
+			<%= image_tag('test_avatars/default.jpg') %>
+			ventwits: Testing a post
+			about 13 hours ago · Reply · View Tweet
+		</div>
+		<div class="tweet">
+			<%= image_tag('test_avatars/emenel.jpg') %>
+			emenel: got basic grid for ^ventwits layout working.. now can make prototype/wireframe html
+			about 20 hours ago · Reply · View Tweet
+		</div>
+		<div class="tweet">
+			<%= image_tag('test_avatars/emenel.jpg') %>
+			emenel: rockin' to hüsker dü as i work on ^ventwits !views and respond to email
+			about 21 hours ago · Reply · View Tweet
+		</div>
+		<div class="tweet">
+			<%= image_tag('test_avatars/emenel.jpg') %>
+			emenel: lots of running around today, need to get going. hope to have some time for !views for ^ventwits, but might end up being tomorrow.
+			3 days ago · Reply · View Tweet
+		</div>
+		<div class="tweet">
+			<%= image_tag('test_avatars/josephdee.jpg') %>
+			josephdee: ^svc \!development Going to need access to the @ventwits account so I don't annoy people.
+			4 days ago · Reply · View Tweet
+		</div>
+		<div class="tweet">
+			<%= image_tag('test_avatars/igniter.jpg') %>
+			Igniter: initial profiles for ^ventwits and #svc done - ready to enter new year launching alphas and raising funds
+			12 days ago · Reply · View Tweet
+		</div>
+		<div class="tweet">
+			<%= image_tag('test_avatars/igniter.jpg') %>
+			Igniter: Writing the basics on #svc and ^ventwits
+			13 days ago · Reply · View Tweet
+		</div>
+	</div>
+</div>
 
-<% for venture in @ventures %>
-  <tr>
-    <td><%=h venture.description %></td>
-    <td><%=h venture.name %></td>
-    <td><%=h venture.tag %></td>
-    <td><%=h venture.url %></td>
-    <td><%= link_to 'Show', venture %></td>
-    <td><%= link_to 'Edit', edit_venture_path(venture) %></td>
-    <td><%= link_to 'Destroy', venture, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New venture', new_venture_path %>
+<div id="additional-content" class="vtprepend-top vtspan-3 vtlast vtclearfix">
+	<div class="vtspan-3 wireframe vtlast">
+		EXTRA CONTENT 1
+	</div>
+	<div class="vtspan-3 wireframe vtlast">
+		EXTRA CONTENT 2
+	</div>
+</div>
