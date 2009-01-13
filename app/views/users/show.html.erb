@@ -7,9 +7,18 @@
 </div>
 
 <div id="actions" class="vtspan-4 wireframe vtlast">
-	  <%=h @user.name %>
+	  <h3><%=h @user.name %></h3>
+	  <%- unless @user.bio.empty? -%><p><span class="label">Bio</span> <%=h @user.bio %></p><%- end -%>
+	  <%- unless @user.url.empty? -%><p><span class="label">Url</span> <%=h @user.url %></p><%- end -%>
+</div>
 
-	  Bio <%=h @user.bio %>
+<%= render :partial => 'shared/twitter_feed' %>
 
-	  Url <%=h @user.url %>
+<div id="additional-content" class="vtspan-3 vtlast vtclearfix">
+	<div class="vtspan-3 wireframe vtlast">
+		<h3>My Needs</h3>
+	</div>
+	<div class="vtspan-3 wireframe vtlast">
+		<h3>New Opportunities</h3>
+	</div>
 </div>

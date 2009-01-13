@@ -2,6 +2,10 @@
   background-color: #DDD;
 }
 
+label, .label {
+  font-weight: bold;
+}
+
 #actions, #twitter, #header, #additional-content div {
   margin-bottom: 1em;
 }
@@ -11,7 +15,7 @@
 }
 
 #twitter textarea {
-  width: 284px;
+  width: 345px;
   height: 75px;
 }
 
