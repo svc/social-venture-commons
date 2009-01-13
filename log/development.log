@@ -961,3 +961,21 @@ Rendering template within layouts/application
 Rendering users/show
 Rendered shared/_twitter_feed (2.0ms)
 Completed in 20ms (View: 12, DB: 0) | 200 OK [http://localhost/users/show/1]
+
+
+Processing VenturesController#show (for 127.0.0.1 at 2009-01-13 16:07:39) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mVenture Load (0.4ms)[0m   [0mSELECT * FROM "ventures" WHERE ("ventures"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering ventures/show
+Rendered shared/_twitter_feed (1.5ms)
+Completed in 23ms (View: 13, DB: 0) | 200 OK [http://localhost/ventures/1]
+
+
+Processing VenturesController#show (for 127.0.0.1 at 2009-01-13 16:07:47) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mVenture Load (0.3ms)[0m   [0;1mSELECT * FROM "ventures" WHERE ("ventures"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering ventures/show
+Rendered shared/_twitter_feed (1.3ms)
+Completed in 20ms (View: 12, DB: 0) | 200 OK [http://localhost/ventures/1]

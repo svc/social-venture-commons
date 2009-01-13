@@ -1,23 +1,25 @@
-<p>
-  <b>Description:</b>
-  <%=h @venture.description %>
-</p>
+<div id="twitter" class="vtspan-4 wireframe">
+	<h2>What are you working on?</h2>
+	<%- form_tag('messages/new') do -%>
+		<%= text_area_tag('message') %>	
+		<p><%= submit_tag('Post') %></p>
+	<%- end -%>
+</div>
 
-<p>
-  <b>Name:</b>
-  <%=h @venture.name %>
-</p>
+<div id="actions" class="vtspan-4 wireframe vtlast">
+	<h3><%=h @venture.name %></h3>
+	<p><span class="label">Description</span> <%=h @venture.description %></p>
+	<p><span class="label">Url</span> <%=h @venture.url %></p>
+	<p><span class="label">Tags</span> <%=h @venture.tag %></p>	
+</div>
 
-<p>
-  <b>Tag:</b>
-  <%=h @venture.tag %>
-</p>
+<%= render :partial => 'shared/twitter_feed' %>
 
-<p>
-  <b>Url:</b>
-  <%=h @venture.url %>
-</p>
-
-
-<%= link_to 'Edit', edit_venture_path(@venture) %> |
-<%= link_to 'Back', ventures_path %>
+<div id="additional-content" class="vtspan-3 vtlast vtclearfix">
+	<div class="vtspan-3 wireframe vtlast">
+		<h3>Contributors</h3>
+	</div>
+	<div class="vtspan-3 wireframe vtlast">
+		<h3>Needs</h3>
+	</div>
+</div>
