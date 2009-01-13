@@ -5,3 +5,23 @@
 #additional-content div {
   margin-bottom: 1.5em;
 }
+
+.tweet {
+  margin: 1em 0;
+}
+
+.tweet img {
+  float: left;
+  width: 48px;
+  height: 48px;
+}
+
+.tweet .tweet-content {
+  float: left;
+  width: 412px;
+  margin: 0 10px;
+}
+
+.tweet .tweet-meta {
+  display: block;
+}
