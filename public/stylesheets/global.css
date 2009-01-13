@@ -2,8 +2,17 @@
   background-color: #DDD;
 }
 
-#additional-content div {
-  margin-bottom: 1.5em;
+#actions, #twitter, #header, #additional-content div {
+  margin-bottom: 1em;
+}
+
+#footer {
+  margin: 1em 0;
+}
+
+#twitter textarea {
+  width: 284px;
+  height: 75px;
 }
 
 .tweet {

@@ -1,4 +1,4 @@
-<div id="twitter" class="vtprepend-top vtspan-4 wireframe">
+<div id="twitter" class="vtspan-4 wireframe">
 	<h2>Please log in with you Twitter account</h2>
 	<%- form_tag('users/login') do -%>
 	
@@ -16,7 +16,8 @@
 		<p class="vtsmall vtquiet">We do not store your user name or password, it is used only to retrieve data from the Twitter API</p>
 	<%- end -%>
 </div>
-<div id="actions" class="vtprepend-top vtspan-4 wireframe vtlast">
+
+<div id="actions" class="vtspan-4 wireframe vtlast">
 	<h2>Log in to Ventwits so you can:</h2>
 	<ul>
 		<li>Create new Ventures and manage Needs</li>
@@ -26,73 +27,37 @@
 	</ul>
 </div>
 
-<div id="twitter-feed" class="vtprepend-top vtspan-5 wireframe">
-	<h2>Latest conversations</h2>
-	<div class="twitter-posts">
-		<div class="tweet vtclearfix">
-			<%= image_tag('test_avatars/emenel.jpg') %>
-			<div class="tweet-content">
-				emenel: some functional html wireframes are in progress today for ^ventwits
-				<span class="tweet-meta">43 minutes ago · Reply · View Tweet</span>
-			</div>
-		</div>
-		<div class="tweet vtclearfix">
-			<%= image_tag('test_avatars/default.png') %>
-			<div class="tweet-content">
-				ventwits: Testing a post
-				<span class="tweet-meta">about 13 hours ago · Reply · View Tweet</span>
-			</div>
-		</div>
-		<div class="tweet vtclearfix">
-			<%= image_tag('test_avatars/emenel.jpg') %>
-			<div class="tweet-content">
-				emenel: got basic grid for ^ventwits layout working.. now can make prototype/wireframe html
-				<span class="tweet-meta">about 20 hours ago · Reply · View Tweet</span>
-			</div>
-		</div>
-		<div class="tweet vtclearfix">
-			<%= image_tag('test_avatars/emenel.jpg') %>
-			<div class="tweet-content">
-				emenel: rockin' to hüsker dü as i work on ^ventwits !views and respond to email
-				<span class="tweet-meta">about 21 hours ago · Reply · View Tweet</span>
-			</div>
-		</div>
-		<div class="tweet vtclearfix">
-			<%= image_tag('test_avatars/emenel.jpg') %>
-			<div class="tweet-content">
-				emenel: lots of running around today, need to get going. hope to have some time for !views for ^ventwits, but might end up being tomorrow.
-				<span class="tweet-meta">3 days ago · Reply · View Tweet</span>
-			</div>
-		</div>
-		<div class="tweet vtclearfix">
-			<%= image_tag('test_avatars/josephdee.jpg') %>
-			<div class="tweet-content">
-				josephdee: ^svc \!development Going to need access to the @ventwits account so I don't annoy people.
-				<span class="tweet-meta">4 days ago · Reply · View Tweet</span>
-			</div>
-		</div>
-		<div class="tweet vtclearfix">
-			<%= image_tag('test_avatars/igniter.jpg') %>
-			<div class="tweet-content">
-				Igniter: initial profiles for ^ventwits and #svc done - ready to enter new year launching alphas and raising funds
-				<span class="tweet-meta">12 days ago · Reply · View Tweet</span>
-			</div>
-		</div>
-		<div class="tweet vtclearfix">
-			<%= image_tag('test_avatars/igniter.jpg') %>
-			<div class="tweet-content">
-				Igniter: Writing the basics on #svc and ^ventwits
-				<span class="tweet-meta">13 days ago · Reply · View Tweet</span>
-			</div>
-		</div>
-	</div>
-</div>
+<%= render :partial => 'shared/twitter_feed' %>
 
-<div id="additional-content" class="vtprepend-top vtspan-3 vtlast vtclearfix">
+<div id="additional-content" class="vtspan-3 vtlast vtclearfix">
 	<div class="vtspan-3 wireframe vtlast">
-		EXTRA CONTENT 1
+		<h3>Most Active Ventures</h3>
+		<ul>
+			<li>VenTwits</li>
+			<li>GroupTwits</li>
+			<li>Lend4Health</li>
+			<li>Twitter</li>
+			<li>FTJCO</li>
+		</ul>
 	</div>
 	<div class="vtspan-3 wireframe vtlast">
-		EXTRA CONTENT 2
+		<h3>Newest Ventures</h3>
+		<ul>
+			<li>GroupTwits</li>
+			<li>FTJCO</li>
+			<li>Bob's Co</li>
+			<li>Happy Hardware</li>
+			<li>Venture Bros.</li>
+		</ul>
+	</div>
+	<div class="vtspan-3 wireframe vtlast">
+		<h3>Top Contributors</h3>
+		<ul>
+			<li>@emenel</li>
+			<li>@igniter</li>
+			<li>@josephdee</li>
+			<li>@ryantaylor</li>
+			<li>@remarkk</li>
+		</ul>
 	</div>
 </div>

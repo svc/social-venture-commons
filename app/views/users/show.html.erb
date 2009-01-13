@@ -1,18 +1,15 @@
-<p>
-  <b>Name:</b>
-  <%=h @user.name %>
-</p>
+<div id="twitter" class="vtspan-4 wireframe">
+	<h2>What are you working on?</h2>
+	<%- form_tag('messages/new') do -%>
+		<%= text_area_tag('message') %>	
+		<p><%= submit_tag('Post') %></p>
+	<%- end -%>
+</div>
 
-<p>
-  <b>Url:</b>
-  <%=h @user.url %>
-</p>
+<div id="actions" class="vtspan-4 wireframe vtlast">
+	  <%=h @user.name %>
 
-<p>
-  <b>Bio:</b>
-  <%=h @user.bio %>
-</p>
+	  Bio <%=h @user.bio %>
 
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+	  Url <%=h @user.url %>
+</div>
