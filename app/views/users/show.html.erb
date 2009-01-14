@@ -1,4 +1,4 @@
-<div id="twitter" class="vtspan-4 wireframe">
+<div id="twitter" class="vtspan-5 wireframe">
 	<h2>What are you working on?</h2>
 	<%- form_tag('messages/new') do -%>
 		<%= text_area_tag('message') %>	
@@ -6,7 +6,7 @@
 	<%- end -%>
 </div>
 
-<div id="actions" class="vtspan-4 wireframe vtlast">
+<div id="actions" class="vtspan-3 wireframe vtlast">
 	  <h3><%=h @user.name %></h3>
 	  <%- unless @user.bio.empty? -%><p><span class="label">Bio</span> <%=h @user.bio %></p><%- end -%>
 	  <%- unless @user.url.empty? -%><p><span class="label">Url</span> <%=h @user.url %></p><%- end -%>
