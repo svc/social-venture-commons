@@ -1,36 +1,46 @@
-<div id="twitter" class="vtspan-5 wireframe">
-	<h2>What are you working on?</h2>
-	<%- form_tag('messages/new') do -%>
-		<%= text_area_tag('message') %>	
-		<p><%= submit_tag('Post') %></p>
-	<%- end -%>
-</div>
-
-<div id="actions" class="vtspan-3 wireframe vtlast">
-	<h3><%=h @venture.name %></h3>
-	<p><span class="label">Description</span> <%=h @venture.description %></p>
-	<p><span class="label">Url</span> <%=h @venture.url %></p>
-	<p><span class="label">Tags</span> <%=h @venture.tag %></p>	
-</div>
-
-<%= render :partial => 'shared/twitter_feed' %>
-
-<div id="additional-content" class="vtspan-3 vtlast vtclearfix">
-	<div class="vtspan-3 wireframe vtlast">
-		<h3>Contributors</h3>
-		<ul>
-			<li>@emenel</li>
-			<li>@igniter</li>
-			<li>@josephdee</li>
-		</ul>
+<div class="vtcolumn vtspan-5">
+	<div id="venture-graph" class="wireframe">
+		<h3>GRAPH</h3>
 	</div>
-	<div class="vtspan-3 wireframe vtlast">
-		<h3>Needs</h3>
-		<ul>
-			<li>!need</li>
-			<li>!need</li>
-			<li>!need</li>
-			<li>!need</li>
-		</ul>
+
+	<div id="twitter" class="wireframe">
+		<h2>What are you working on?</h2>
+		<%- form_tag('messages/new') do -%>
+			<%= text_area_tag('message') %>	
+			<p><%= submit_tag('Post') %></p>
+		<%- end -%>
+	</div>
+
+	<%= render :partial => 'shared/twitter_feed' %>
+</div>
+
+<div class="vtcolumn vtspan-3 vtlast">
+
+	<div id="actions" class="vtspan-3 wireframe vtlast">
+		<h3><%=h @venture.name %></h3>
+		<p><span class="label">Description</span> <%=h @venture.description %></p>
+		<p><span class="label">Url</span> <%=h @venture.url %></p>
+		<p><span class="label">Tags</span> <%=h @venture.tag %></p>	
+	</div>
+
+
+	<div id="additional-content" class="vtspan-3 vtlast vtclearfix">
+		<div class="vtspan-3 wireframe vtlast">
+			<h3>Contributors</h3>
+			<ul>
+				<li>@emenel</li>
+				<li>@igniter</li>
+				<li>@josephdee</li>
+			</ul>
+		</div>
+		<div class="vtspan-3 wireframe vtlast">
+			<h3>Needs</h3>
+			<ul>
+				<li>!need</li>
+				<li>!need</li>
+				<li>!need</li>
+				<li>!need</li>
+			</ul>
+		</div>
 	</div>
 </div>
