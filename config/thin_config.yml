@@ -1,13 +1,14 @@
 ---
-  chdir: /var/www/applications/scv.itthugs.com/current
+  chdir: /var/www/applications/svc.itthugs.com/current
   environment: production
-  log: /var/www/applications/scv.itthugs.com/shared/log/thin.log
-  pid: /var/www/applications/scv.itthugs.com/shared/pids/thin.pid
+  log: /var/www/applications/svc.itthugs.com/shared/log/thin.log
+  pid: /var/www/applications/svc.itthugs.com/shared/pids/thin.pid
   max_conns: 1024
   max_persistent_conns: 512
   require: []
   user: nginx
   group: nginx
   servers: 2
-  socket: /var/www/applications/scv.itthugs.com/shared/sockets/thin.sock
+  socket: /var/www/applications/svc.itthugs.com/shared/sockets/thin.sock
+
   daemonize: true
