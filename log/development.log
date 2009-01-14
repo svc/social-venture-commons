@@ -1230,3 +1230,138 @@ Rendering template within layouts/application
 Rendering ventures/show
 Rendered shared/_twitter_feed (1.3ms)
 Completed in 21ms (View: 12, DB: 0) | 200 OK [http://localhost/ventures/1]
+
+
+Processing VenturesController#show (for 127.0.0.1 at 2009-01-14 11:35:27) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mVenture Load (0.3ms)[0m   [0mSELECT * FROM "ventures" WHERE ("ventures"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering ventures/show
+Rendered shared/_twitter_feed (1.3ms)
+Completed in 22ms (View: 13, DB: 0) | 200 OK [http://localhost/ventures/1]
+
+
+Processing VenturesController#show (for 127.0.0.1 at 2009-01-14 11:35:45) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mVenture Load (0.4ms)[0m   [0;1mSELECT * FROM "ventures" WHERE ("ventures"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering ventures/show
+Rendered shared/_twitter_feed (1.3ms)
+Completed in 21ms (View: 13, DB: 0) | 200 OK [http://localhost/ventures/1]
+
+
+Processing VenturesController#show (for 127.0.0.1 at 2009-01-14 11:38:09) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mVenture Load (0.3ms)[0m   [0mSELECT * FROM "ventures" WHERE ("ventures"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering ventures/show
+Rendered shared/_twitter_feed (1.3ms)
+Completed in 23ms (View: 15, DB: 0) | 200 OK [http://localhost/ventures/1]
+
+
+Processing VenturesController#show (for 127.0.0.1 at 2009-01-14 11:38:44) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mVenture Load (0.3ms)[0m   [0;1mSELECT * FROM "ventures" WHERE ("ventures"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering ventures/show
+Rendered shared/_twitter_feed (1.2ms)
+Completed in 22ms (View: 13, DB: 0) | 200 OK [http://localhost/ventures/1]
+
+
+Processing VenturesController#show (for 127.0.0.1 at 2009-01-14 11:38:57) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mVenture Load (0.3ms)[0m   [0mSELECT * FROM "ventures" WHERE ("ventures"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering ventures/show
+Rendered shared/_twitter_feed (1.2ms)
+Completed in 21ms (View: 13, DB: 0) | 200 OK [http://localhost/ventures/1]
+
+
+Processing VenturesController#show (for 127.0.0.1 at 2009-01-14 11:39:11) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mVenture Load (0.3ms)[0m   [0;1mSELECT * FROM "ventures" WHERE ("ventures"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering ventures/show
+Rendered shared/_twitter_feed (1.7ms)
+Completed in 113ms (View: 16, DB: 0) | 200 OK [http://localhost/ventures/1]
+
+
+Processing VenturesController#show (for 127.0.0.1 at 2009-01-14 11:39:19) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mVenture Load (0.5ms)[0m   [0mSELECT * FROM "ventures" WHERE ("ventures"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering ventures/show
+Rendered shared/_twitter_feed (1.3ms)
+Completed in 25ms (View: 14, DB: 0) | 200 OK [http://localhost/ventures/1]
+
+
+Processing VenturesController#show (for 127.0.0.1 at 2009-01-14 11:42:22) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mVenture Load (0.3ms)[0m   [0;1mSELECT * FROM "ventures" WHERE ("ventures"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering ventures/show
+Rendered shared/_twitter_feed (1.2ms)
+Completed in 20ms (View: 13, DB: 0) | 200 OK [http://localhost/ventures/1]
+
+
+Processing VenturesController#show (for 127.0.0.1 at 2009-01-14 11:42:23) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mVenture Load (0.3ms)[0m   [0mSELECT * FROM "ventures" WHERE ("ventures"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering ventures/show
+Rendered shared/_twitter_feed (1.2ms)
+Completed in 21ms (View: 13, DB: 0) | 200 OK [http://localhost/ventures/1]
+
+
+Processing VenturesController#show (for 127.0.0.1 at 2009-01-14 11:42:33) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mVenture Load (0.3ms)[0m   [0;1mSELECT * FROM "ventures" WHERE ("ventures"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering ventures/show
+Rendered shared/_twitter_feed (1.9ms)
+Completed in 22ms (View: 14, DB: 0) | 200 OK [http://localhost/ventures/1]
+
+
+Processing VenturesController#show (for 127.0.0.1 at 2009-01-14 11:42:38) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mVenture Load (0.3ms)[0m   [0mSELECT * FROM "ventures" WHERE ("ventures"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering ventures/show
+Rendered shared/_twitter_feed (1.4ms)
+Completed in 24ms (View: 15, DB: 0) | 200 OK [http://localhost/ventures/1]
+
+
+Processing VenturesController#show (for 127.0.0.1 at 2009-01-14 11:42:45) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mVenture Load (0.3ms)[0m   [0;1mSELECT * FROM "ventures" WHERE ("ventures"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering ventures/show
+Rendered shared/_twitter_feed (1.3ms)
+Completed in 109ms (View: 102, DB: 0) | 200 OK [http://localhost/ventures/1]
+
+
+Processing VenturesController#show (for 127.0.0.1 at 2009-01-14 11:44:11) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mVenture Load (0.5ms)[0m   [0mSELECT * FROM "ventures" WHERE ("ventures"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering ventures/show
+Rendered shared/_twitter_feed (1.6ms)
+Completed in 25ms (View: 17, DB: 0) | 200 OK [http://localhost/ventures/1]
+
+
+Processing VenturesController#show (for 127.0.0.1 at 2009-01-14 11:44:18) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mVenture Load (0.3ms)[0m   [0;1mSELECT * FROM "ventures" WHERE ("ventures"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering ventures/show
+Rendered shared/_twitter_feed (1.3ms)
+Completed in 24ms (View: 16, DB: 0) | 200 OK [http://localhost/ventures/1]
+
+
+Processing VenturesController#show (for 127.0.0.1 at 2009-01-14 11:44:28) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mVenture Load (0.5ms)[0m   [0mSELECT * FROM "ventures" WHERE ("ventures"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering ventures/show
+Rendered shared/_twitter_feed (1.5ms)
+Completed in 24ms (View: 16, DB: 0) | 200 OK [http://localhost/ventures/1]
