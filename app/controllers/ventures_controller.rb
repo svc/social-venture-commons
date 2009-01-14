@@ -2,7 +2,7 @@ class VenturesController < ApplicationController
   # GET /ventures
   # GET /ventures.xml
   def index
-    @ventures = Venture.find(:all)
+    @svc_feeds = Twitter::Search.new('#svc')
 
     respond_to do |format|
       format.html # index.html.erb
