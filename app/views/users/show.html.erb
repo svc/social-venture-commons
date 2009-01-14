@@ -14,6 +14,7 @@
 	  <h2><%=h @user.name %></h2>
 	  <%- unless @user.bio.empty? -%><p><span class="label">Bio</span> <%=h @user.bio %></p><%- end -%>
 	  <%- unless @user.url.empty? -%><p><span class="label">Url</span> <%=h @user.url %></p><%- end -%>
+		<p><span class="label">Skill Tags</span> <%= link_to 'skill' %>, <%= link_to 'skill' %>, <%= link_to 'skill' %>, <%= link_to 'skill' %></p>
 	</div>
 
 

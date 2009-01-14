@@ -1,28 +1,32 @@
-<p>
-  <b>Description:</b>
-  <%=h @need.description %>
-</p>
+<div class="vtcolumn vtspan-5">
+	<div id="twitter" class="wireframe">
+		<h3>What are you working on?</h3>
+		<%- form_tag('messages/new') do -%>
+			<%= text_area_tag('message') %>	
+			<p><%= submit_tag('Post') %></p>
+		<%- end -%>
+	</div>
+	<%= render :partial => 'shared/twitter_feed' %>
+</div>
 
-<p>
-  <b>Name:</b>
-  <%=h @need.name %>
-</p>
-
-<p>
-  <b>Tag:</b>
-  <%=h @need.tag %>
-</p>
-
-<p>
-  <b>Venture:</b>
-  <%=h @need.venture %>
-</p>
-
-<p>
-  <b>User:</b>
-  <%=h @need.user %>
-</p>
+<div class="vtcolumn vtspan-3 vtlast">
+	<div id="actions" class="vtspan-3 wireframe">
+	  <h2><%=h @need.venture %> &raquo; <%=h @need.name %></h2>
+	  <%- unless @need.description.empty? -%><p><span class="label">Description</span> <%=h @need.description %></p><%- end -%>
+	  <%- unless @need.tag.empty? -%><p><span class="label">Tag</span> <%=h @need.tag %></p><%- end -%>
+		<%- unless @need.url.empty? -%><p><span class="label">Url</span> <%=h @user.url %></p><%- end -%>
+		<p><span class="label">Skill Tags</span> <%= link_to 'skill' %>, <%= link_to 'skill' %>, <%= link_to 'skill' %>, <%= link_to 'skill' %></p>
+	</div>
 
 
-<%= link_to 'Edit', edit_need_path(@need) %> |
-<%= link_to 'Back', needs_path %>
+	<div id="additional-content" class="vtspan-3 vtlast">
+		<div class="vtspan-3 wireframe">
+			<h3>People working on this need</h3>
+			<ul>
+				<li><%= link_to '@emenel' %></li>
+				<li><%= link_to '@igniter' %></li>
+				<li><%= link_to '@josephdee' %></li>
+			</ul>
+		</div>
+	</div>
+</div>
