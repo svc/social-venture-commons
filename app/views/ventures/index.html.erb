@@ -28,7 +28,7 @@
 	</ul>
 </div>
 
-<%= render :partial => 'shared/twitter_feed' %>
+<%= render :partial => 'shared/twitter_feed', :locals =>{:feed => @svc_feeds} %>
 
 <div id="additional-content" class="vtspan-3 vtlast vtclearfix">
 	<div class="vtspan-3 wireframe vtlast">
