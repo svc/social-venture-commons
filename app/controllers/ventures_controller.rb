@@ -14,7 +14,8 @@ class VenturesController < ApplicationController
   # GET /ventures/1.xml
   def show
     @venture = Venture.find(params[:id])
-
+    @venture_feeds = Twitter::Search.new(CGI::escape(@venture[:tag]))
+    
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @venture }

@@ -1,7 +1,7 @@
 <div id="twitter-feed" class="vtspan-5 wireframe">
 	<h2>Latest conversations</h2>
 	<div class="twitter-posts">
-		<% @svc_feeds.each do |tweet| %>
+		<% venture_feeds.each do |tweet| %>
 		<div class="tweet vtclearfix">
 			<%= image_tag(tweet.profile_image_url) %>
 			<div class="tweet-content">
