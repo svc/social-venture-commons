@@ -14,8 +14,7 @@
 	  <h2><%=h @need.venture %> &raquo; <%=h @need.name %></h2>
 	  <%- unless @need.description.empty? -%><p><span class="label">Description</span> <%=h @need.description %></p><%- end -%>
 	  <%- unless @need.tag.empty? -%><p><span class="label">Tag</span> <%=h @need.tag %></p><%- end -%>
-		<%- unless @need.url.empty? -%><p><span class="label">Url</span> <%=h @user.url %></p><%- end -%>
-		<p><span class="label">Skill Tags</span> <%= link_to 'skill' %>, <%= link_to 'skill' %>, <%= link_to 'skill' %>, <%= link_to 'skill' %></p>
+		<p><%= link_to "Complete this need" %></p>
 	</div>
 
 

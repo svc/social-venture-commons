@@ -6,7 +6,7 @@ label, .label {
   font-weight: bold;
 }
 
-#actions, #twitter, #header, #additional-content div {
+#profile, #actions, #twitter, #header, #additional-content div {
   margin-bottom: 1em;
 }
 
@@ -19,20 +19,25 @@ label, .label {
   height: 75px;
 }
 
+#profile .data {
+  float: left;
+  width: 100px;
+}
+
 .tweet {
   margin: 1em 0;
 }
 
-.tweet img {
+#profile img, .tweet img {
   float: left;
   width: 48px;
   height: 48px;
+  margin: 0 10px 0 0;
 }
 
 .tweet .tweet-content {
   float: left;
   width: 412px;
-  margin: 0 10px;
 }
 
 .tweet .tweet-meta {

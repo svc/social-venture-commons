@@ -19,25 +19,26 @@
 		<h2><%=h @venture.name %></h2>
 		<p><span class="label">Description</span> <%=h @venture.description %></p>
 		<p><span class="label">Url</span> <%= link_to h(@venture.url) %></p>
-		<p><span class="label">Venture Tag</span> <%=h @venture.tag %></p>	
+		<p><span class="label">Venture Tag</span> <%=h @venture.tag %></p>
+		
+		<p><span class="label">Related Links</span></p>
 	</div>
-
 	<div id="additional-content" class="vtclearfix">
+		<div class="vtspan-3 wireframe vtlast">
+			<h3>Current Needs</h3>
+			<ul>
+				<li><%= link_to '!need' %></li>
+				<li><%= link_to '!need' %></li>
+				<li><%= link_to '!need' %></li>
+				<li><%= link_to '!need' %></li>
+			</ul>
+		</div>
 		<div class="vtspan-3 wireframe vtlast">
 			<h3>Contributors</h3>
 			<ul>
 				<li><%= link_to '@emenel' %></li>
 				<li><%= link_to '@igniter' %></li>
 				<li><%= link_to '@josephdee' %></li>
-			</ul>
-		</div>
-		<div class="vtspan-3 wireframe vtlast">
-			<h3>Needs</h3>
-			<ul>
-				<li><%= link_to '!need' %></li>
-				<li><%= link_to '!need' %></li>
-				<li><%= link_to '!need' %></li>
-				<li><%= link_to '!need' %></li>
 			</ul>
 		</div>
 	</div>
