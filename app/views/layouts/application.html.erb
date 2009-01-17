@@ -7,12 +7,24 @@
 		<title>Ventwits</title>
 		
 		<%= stylesheet_link_tag "blueprint/screen", "global" %>
+		<%= javascript_include_tag :defaults %>
 	</head>
 
 	<body>
 		<div class="vtcontainer">
 			<div id="header" class="vtspan-8 wireframe vtclearfix">
-				<h1>HEADER</h1>
+				<h1>Ventwits</h1>
+
+				<div id="main-nav">
+					<%= link_to 'All Ventures', '/' %>
+					<%= link_to 'My Ventures', 'user/show' %>
+				</div>
+				
+				<%- form_tag 'search' do -%>
+				<%= label_tag 'search', 'Search' %>
+				<%= text_field_tag 'search' %>
+				<%= submit_tag 'Search' %>
+				<%- end -%>
 			</div>
 
 			<%= yield %>

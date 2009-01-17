@@ -6,6 +6,18 @@ label, .label {
   font-weight: bold;
 }
 
+#header h1, #header #main-nav {
+  float: left;
+}
+
+#header h1 {
+  margin: 0 20px 0 0;
+}
+
+#header form {
+  float: right;
+}
+
 #profile, #actions, #twitter, #header, #additional-content div {
   margin-bottom: 1em;
 }
