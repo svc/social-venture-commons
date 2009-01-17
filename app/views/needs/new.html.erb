@@ -1,6 +1,6 @@
 <h1>New need</h1>
 
-<% form_for(@need) do |f| %>
+<% form_for([@venture, @need]) do |f| %>
   <%= f.error_messages %>
 
   <p>
@@ -16,16 +16,8 @@
     <%= f.text_field :tag %>
   </p>
   <p>
-    <%= f.label :venture %><br />
-    <%= f.collection_select :venture, Venture.find(:all), :name, :name %>
-  </p>
-  <p>
-    <%= f.label :user %><br />
-    <%= f.text_field :user %>
-  </p>
-  <p>
     <%= f.submit "Create" %>
   </p>
 <% end %>
 
-<%= link_to 'Back', needs_path %>
+<%= link_to 'Back', venture_needs_path %>

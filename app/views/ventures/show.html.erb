@@ -6,7 +6,7 @@
 	<div id="twitter" class="wireframe">
 		<h3>What are you working on?</h3>
 		<%- form_tag('messages/new') do -%>
-			<%= text_area_tag('message') %>	
+			<%= text_area_tag('message',"#{@venture.tag} ") %>	
 			<p><%= submit_tag('Post') %></p>
 		<%- end -%>
 	</div>
@@ -24,15 +24,16 @@
 		<p><span class="label">Related Links</span></p>
 	</div>
 	<div id="additional-content" class="vtclearfix">
+	  <% if @venture.needs.any? %>
 		<div class="vtspan-3 wireframe vtlast">
 			<h3>Current Needs</h3>
 			<ul>
-				<li><%= link_to '!need' %></li>
-				<li><%= link_to '!need' %></li>
-				<li><%= link_to '!need' %></li>
-				<li><%= link_to '!need' %></li>
+			  <% @venture.needs.each do |need| %>
+				<li><%= link_to need.tag,[@venture, need] %></li>
+				<% end %>
 			</ul>
 		</div>
+		<% end %>
 		<div class="vtspan-3 wireframe vtlast">
 			<h3>Contributors</h3>
 			<ul>

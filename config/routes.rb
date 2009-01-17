@@ -5,9 +5,10 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :users
 
-  map.resources :needs
 
-  map.resources :ventures
+  map.resources :ventures do |ventures|
+    ventures.resources :needs
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
 

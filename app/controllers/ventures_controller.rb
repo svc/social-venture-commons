@@ -2,7 +2,7 @@ class VenturesController < ApplicationController
   # GET /ventures
   # GET /ventures.xml
   def index
-    @svc_feeds = Twitter::Search.new('#svc')
+    @svc_feeds = Feed.search('#svc')
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,7 +14,7 @@ class VenturesController < ApplicationController
   # GET /ventures/1.xml
   def show
     @venture = Venture.find(params[:id])
-    @venture_feeds = Twitter::Search.new(CGI::escape(@venture[:tag]))
+    @venture_feeds = Feed.search(@venture[:tag])
     
     respond_to do |format|
       format.html # show.html.erb

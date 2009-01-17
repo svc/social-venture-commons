@@ -1,14 +1,14 @@
 <div id="twitter-feed" class="vtspan-5 wireframe">
 	<h2>Latest conversations</h2>
 	<div class="twitter-posts">
-		<% feed.each do |tweet| %>
-		<div class="tweet vtclearfix">
-			<%= image_tag(tweet.profile_image_url) %>
-			<div class="tweet-content">
-				<%= "#{tweet.from_user}: #{tweet.text}" %>
-				<span class="tweet-meta"><%=time_ago_in_words(tweet.created_at)%> · <%=link_to 'Reply',"http://twitter.com/home?status=@#{tweet.from_user}" %> · <%= link_to 'View Tweet',"http://www.twitter.com/#{tweet.from_user}/statuses/#{tweet.id}" %></span>
-			</div>
-		</div>
+    <% feed.results.each do |tweet| %>
+    <div class="tweet vtclearfix">
+    	<%= image_tag(tweet.profile_image_url) %>
+    	<div class="tweet-content">
+    		<%= "#{tweet.from_user}: #{tweet.text}" %>
+    		<span class="tweet-meta"><%=time_ago_in_words(tweet.created_at)%> · <%=link_to 'Reply',"http://twitter.com/home?status=@#{tweet.from_user}" %> · <%= link_to 'View Tweet',"http://www.twitter.com/#{tweet.from_user}/statuses/#{tweet.id}" %></span>
+    	</div>
+    </div>
     <% end %>
 	</div>
 </div>

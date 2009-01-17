@@ -16,13 +16,13 @@
     <td><%=h need.tag %></td>
     <td><%=h need.venture %></td>
     <td><%=h need.user %></td>
-    <td><%= link_to 'Show', need %></td>
-    <td><%= link_to 'Edit', edit_need_path(need) %></td>
-    <td><%= link_to 'Destroy', need, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Show', [@venture, need] %></td>
+    <td><%= link_to 'Edit', edit_venture_need_path(@venture,need) %></td>
+    <td><%= link_to 'Destroy', [@venture, need], :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New need', new_need_path %>
+<%= link_to 'New need', new_venture_need_path %>

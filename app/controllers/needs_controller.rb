@@ -1,8 +1,10 @@
 class NeedsController < ApplicationController
+  before_filter :load_parent
+  
   # GET /needs
   # GET /needs.xml
   def index
-    @needs = Need.find(:all)
+    @needs = @venture.needs.find(:all)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,7 +16,8 @@ class NeedsController < ApplicationController
   # GET /needs/1.xml
   def show
     @need = Need.find(params[:id])
-
+    @need_feed = Feed.search("#{@need.venture.tag} #{@need.tag}")
+    
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @need }
@@ -24,7 +27,7 @@ class NeedsController < ApplicationController
   # GET /needs/new
   # GET /needs/new.xml
   def new
-    @need = Need.new
+    @need = @venture.needs.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,18 +37,18 @@ class NeedsController < ApplicationController
 
   # GET /needs/1/edit
   def edit
-    @need = Need.find(params[:id])
+    @need = @venture.needs.find(params[:id])
   end
 
   # POST /needs
   # POST /needs.xml
   def create
-    @need = Need.new(params[:need])
+    @need = @venture.needs.new(params[:need])
 
     respond_to do |format|
       if @need.save
         flash[:notice] = 'Need was successfully created.'
-        format.html { redirect_to(@need) }
+        format.html { redirect_to([@venture, @need]) }
         format.xml  { render :xml => @need, :status => :created, :location => @need }
       else
         format.html { render :action => "new" }
@@ -57,12 +60,12 @@ class NeedsController < ApplicationController
   # PUT /needs/1
   # PUT /needs/1.xml
   def update
-    @need = Need.find(params[:id])
+    @need = @venture.needs.find(params[:id])
 
     respond_to do |format|
       if @need.update_attributes(params[:need])
         flash[:notice] = 'Need was successfully updated.'
-        format.html { redirect_to(@need) }
+        format.html { redirect_to([@venture, @need]) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -78,8 +81,13 @@ class NeedsController < ApplicationController
     @need.destroy
 
     respond_to do |format|
-      format.html { redirect_to(needs_url) }
+      format.html { redirect_to(venture_needs_url) }
       format.xml  { head :ok }
     end
   end
+  
+  protected
+    def load_parent
+      @venture = Venture.find(params[:venture_id])
+    end
 end
