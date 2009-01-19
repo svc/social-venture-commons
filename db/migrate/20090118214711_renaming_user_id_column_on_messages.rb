@@ -5,6 +5,5 @@ class RenamingUserIdColumnOnMessages < ActiveRecord::Migration
 
   def self.down
     rename_column :messages, :account_id, :user_id
-    
   end
 end

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090118214711) do
+ActiveRecord::Schema.define(:version => 20090119161920) do
 
   create_table "account_types", :force => true do |t|
     t.text     "name"
@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(:version => 20090118214711) do
     t.integer  "account_type_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "remember_token",            :limit => 40
+    t.datetime "remember_token_expires_at"
   end
 
   add_index "accounts", ["twitter_id"], :name => "index_accounts_on_twitter_id"
@@ -65,6 +67,18 @@ ActiveRecord::Schema.define(:version => 20090118214711) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "roles", :force => true do |t|
+    t.string "name"
+  end
+
+  create_table "roles_accounts", :id => false, :force => true do |t|
+    t.integer "role_id"
+    t.integer "account_id"
+  end
+
+  add_index "roles_accounts", ["account_id"], :name => "index_roles_accounts_on_account_id"
+  add_index "roles_accounts", ["role_id"], :name => "index_roles_accounts_on_role_id"
 
   create_table "skill_tags", :force => true do |t|
     t.string   "name"

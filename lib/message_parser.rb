@@ -22,4 +22,12 @@ class MessageParser
       message.save
     end
   end
+  
+  def self.get_messages_and_parse(options = Hash.new)
+    options[:since] = Message.maximum(:updated_at) unless options[:since]
+
+    Twitter::Base.new(TWITTER_USERNAME,TWITTER_PASSWORD).timeline(:friends,options).each do |tweet|
+      MessageParser.parse(tweet)      
+    end
+  end
 end

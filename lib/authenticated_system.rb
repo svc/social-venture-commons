@@ -14,7 +14,7 @@ module AuthenticatedSystem
 
     # Store the given user id in the session.
     def current_user=(new_user)
-      session[:user_id] = new_user ? new_user.id : nil
+      session[:account_id] = new_user ? new_user.id : nil
       @current_user = new_user || false
     end
 
@@ -105,13 +105,14 @@ module AuthenticatedSystem
 
     # Called from #current_user.  First attempt to login by the user id stored in the session.
     def login_from_session
-      self.current_user = User.find_by_id(session[:user_id]) if session[:user_id]
+      RAILS_DEFAULT_LOGGER.debug "SESSION ID: #{session.inspect}"
+      self.current_user = Account.find_by_id(session[:account_id]) if session[:account_id]
     end
 
     # Called from #current_user.  Now, attempt to login by basic authentication information.
     def login_from_basic_auth
       authenticate_with_http_basic do |login, password|
-        self.current_user = User.authenticate(login, password)
+        self.current_user = Acount.authenticate(login, password)
       end
     end
     
@@ -122,9 +123,9 @@ module AuthenticatedSystem
     # Called from #current_user.  Finaly, attempt to login by an expiring token in the cookie.
     # for the paranoid: we _should_ be storing user_token = hash(cookie_token, request IP)
     def login_from_cookie
-      user = cookies[:auth_token] && User.find_by_remember_token(cookies[:auth_token])
-      if user && user.remember_token?
-        self.current_user = user
+      account = cookies[:auth_token] && Account.find_by_remember_token(cookies[:auth_token])
+      if account && account.remember_token?
+        self.current_user = account
         handle_remember_cookie! false # freshen cookie token (keeping date)
         self.current_user
       end
@@ -138,8 +139,9 @@ module AuthenticatedSystem
       @current_user.forget_me if @current_user.is_a? User
       @current_user = false     # not logged in, and don't do it for me
       kill_remember_cookie!     # Kill client-side auth cookie
-      session[:user_id] = nil   # keeps the session but kill our variable
+      session[:account_id] = nil   # keeps the session but kill our variable
       # explicitly kill any other session variables you set
+      session[:tw_pw] = nil
     end
 
     # The session should only be reset at the tail end of a form POST --

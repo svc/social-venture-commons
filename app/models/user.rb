@@ -1,5 +1,4 @@
 class User < ActiveRecord::Base
-  concerned_with :authorization, :roles 
   
 	has_many :skillTag
 	

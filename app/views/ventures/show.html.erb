@@ -5,10 +5,7 @@
 
 	<div id="twitter" class="wireframe">
 		<h3>What are you working on?</h3>
-		<%- form_tag('messages/new') do -%>
-			<%= text_area_tag('message',"#{@venture.tag} ") %>	
-			<p><%= submit_tag('Post') %></p>
-		<%- end -%>
+		<%= render :partial => 'shared/tweet_box',:locals=>{:initial_value => @venture.tag} %>
 	</div>
 
 	<%= render :partial => 'shared/message_feed',:locals=>{:messages => @venture_messages} %>

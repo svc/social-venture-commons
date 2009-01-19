@@ -2,7 +2,7 @@ class VenturesController < ApplicationController
   # GET /ventures
   # GET /ventures.xml
   def index
-    @svc_messages = Message.all
+    @svc_messages = Message.all(:order=>'created_at DESC')
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,7 +14,7 @@ class VenturesController < ApplicationController
   # GET /ventures/1.xml
   def show
     @venture = Venture.find(params[:id])
-    @venture_messages = @venture.messages
+    @venture_messages = @venture.messages.all(:order=>'created_at DESC')
     
     respond_to do |format|
       format.html # show.html.erb

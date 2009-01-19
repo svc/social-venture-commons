@@ -8,7 +8,7 @@ module AuthenticatedSystem
     
     # Accesses the current user from the session.
     def current_user
-      @current_user ||= (@current_user && User.find_by_id(@current_user)) || :false
+      @current_user ||= (@current_user && Account.find_by_id(@current_user)) || :false
     end
     
     # Store the given user in the session.
@@ -49,7 +49,7 @@ module AuthenticatedSystem
     #
     def login_required
       username, passwd = get_auth_data
-      self.current_user ||= User.authenticate(username, passwd) || :false if username && passwd
+      self.current_user ||= Account.authenticate(username, passwd) || :false if username && passwd
       logged_in? && authorized? ? true : access_denied
     end
     
@@ -91,10 +91,10 @@ module AuthenticatedSystem
     # cookie and log the user back in if apropriate
     def login_from_cookie
       return unless cookies[:auth_token] && !logged_in?
-      user = User.find_by_remember_token(cookies[:auth_token])
-      if user && user.remember_token?
-        user.remember_me
-        self.current_user = user
+      account = Account.find_by_remember_token(cookies[:auth_token])
+      if account && account.remember_token?
+        account.remember_me
+        self.current_user = account
         cookies[:auth_token] = { :value => self.current_user.remember_token , :expires => self.current_user.remember_token_expires_at }
         flash[:notice] = "Logged in successfully"
       end

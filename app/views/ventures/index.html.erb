@@ -1,21 +1,15 @@
 <div id="twitter" class="vtspan-5 wireframe">
-	<h2>Please log in with you Twitter account</h2>
-	<%- form_tag('users/login') do -%>
+  <% if not logged_in? -%>
+  	<h2>Please log in with you Twitter account</h2>
+  		<div class="vtclearfix">
+        <%= render :partial => 'shared/login' %>
+  	  </div>
+  		<p class="vtsmall vtquiet">We do not store your user name or password, it is used only to retrieve data from the Twitter API</p>
+  <% else %>
+	<h2>Welcome to VenTwits</h2>
 		<div class="vtclearfix">
-			<div class="vtspan-2">
-				<%= label_tag('user_name', 'User Name') %><br>
-				<%= text_field_tag('user_name') %>
-			</div>
-			<div class="vtspan-2 vtlast">
-				<%= label_tag('password', 'Password') %><br>
-				<%= password_field_tag('password') %>
-			</div>
-		</div>
-		
-		<p><%= submit_tag('Login') %></p>
-	
-		<p class="vtsmall vtquiet">We do not store your user name or password, it is used only to retrieve data from the Twitter API</p>
-	<%- end -%>
+	  </div>
+  <% end %>
 </div>
 
 <div id="actions" class="vtspan-3 wireframe vtlast">
