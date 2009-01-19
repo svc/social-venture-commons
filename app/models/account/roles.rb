@@ -1,4 +1,4 @@
-class User
+class Account
   has_and_belongs_to_many :roles
 
   def has_role?(role_in_question)
