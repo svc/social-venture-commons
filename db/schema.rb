@@ -9,23 +9,52 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090107231048) do
+ActiveRecord::Schema.define(:version => 20090118214711) do
 
-  create_table "messages", :force => true do |t|
-    t.string   "t_id"
-    t.datetime "published"
-    t.string   "link"
-    t.string   "title"
-    t.text     "content"
-    t.datetime "t_updated"
-    t.string   "authorname"
-    t.string   "authorurl"
-    t.integer  "user_id"
-    t.integer  "venture_id"
-    t.integer  "need_id"
+  create_table "account_types", :force => true do |t|
+    t.text     "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "accounts", :force => true do |t|
+    t.integer  "twitter_id"
+    t.string   "name"
+    t.string   "screen_name"
+    t.string   "url"
+    t.text     "description"
+    t.string   "profile_image_url"
+    t.integer  "account_type_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "accounts", ["twitter_id"], :name => "index_accounts_on_twitter_id"
+
+  create_table "messages", :force => true do |t|
+    t.string   "twitter_id"
+    t.text     "twitter_text"
+    t.integer  "account_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "messages", ["account_id"], :name => "index_messages_on_user_id"
+  add_index "messages", ["twitter_id"], :name => "index_messages_on_twitter_id", :unique => true
+
+  create_table "messages_needs", :id => false, :force => true do |t|
+    t.integer "message_id"
+    t.integer "need_id"
+  end
+
+  add_index "messages_needs", ["message_id", "need_id"], :name => "index_messages_needs_on_message_id_and_need_id", :unique => true
+
+  create_table "messages_ventures", :id => false, :force => true do |t|
+    t.integer "message_id"
+    t.integer "venture_id"
+  end
+
+  add_index "messages_ventures", ["message_id", "venture_id"], :name => "index_messages_ventures_on_message_id_and_venture_id", :unique => true
 
   create_table "needs", :force => true do |t|
     t.text     "description"

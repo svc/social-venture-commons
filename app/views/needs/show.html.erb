@@ -2,11 +2,11 @@
 	<div id="twitter" class="wireframe">
 		<h3>What are you working on?</h3>
 		<%- form_tag('messages/new') do -%>
-			<%= text_area_tag('message',"#{@venture.tag} #{@need.tag} ") %>	
+			<%= text_area_tag('message',"#{@need.tag} ") %>	
 			<p><%= submit_tag('Post') %></p>
 		<%- end -%>
 	</div>
-	<%= render :partial => 'shared/twitter_feed', :locals=>{:feed=>@need_feed} %>
+	<%= render :partial => 'shared/message_feed',:locals=>{:messages => @need_messages} %>
 </div>
 
 <div class="vtcolumn vtspan-3 vtlast">

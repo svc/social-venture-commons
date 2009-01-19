@@ -1,1 +1,0 @@
-FEED_TYPE = TwitterFeedMock

@@ -16,7 +16,7 @@ class NeedsController < ApplicationController
   # GET /needs/1.xml
   def show
     @need = Need.find(params[:id])
-    @need_feed = Feed.search("#{@need.venture.tag} #{@need.tag}")
+    @need_messages = @need.messages
     
     respond_to do |format|
       format.html # show.html.erb
