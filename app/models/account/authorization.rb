@@ -4,24 +4,12 @@ class Account
   include Authentication::ByPassword
   include Authentication::ByCookieToken
 
-  validates_presence_of     :login
-  validates_length_of       :login,    :within => 3..40
-  validates_uniqueness_of   :login
-  validates_format_of       :login,    :with => Authentication.login_regex, :message => Authentication.bad_login_message
-
-  validates_format_of       :name,     :with => Authentication.name_regex,  :message => Authentication.bad_name_message, :allow_nil => true
-  validates_length_of       :name,     :maximum => 100
-
-  validates_presence_of     :email
-  validates_length_of       :email,    :within => 6..100 #r@a.wk
-  validates_uniqueness_of   :email
-  validates_format_of       :email,    :with => Authentication.email_regex, :message => Authentication.bad_email_message
-
-  attr_accessible :login, :email, :name, :password, :password_confirmation
+  attr_accessible :login, :email, :name, :password, :password_confirmation, :url, :description, :twitter_id, :screen_name, :profile_image_url
 
   def self.authenticate(login, password)
     return nil if login.blank? || password.blank?
     begin
+      
       twitter = Twitter::Base.new(login,password)
       twitter_user = Twitter::User.new_from_xml(twitter.verify_credentials)
       
@@ -36,9 +24,10 @@ class Account
             :description => twitter_user.description,
             :profile_image_url => twitter_user.profile_image_url
           )
+                  
+        # Twitter::Base.new(TWITTER_USERNAME,TWITTER_PASSWORD).follow(account.twitter_id)
       end
 
-      account.twitter_password = password
       account
     rescue Exception => e
       return nil
