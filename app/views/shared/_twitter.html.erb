@@ -18,6 +18,6 @@
 		<p class="vtsmall vtquiet">We do not store your user name or password, it is used only to retrieve data from 
 	<% else %>
 		<h3>What are you working on?</h3>
-		<%= render :partial => 'shared/tweet_box', :locals => {:initial_value => @venture && @venture.tag || nil} %>
+		<%= render :partial => 'shared/tweet_box', :locals => {:initial_value => @venture && @venture.tag || ""} %>
 	<% end %>
 </div></div>
