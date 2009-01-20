@@ -1,0 +1,22 @@
+<div id="twitter" class="vtspan-5 ">
+	<% if not logged_in? -%>
+		<h3>Please log in with you Twitter account</h3>
+		<% form_tag session_path do -%>
+			<div class="vtclearfix">
+				<div class="vtspan-2">
+					<%= label_tag 'login' %>
+					<%= text_field_tag 'login', @login %>
+				</div>
+				<div class="vtspan-2 last">
+					<%= label_tag 'password' %>
+					<%= password_field_tag 'password', nil %>
+				</div>
+			</div><br>
+			<p><%= submit_tag 'Log in' %></p>
+		<% end %>
+		<p class="vtsmall vtquiet">We do not store your user name or password, it is used only to retrieve data from 
+	<% else %>
+		<h3>What are you working on?</h3>
+		<%= render :partial => 'shared/tweet_box',:locals=>{:initial_value => @venture.tag} %>
+	<% end %>
+</div>
