@@ -1,24 +1,30 @@
+<%= render :partial => 'shared/twitter' %>	
+
+<div id="profile" class="vtspan-3  vtclearfix">
+  <h3><%=h @user.name %></h3>
+	<%= image_tag('test_avatars/default.png') %>
+	<div class="data">
+	  <%- unless @user.bio.empty? -%><p><span class="label">Bio</span> <%=h @user.bio %></p><%- end -%>
+	  <%- unless @user.url.empty? -%><p><span class="label">Url</span> <%=h @user.url %></p><%- end -%>
+	</div>
+</div>
+
+
 <div class="vtcolumn vtspan-5">
-	<%= render :partial => 'shared/twitter' %>	
 	<%= render :partial => 'shared/twitter_feed' %>
 </div>
 
 <div class="vtcolumn vtspan-3 vtlast">
-	<div id="profile" class="vtspan-3  vtclearfix">
-	  <h3><%=h @user.name %></h3>
-		<%= image_tag('test_avatars/default.png') %>
-		<div class="data">
-		  <%- unless @user.bio.empty? -%><p><span class="label">Bio</span> <%=h @user.bio %></p><%- end -%>
-		  <%- unless @user.url.empty? -%><p><span class="label">Url</span> <%=h @user.url %></p><%- end -%>
-		</div>
-	</div>
-
 	<div id="additional-content" class="vtspan-3 vtlast">
 		<div class="vtspan-3 ">
-			<h3>My Needs</h3>
+			<div class="box-content">
+				<h3>My Needs</h3>
+			</div>
 		</div>
 		<div class="vtspan-3 ">
-			<h3>New Opportunities</h3>
+			<div class="box-content">
+				<h3>New Opportunities</h3>
+			</div>
 		</div>
 	</div>
 </div>

@@ -1,40 +1,46 @@
+<%= render :partial => 'shared/twitter' %>
+
+<div class="vtspan-3 vtlast">
+<div id="actions">
+	<h3><%=h @venture.name %></h3>
+	<p><span class="label">Description</span> <%=h @venture.description %></p>
+	<p><span class="label">Url</span> <%= link_to h(@venture.url) %></p>
+	<p><span class="label">Venture Tag</span> <%=h @venture.tag %></p>
+
+	<p><span class="label">Related Links</span></p>
+</div></div>
+
 <div class="vtcolumn vtspan-5">
 	<div id="venture-graph" class="">
 		<h3>GRAPH</h3>
 	</div>
-
-	<%= render :partial => 'shared/twitter' %>
 	
 	<%= render :partial => 'shared/message_feed',:locals=>{:messages => @venture_messages} %>
 </div>
 
 <div class="vtcolumn vtspan-3 vtlast">
-	<div id="actions" class="vtspan-3 vtlast">
-		<h3><%=h @venture.name %></h3>
-		<p><span class="label">Description</span> <%=h @venture.description %></p>
-		<p><span class="label">Url</span> <%= link_to h(@venture.url) %></p>
-		<p><span class="label">Venture Tag</span> <%=h @venture.tag %></p>
-		
-		<p><span class="label">Related Links</span></p>
-	</div>
 	<div id="additional-content" class="vtclearfix">
 	  <% if @venture.needs.any? %>
-		<div class="vtspan-3  vtlast">
-			<h3>Current Needs</h3>
-			<ul>
-			  <% @venture.needs.each do |need| %>
-				<li><%= link_to need.tag,[@venture, need] %></li>
-				<% end %>
-			</ul>
+		<div class="vtspan-3 vtlast">
+			<div class="box-content">
+				<h3>Current Needs</h3>
+				<ul>
+				  <% @venture.needs.each do |need| %>
+					<li><%= link_to need.tag,[@venture, need] %></li>
+					<% end %>
+				</ul>
+			</div>
 		</div>
 		<% end %>
-		<div class="vtspan-3  vtlast">
-			<h3>Contributors</h3>
-			<ul>
-				<li><%= link_to '@emenel' %></li>
-				<li><%= link_to '@igniter' %></li>
-				<li><%= link_to '@josephdee' %></li>
-			</ul>
+		<div class="vtspan-3 vtlast">
+			<div class="box-content">
+				<h3>Contributors</h3>
+				<ul>
+					<li><%= link_to '@emenel' %></li>
+					<li><%= link_to '@igniter' %></li>
+					<li><%= link_to '@josephdee' %></li>
+				</ul>
+			</div>
 		</div>
 	</div>
 </div>

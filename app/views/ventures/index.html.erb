@@ -1,46 +1,56 @@
 <%= render :partial => 'shared/twitter' %>
 
-<div id="actions" class="vtspan-3  vtlast">
-	<h3>Log in to Ventwits so you can:</h3>
-	<ul>
-		<li>Create new Ventures and manage Needs</li>
-		<li>Participate in on going Ventures</li>
-		<li>Fulfil Needs and help others see their vision come to life</li>
-		<li>Become part of a vibrant community of talented professionals</li>
-	</ul>
+<div class="vtspan-3 vtlast">
+	<div id="actions">
+		<h3>Log in to Ventwits so you can:</h3>
+		<ul>
+			<li>Create new Ventures and manage Needs</li>
+			<li>Participate in on going Ventures</li>
+			<li>Fulfil Needs and help others see their vision come to life</li>
+			<li>Become part of a vibrant community of talented professionals</li>
+		</ul>
+	</div>
 </div>
 
+<div class="vtcolumn vtspan-5">
 <%= render :partial => 'shared/message_feed', :locals =>{:messages => @svc_messages} %>
+</div>
 
 <div id="additional-content" class="vtspan-3 vtlast vtclearfix">
-	<div class="vtspan-3  vtlast">
-		<h3>Most Active Ventures</h3>
-		<ul>
-			<li>VenTwits</li>
-			<li>GroupTwits</li>
-			<li>Lend4Health</li>
-			<li>Twitter</li>
-			<li>FTJCO</li>
-		</ul>
+	<div class="vtspan-3 vtlast">
+		<div class="box-content">
+			<h3>Most Active Ventures</h3>
+			<ul>
+				<li>VenTwits</li>
+				<li>GroupTwits</li>
+				<li>Lend4Health</li>
+				<li>Twitter</li>
+				<li>FTJCO</li>
+			</ul>
+		</div>
 	</div>
 	<div class="vtspan-3  vtlast">
-		<h3>Newest Ventures</h3>
-		<ul>
-			<li>GroupTwits</li>
-			<li>FTJCO</li>
-			<li>Bob's Co</li>
-			<li>Happy Hardware</li>
-			<li>Venture Bros.</li>
-		</ul>
+		<div class="box-content">
+			<h3>Newest Ventures</h3>
+			<ul>
+				<li>GroupTwits</li>
+				<li>FTJCO</li>
+				<li>Bob's Co</li>
+				<li>Happy Hardware</li>
+				<li>Venture Bros.</li>
+			</ul>
+		</div>
 	</div>
 	<div class="vtspan-3  vtlast">
-		<h3>Top Contributors</h3>
-		<ul>
-			<li>@emenel</li>
-			<li>@igniter</li>
-			<li>@josephdee</li>
-			<li>@ryantaylor</li>
-			<li>@remarkk</li>
-		</ul>
+		<div class="box-content">
+			<h3>Top Contributors</h3>
+			<ul>
+				<li>@emenel</li>
+				<li>@igniter</li>
+				<li>@josephdee</li>
+				<li>@ryantaylor</li>
+				<li>@remarkk</li>
+			</ul>
+		</div>
 	</div>
 </div>

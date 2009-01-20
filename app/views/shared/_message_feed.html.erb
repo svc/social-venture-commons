@@ -1,20 +1,20 @@
+<h3>Latest conversations</h3>
 <div id="twitter-feed" class="vtspan-5 ">
-	<h3>Latest conversations</h3>
 	<div class="twitter-posts">
-    <% messages.each do |message| %>
-    <div class="tweet vtclearfix">
-    	<%= image_tag(message.account.profile_image_url) %>
-    	<div class="tweet-content">    	  
-    	  <%
-          message.ventures.each do |v| 
-            message.needs.each {|n| message.text.gsub! n.short_tag, link_to(n.short_tag, venture_need_url(v,n))}
-            message.text.gsub! v.tag, link_to(v.tag, venture_url(v))
-          end
-    	  %>
-    		<%= "#{message.account.name}: #{message.text}" %>
-    		<span class="tweet-meta"><%=time_ago_in_words(message.created_at)%> · <%=link_to 'Reply',"http://twitter.com/home?status=@#{message.account.screen_name}" %> · <%= link_to 'View Tweet',"http://www.twitter.com/#{message.account.screen_name}/statuses/#{message.twitter_id}" %></span>
-    	</div>
-    </div>
-    <% end %>
+    <%- messages.each do |message| -%>
+	    <div class="tweet vtclearfix <%= cycle("odd", "even") %>">
+	    	<%= image_tag(message.account.profile_image_url) %>
+	    	<div class="tweet-content">    	  
+	    	  <%-
+	          message.ventures.each do |v| 
+	            message.needs.each {|n| message.text.gsub! n.short_tag, link_to(n.short_tag, venture_need_url(v,n))}
+	            message.text.gsub! v.tag, link_to(v.tag, venture_url(v))
+	          end
+	    	  -%>
+	    		<%= "#{message.account.name}: #{message.text}" %>
+	    		<span class="tweet-meta"><%=time_ago_in_words(message.created_at)%> · <%=link_to 'Reply',"http://twitter.com/home?status=@#{message.account.screen_name}" %> · <%= link_to 'View Tweet',"http://www.twitter.com/#{message.account.screen_name}/statuses/#{message.twitter_id}" %></span>
+	    	</div>
+	    </div>
+    <%- end -%>
 	</div>
 </div>

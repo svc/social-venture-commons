@@ -38,6 +38,32 @@ label, .label {
   margin-bottom: 1em;
 }
 
+#twitter, #actions {
+  padding: 1em;
+  border: 1px solid #ddd;
+}
+
+#additional-content div {
+  border: 1px solid #ddd;
+  background: #eee;
+}
+
+#additional-content ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#additional-content ul li {
+  padding: 0;
+  margin: 0;
+}
+
+#additional-content div.box-content, div.box-content {
+  border: none;
+  margin: 1em;
+}
+
 #footer {
   margin: 1em 0 0 0;
   background: #ddd;
@@ -53,10 +79,6 @@ label, .label {
   width: 100px;
 }
 
-.tweet {
-  margin: 1em 0;
-}
-
 #profile img, .tweet img {
   float: left;
   width: 48px;
@@ -64,9 +86,22 @@ label, .label {
   margin: 0 10px 0 0;
 }
 
+#twitter-feed {
+  background: #eee;
+  border: 1px solid #ddd;
+}
+
+#twitter-feed .odd {
+  background: #ddd;
+}
+
+.tweet {
+  padding: 1em;
+}
+
 .tweet .tweet-content {
   float: left;
-  width: 412px;
+  width: 392px;
 }
 
 .tweet .tweet-meta {
