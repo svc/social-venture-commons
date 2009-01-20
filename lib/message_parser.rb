@@ -3,6 +3,8 @@ class MessageParser
     tweet.text.downcase!
     return false unless tweet.text =~ /\^/
     
+    puts " RAW TWEET: #{tweet.text}"
+    
     possible_venture_tags       = tweet.text.scan(/(\^[a-z0-9]*)/).uniq
     
     puts "Possible Venture Tags: #{possible_venture_tags.inspect}"
@@ -22,8 +24,14 @@ class MessageParser
       message = Message.new(:twitter_id=>tweet.id, :twitter_text=>tweet.text,:account_id=>account.id)
       message.ventures << ventures
       message.needs << needs     
-         
-      message.save
+      
+      begin
+        message.save
+      rescue Exception => e
+        puts "Duplicate Twitter Message Detected"
+      end
+      
+      puts '------------------------------------'
     end
   end
   
@@ -31,7 +39,7 @@ class MessageParser
     message_last_updated_at = Message.maximum(:updated_at)
     options[:since] = Message.maximum(:updated_at) unless options[:since] && message_last_updated_at.nil?
 
-    Twitter::Base.new(TWITTER_USERNAME,TWITTER_PASSWORD).timeline(:friends,options).each do |tweet|
+    Twitter::Base.new(TWITTER_USERNAME,TWITTER_PASSWORD).timeline(:friends).each do |tweet|
       MessageParser.parse(tweet)      
     end
   end
