@@ -1,19 +1,7 @@
-<div id="twitter" class="vtspan-5 wireframe">
-  <% if not logged_in? -%>
-  	<h2>Please log in with you Twitter account</h2>
-  		<div class="vtclearfix">
-        <%= render :partial => 'shared/login' %>
-  	  </div>
-  		<p class="vtsmall vtquiet">We do not store your user name or password, it is used only to retrieve data from the Twitter API</p>
-  <% else %>
-	<h2>Welcome to VenTwits</h2>
-		<div class="vtclearfix">
-	  </div>
-  <% end %>
-</div>
+<%= render :partial => 'shared/twitter' %>
 
-<div id="actions" class="vtspan-3 wireframe vtlast">
-	<h2>Log in to Ventwits so you can:</h2>
+<div id="actions" class="vtspan-3  vtlast">
+	<h3>Log in to Ventwits so you can:</h3>
 	<ul>
 		<li>Create new Ventures and manage Needs</li>
 		<li>Participate in on going Ventures</li>
@@ -25,7 +13,7 @@
 <%= render :partial => 'shared/message_feed', :locals =>{:messages => @svc_messages} %>
 
 <div id="additional-content" class="vtspan-3 vtlast vtclearfix">
-	<div class="vtspan-3 wireframe vtlast">
+	<div class="vtspan-3  vtlast">
 		<h3>Most Active Ventures</h3>
 		<ul>
 			<li>VenTwits</li>
@@ -35,7 +23,7 @@
 			<li>FTJCO</li>
 		</ul>
 	</div>
-	<div class="vtspan-3 wireframe vtlast">
+	<div class="vtspan-3  vtlast">
 		<h3>Newest Ventures</h3>
 		<ul>
 			<li>GroupTwits</li>
@@ -45,7 +33,7 @@
 			<li>Venture Bros.</li>
 		</ul>
 	</div>
-	<div class="vtspan-3 wireframe vtlast">
+	<div class="vtspan-3  vtlast">
 		<h3>Top Contributors</h3>
 		<ul>
 			<li>@emenel</li>

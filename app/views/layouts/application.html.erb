@@ -12,26 +12,27 @@
 
 	<body>
 		<div class="vtcontainer">
-			<div id="header" class="vtspan-8 wireframe vtclearfix">
-				<h1>Ventwits</h1>
+			<div id="header" class="vtspan-8  vtclearfix">
+				<div class="vtspan-2"><h1>Ventwits</h1></div>
 
-				<div id="main-nav">
+				<div id="main-nav" class="vtspan-3">
 					<%= link_to 'All Ventures', '/' %>
 					<%= link_to 'My Ventures', 'user/show' %>
 				</div>
 				
-				<%- form_tag 'search' do -%>
-				<%= label_tag 'search', 'Search' %>
-				<%= text_field_tag 'search' %>
-				<%= submit_tag 'Search' %>
-				<%- end -%>
+				<div class="vtspan-3 vtlast">
+					<%- form_tag('search') do -%>
+						<%= text_field_tag 'search' %>
+						<%= submit_tag 'Search' %>
+					<%- end -%>
+				</div>
 			</div>
 			<div>
         <%= flash[:notice] %>
       </div>
 			<%= yield %>
 			
-			<div id="footer" class="vtprepend-top vtspan-8 wireframe">
+			<div id="footer" class="vtprepend-top vtspan-8 ">
 				Footer
 			</div>
 		</div>

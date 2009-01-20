@@ -1,3 +1,7 @@
+body, h1, h2, h3, h4, h5 {
+  color: #222;
+}
+
 .wireframe {
   background-color: #DDD;
 }
@@ -6,8 +10,19 @@ label, .label {
   font-weight: bold;
 }
 
-#header h1, #header #main-nav {
-  float: left;
+#header {
+  padding: 1.5em 0 0 0;
+  margin-bottom: 1.5em;
+  border-bottom: 1px solid #999;
+}
+
+#header #main-nav {
+  margin-top: 0.8em;
+}
+
+#header #main-nav a {
+  font-size: 1.5em;
+  padding: 0 0.5em;
 }
 
 #header h1 {
@@ -15,15 +30,16 @@ label, .label {
 }
 
 #header form {
-  float: right;
+  padding: 1em;
 }
 
-#profile, #actions, #twitter, #header, #additional-content div {
+#profile, #actions, #twitter, #additional-content div {
   margin-bottom: 1em;
 }
 
 #footer {
   margin: 1em 0;
+  border-top: 1px solid #999;
 }
 
 #twitter textarea {
