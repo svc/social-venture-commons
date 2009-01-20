@@ -4,12 +4,16 @@ class MessageParser
     return false unless tweet.text =~ /\^/
     
     possible_venture_tags       = tweet.text.scan(/(\^[a-z0-9]*)/).uniq
-
+    
+    puts "Possible Venture Tags: #{possible_venture_tags.inspect}"
     
     ventures = Venture.all(:conditions=>"tag IN ('#{possible_venture_tags.join('\',\'')}')")
     
     if ventures.any?
       possible_venture_need_tags  = tweet.text.scan(/\^[a-z0-9]* ![a-z0-9]*/).uniq
+      
+      puts "Possible venture Need tags #{possible_venture_need_tags}"
+      
       needs = Need.all(:conditions=>"tag IN ('#{possible_venture_need_tags.join('\',\'')}')")
       
       account = Account.find_by_twitter_id(tweet.user.id)
@@ -24,7 +28,8 @@ class MessageParser
   end
   
   def self.get_messages_and_parse(options = Hash.new)
-    options[:since] = Message.maximum(:updated_at) unless options[:since]
+    message_last_updated_at = Message.maximum(:updated_at)
+    options[:since] = Message.maximum(:updated_at) unless options[:since] && message_last_updated_at.nil?
 
     Twitter::Base.new(TWITTER_USERNAME,TWITTER_PASSWORD).timeline(:friends,options).each do |tweet|
       MessageParser.parse(tweet)      
