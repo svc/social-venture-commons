@@ -1,14 +1,15 @@
 <%= render :partial => 'shared/twitter' %>
 
 <div class="vtspan-3 vtlast">
-<div id="actions">
-	<h3><%=h @venture.name %></h3>
-	<p><span class="label">Description</span> <%=h @venture.description %></p>
-	<p><span class="label">Url</span> <%= link_to h(@venture.url) %></p>
-	<p><span class="label">Venture Tag</span> <%=h @venture.tag %></p>
+	<div id="actions">
+		<h3><%=h @venture.name %></h3>
+		<p><span class="label">Description</span> <%=h @venture.description %></p>
+		<p><span class="label">Url</span> <%= link_to h(@venture.url) %></p>
+		<p><span class="label">Venture Tag</span> <%=h @venture.tag %></p>
 
-	<p><span class="label">Related Links</span></p>
-</div></div>
+		<p><span class="label">Related Links</span></p>
+	</div>
+</div>
 
 <div class="vtcolumn vtspan-5">
 	<div id="venture-graph" class="">
