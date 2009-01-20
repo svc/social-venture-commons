@@ -11,15 +11,15 @@
 	</head>
 
 	<body>
-		<div class="vtcontainer">
-			<div id="header" class="vtspan-8  vtclearfix">
+		<div id="header">
+			<div class="vtcontainer">
 				<div class="vtspan-2"><h1>Ventwits</h1></div>
 
 				<div id="main-nav" class="vtspan-3">
 					<%= link_to 'All Ventures', '/' %>
 					<%= link_to 'My Ventures', 'user/show' %>
 				</div>
-				
+			
 				<div class="vtspan-3 vtlast">
 					<%- form_tag('search') do -%>
 						<%= text_field_tag 'search' %>
@@ -27,14 +27,16 @@
 					<%- end -%>
 				</div>
 			</div>
+		</div>
+
+		<div class="vtcontainer">
 			<div>
         <%= flash[:notice] %>
       </div>
 			<%= yield %>
-			
-			<div id="footer" class="vtprepend-top vtspan-8 ">
-				Footer
-			</div>
+		</div>
+		<div id="footer">
+			Footer
 		</div>
 	</body>
 </html>

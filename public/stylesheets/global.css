@@ -13,7 +13,8 @@ label, .label {
 #header {
   padding: 1.5em 0 0 0;
   margin-bottom: 1.5em;
-  border-bottom: 1px solid #999;
+  background: #eee;
+  border-bottom: 0.25em solid #ddd;
 }
 
 #header #main-nav {
@@ -38,8 +39,8 @@ label, .label {
 }
 
 #footer {
-  margin: 1em 0;
-  border-top: 1px solid #999;
+  margin: 1em 0 0 0;
+  background: #ddd;
 }
 
 #twitter textarea {
