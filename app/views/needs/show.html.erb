@@ -1,5 +1,5 @@
 <div class="vtcolumn vtspan-5">
-	<%= render :partial => 'shared/twitter' %>
+	<%= render :partial => 'shared/twitter', :locals=>{:initial_value=>@need.tag} %>
 	<%= render :partial => 'shared/message_feed',:locals=>{:messages => @need_messages} %>
 </div>
 

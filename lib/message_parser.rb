@@ -1,9 +1,11 @@
 class MessageParser
   def self.parse(tweet)
+
     tweet.text.downcase!
-    return false unless tweet.text =~ /\^/
-    
+    puts '------------------------------------'
     puts " RAW TWEET: #{tweet.text}"
+    
+    return false unless tweet.text =~ /\^/
     
     possible_venture_tags       = tweet.text.scan(/(\^[a-z0-9]*)/).uniq
     
@@ -31,7 +33,6 @@ class MessageParser
         puts "Duplicate Twitter Message Detected"
       end
       
-      puts '------------------------------------'
     end
   end
   
