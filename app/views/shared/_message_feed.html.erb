@@ -7,8 +7,8 @@
 	    	<div class="tweet-content">    	  
 	    	  <%-
 	          message.ventures.each do |v| 
-	            message.needs.each {|n| message.text.gsub! n.short_tag, link_to(n.short_tag, venture_need_url(v,n))}
-	            message.text.gsub! v.tag, link_to(v.tag, venture_url(v))
+	            message.needs.each {|n| message.text.gsub! n.short_tag, link_to(n.short_tag, venture_need_path(v,n))}
+	            message.text.gsub! v.tag, link_to(v.tag, venture_path(v))
 	          end
 	    	  -%>
 	    		<%= "#{message.account.name}: #{message.text}" %>
