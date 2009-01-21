@@ -38,9 +38,17 @@ label, .label {
   margin-bottom: 1em;
 }
 
+#twitter {
+  border-right: 1px solid #ddd;
+}
+
+#actions {
+  border-left: 1px solid #ddd;
+  margin-left: -0.9em;
+}
+
 #twitter, #actions {
   padding: 1em;
-  border: 1px solid #ddd;
 }
 
 #additional-content div {
