@@ -24,8 +24,8 @@ class Account
             :description => twitter_user.description,
             :profile_image_url => twitter_user.profile_image_url
           )
-                  
-        # Twitter::Base.new(TWITTER_USERNAME,TWITTER_PASSWORD).follow(account.twitter_id)
+
+        Twitter::Base.new(TWITTER_USERNAME,TWITTER_PASSWORD).create_friendship(account.twitter_id)
       end
 
       account
