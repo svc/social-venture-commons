@@ -408,6 +408,7 @@ Run `rake gems:install` to install the missing gems.
       if configuration.frameworks.include?(:active_record)
         ActiveRecord::Base.configurations = configuration.database_configuration
         ActiveRecord::Base.establish_connection
+        configuration.middleware.use ActiveRecord::QueryCache
       end
     end
 
@@ -542,7 +543,9 @@ Run `rake gems:install` to install the missing gems.
     end
 
     def initialize_metal
-      configuration.middleware.insert_before(:"ActionController::RewindableInput", Rails::Rack::Metal)
+      configuration.middleware.insert_before(
+        :"ActionController::RewindableInput",
+        Rails::Rack::Metal, :if => Rails::Rack::Metal.metals.any?)
     end
 
     # Initializes framework-specific settings for each of the loaded frameworks
