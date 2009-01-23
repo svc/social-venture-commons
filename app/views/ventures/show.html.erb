@@ -24,25 +24,21 @@
 	<div id="additional-content" class="vtclearfix">
 	  <% if @venture.needs.any? %>
 		<div class="vtspan-3 vtlast">
-			<div class="box-content">
 				<h3>Current Needs</h3>
 				<ul>
 				  <% @venture.needs.each do |need| %>
 					<li><%= link_to need.tag,[@venture, need] %></li>
 					<% end %>
 				</ul>
-			</div>
 		</div>
 		<% end %>
 		<div class="vtspan-3 vtlast">
-			<div class="box-content">
 				<h3>Contributors</h3>
 				<ul>
 					<li><%= link_to '@emenel' %></li>
 					<li><%= link_to '@igniter' %></li>
 					<li><%= link_to '@josephdee' %></li>
 				</ul>
-			</div>
 		</div>
 	</div>
 </div>
