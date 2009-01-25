@@ -66,6 +66,9 @@ class VenturesController < ApplicationController
         flash[:notice] = 'Venture was successfully updated.'
         format.html { redirect_to(@venture) }
         format.xml  { head :ok }
+				format.part do 
+					render :partial => 'shared/editable_value', :locals => {:value => @venture.description}
+				end
       else
         format.html { render :action => "edit" }
         format.xml  { render :xml => @venture.errors, :status => :unprocessable_entity }
