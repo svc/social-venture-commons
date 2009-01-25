@@ -1,12 +1,12 @@
 <div class="vtcolumn vtspan-5">
-	<%= render :partial => 'shared/twitter', :locals=>{:initial_value=>@need.tag} %>
+	<%= render :partial => 'shared/twitter', :locals=>{:initial_value=>@venture ? "#{@venture.tag} #{@need.tag}" : @need.tag} %>
 </div>
 
 <div class="vtspan-3 vtlast">
 	<div id="actions">
-	  <h3><%=h @need.venture %> &raquo; <%=h @need.name %></h3>
-	  <%- unless @need.description.empty? -%><p><span class="label">Description</span> <%=h @need.description %></p><%- end -%>
-	  <%- unless @need.tag.empty? -%><p><span class="label">Tag</span> <%=h @need.tag %></p><%- end -%>
+	  <h3><%=h @need.name %></h3>
+	  <%- if @need.description -%><p><span class="label">Description</span> <%=h @need.description %></p><%- end -%>
+	  <p><span class="label">Tag</span> <%=h @need.tag %></p>
 		<p><%= link_to "Complete this need" %></p>
 	</div>
 </div>

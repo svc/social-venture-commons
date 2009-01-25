@@ -17,6 +17,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :ventures do |ventures|
     ventures.resources :needs
   end
+  
+  map.resources :needs
 
   # The priority is based upon order of creation: first created -> highest priority.
 
