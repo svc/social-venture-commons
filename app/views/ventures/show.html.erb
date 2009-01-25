@@ -12,14 +12,16 @@
 	
 	<script type="text/javascript" charset="utf-8">
 		$(document).ready(function() {
-			$('#venture_description').editable('/ventures/update/<%= @venture.id %>.part', {
+			var temp = {};
+			var editableOpts = {
 				indicator: 'Saving...',
         tooltip: 'Click to edit...',
         cancel: 'Cancel',
         submit: 'OK',
-				tooltip: 'Click to edit',
-				name: 'venture[description]'
-			});
+				tooltip: 'Click to edit'
+			};
+
+			$('#venture_description').editable('/ventures/update/<%= @venture.id %>.part', $.extend(temp, editableOpts, {name: 'venture[description]'}));
 		});
 	</script>
 </div>
