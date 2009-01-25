@@ -3,27 +3,12 @@
 <div class="vtspan-3 vtlast">
 	<div id="actions">
 		<h3><%=h @venture.name %></h3>
-		<%= render :partial => 'shared/editable_field', :locals => {:label => "Description", :value => @venture.description} %>
+		<%= render :partial => 'shared/editable_field', :locals => {:label => "Description", :name => "venture[description]", :value => @venture.description} %>
 		<p><span class="label">Url</span> <span id="venture_url"><%= link_to h(@venture.url) %></span></p>
 		<p><span class="label">Venture Tag</span> <span id="venture_tag"><%=h @venture.tag %></span></p>
 
 		<p><span class="label">Related Links</span></p>
 	</div>
-	
-	<script type="text/javascript" charset="utf-8">
-		$(document).ready(function() {
-			var temp = {};
-			var editableOpts = {
-				indicator: 'Saving...',
-        tooltip: 'Click to edit...',
-        cancel: 'Cancel',
-        submit: 'OK',
-				tooltip: 'Click to edit'
-			};
-
-			$('#venture_description').editable('/ventures/update/<%= @venture.id %>.part', $.extend(temp, editableOpts, {name: 'venture[description]'}));
-		});
-	</script>
 </div>
 
 <hr>

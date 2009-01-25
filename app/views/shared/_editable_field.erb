@@ -1,1 +1,9 @@
-<p><span class="label"><%= label %></span> <%= render :partial => 'shared/editable_value', :locals => {:value => value} %></p>
+<%- local_id = 'random' -%>
+
+<p><span class="label"><%= label %></span> <%= render :partial => 'shared/editable_value', :locals => {:id => local_id, :value => value} %></p>
+
+<script type="text/javascript" charset="utf-8">
+	$(document).ready(function() {
+		$("<%= local_id %>").editable('/ventures/update/<%= @venture.id %>.part', $.extend({}, editableOpts, {name: "<%= name %>"}));
+	});
+</script>
