@@ -3,8 +3,11 @@ class VenturesController < ApplicationController
   # GET /ventures.xml
   def index
     @svc_messages = Message.all(:order=>'created_at DESC')
-		@newest_ventures = Venture.all(:order=>'created_at DESC')
-
+		@newest_ventures = Venture.all(:order=>'id DESC')
+    
+    @top_contributors = Account.with_message_counts(:limit=>5)
+    @top_ventures = Venture.with_message_counts(:limit=>5)
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @ventures }

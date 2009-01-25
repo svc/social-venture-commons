@@ -22,29 +22,25 @@
 	<div class="vtspan-3 vtlast">
 			<h3>Most Active Ventures</h3>
 			<ul>
-				<li>VenTwits</li>
-				<li>GroupTwits</li>
-				<li>Lend4Health</li>
-				<li>Twitter</li>
-				<li>FTJCO</li>
+			  <%- @top_ventures.each do |v| -%>
+				  <li><%= link_to v, venture_path(v) %></li>
+				<%- end %>
 			</ul>
 	</div>
 	<div class="vtspan-3  vtlast">
 			<h3>Newest Ventures</h3>
 			<ul>
 				<%- @newest_ventures.each do |v| -%>
-					<li><%= link_to((v.name.blank? ? v.tag : v.name), {:controller => :ventures, :action => :show, :id => v.id}) %></li>
+					<li><%= link_to(v, venture_path(v)) %></li>
 				<%- end -%>
 			</ul>
 	</div>
 	<div class="vtspan-3  vtlast">
 			<h3>Top Contributors</h3>
 			<ul>
-				<li>@emenel</li>
-				<li>@igniter</li>
-				<li>@josephdee</li>
-				<li>@ryantaylor</li>
-				<li>@remarkk</li>
+			  <%- @top_contributors.each do |c| -%>
+				  <li><%= link_to c.screen_name, user_path(c) %></li>
+				<%- end %>
 			</ul>
 	</div>
 </div>
