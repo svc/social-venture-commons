@@ -32,11 +32,9 @@
 	<div class="vtspan-3  vtlast">
 			<h3>Newest Ventures</h3>
 			<ul>
-				<li>GroupTwits</li>
-				<li>FTJCO</li>
-				<li>Bob's Co</li>
-				<li>Happy Hardware</li>
-				<li>Venture Bros.</li>
+				<%- @newest_ventures.each do |v| -%>
+					<li><%= link_to((v.name.blank? ? v.tag : v.name), {:controller => :ventures, :action => :show, :id => v.id}) %></li>
+				<%- end -%>
 			</ul>
 	</div>
 	<div class="vtspan-3  vtlast">

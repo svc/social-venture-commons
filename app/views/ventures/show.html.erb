@@ -13,10 +13,12 @@
 	<script type="text/javascript" charset="utf-8">
 		$(document).ready(function() {
 			$('#venture_description').editable('/ventures/update/<%= @venture.id %>', {
-				indicator : 'Saving...',
-        tooltip   : 'Click to edit...',
-        cancel    : 'Cancel',
-        submit    : 'OK'
+				indicator: 'Saving...',
+        tooltip: 'Click to edit...',
+        cancel: 'Cancel',
+        submit: 'OK',
+				tooltip: 'Click to edit',
+				name: 'venture[description]'
 			});
 		});
 	</script>
