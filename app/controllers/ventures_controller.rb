@@ -66,8 +66,17 @@ class VenturesController < ApplicationController
         flash[:notice] = 'Venture was successfully updated.'
         format.html { redirect_to(@venture) }
         format.xml  { head :ok }
-				format.part do 
-					render :partial => 'shared/editable_value', :locals => {:value => @venture.description}
+				format.part do
+					if params[:venture].key?(:tag)
+						value = @venture.tag
+					elsif params[:venture].key?(:description)
+						value = @venture.description
+					elsif params[:venture].key?(:url)
+						value = @venture.url
+					elsif params[:venture].key?(:name)
+						value = @venture.name
+					end
+					render :partial => 'shared/editable_value', :locals => {:value => value}
 				end
       else
         format.html { render :action => "edit" }
