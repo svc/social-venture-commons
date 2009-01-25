@@ -14,13 +14,12 @@
 
 <hr>
 
-<div class="vtcolumn vtspan-5">
+<div id="main-content" class="vtcolumn vtspan-5">
 <%= render :partial => 'shared/message_feed', :locals =>{:messages => @svc_messages} %>
 </div>
 
 <div id="additional-content" class="vtspan-3 vtlast vtclearfix">
 	<div class="vtspan-3 vtlast">
-		<div class="box-content">
 			<h3>Most Active Ventures</h3>
 			<ul>
 				<li>VenTwits</li>
@@ -29,22 +28,16 @@
 				<li>Twitter</li>
 				<li>FTJCO</li>
 			</ul>
-		</div>
 	</div>
 	<div class="vtspan-3  vtlast">
-		<div class="box-content">
 			<h3>Newest Ventures</h3>
 			<ul>
-				<li>GroupTwits</li>
-				<li>FTJCO</li>
-				<li>Bob's Co</li>
-				<li>Happy Hardware</li>
-				<li>Venture Bros.</li>
+				<%- @newest_ventures.each do |v| -%>
+					<li><%= link_to((v.name.blank? ? v.tag : v.name), {:controller => :ventures, :action => :show, :id => v.id}) %></li>
+				<%- end -%>
 			</ul>
-		</div>
 	</div>
 	<div class="vtspan-3  vtlast">
-		<div class="box-content">
 			<h3>Top Contributors</h3>
 			<ul>
 				<li>@emenel</li>
@@ -53,6 +46,5 @@
 				<li>@ryantaylor</li>
 				<li>@remarkk</li>
 			</ul>
-		</div>
 	</div>
 </div>

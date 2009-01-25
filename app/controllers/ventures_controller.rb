@@ -3,6 +3,7 @@ class VenturesController < ApplicationController
   # GET /ventures.xml
   def index
     @svc_messages = Message.all(:order=>'created_at DESC')
+		@newest_ventures = Venture.all(:order=>'created_at DESC')
 
     respond_to do |format|
       format.html # index.html.erb

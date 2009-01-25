@@ -38,24 +38,6 @@ label, .label {
   margin-bottom: 1em;
 }
 
-#twitter {
-  border-right: 1px solid #ddd;
-}
-
-#actions {
-  border-left: 1px solid #ddd;
-  margin-left: -0.9em;
-}
-
-#twitter, #actions {
-  padding: 1em;
-}
-
-#additional-content div {
-  border: 1px solid #ddd;
-  background: #eee;
-}
-
 #additional-content ul {
   list-style-type: none;
   padding: 0;
@@ -92,15 +74,6 @@ label, .label {
   width: 48px;
   height: 48px;
   margin: 0 10px 0 0;
-}
-
-#twitter-feed {
-  background: #eee;
-  border: 1px solid #ddd;
-}
-
-#twitter-feed .odd {
-  background: #ddd;
 }
 
 .tweet {
