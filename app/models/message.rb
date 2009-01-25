@@ -9,6 +9,4 @@ class Message < ActiveRecord::Base
   def text
     twitter_text
   end
-  
-
 end
