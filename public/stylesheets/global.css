@@ -11,7 +11,7 @@ label, .label {
 }
 
 #header {
-  padding: 1.5em 0 0 0;
+  padding: 0.5em 0 0 0;
   margin-bottom: 1.5em;
   background: #eee;
   border-bottom: 0.25em solid #ddd;
@@ -26,12 +26,29 @@ label, .label {
   padding: 0 0.5em;
 }
 
+#header #user-nav {
+  margin-bottom: 1em;
+  padding-bottom: 0.5em;
+  text-align: right;
+  border-bottom: 1px solid #ccc;
+}
+
 #header h1 {
   margin: 0 20px 0 0;
 }
 
+#header h1 a {
+  text-decoration: none;
+  color: #000;
+}
+
 #header form {
-  padding: 1em;
+  padding: 1em 0;
+}
+
+#header form input#search {
+  width: 209px;
+  margin-right: 10px;
 }
 
 #profile, #actions, #twitter, #additional-content div {
