@@ -1,8 +1,8 @@
 <%= render :partial => 'shared/twitter',:locals =>{:initial_value => ''}  %>
 
-<%- if !logged_in? -%>
 <div class="vtspan-3 vtlast">
 	<div id="actions">
+		<%- if !logged_in? -%>
 		<h3>Log in to Ventwits so you can:</h3>
 		<ul>
 			<li>Create new Ventures and manage Needs</li>
@@ -10,10 +10,15 @@
 			<li>Fulfil Needs and help others see their vision come to life</li>
 			<li>Become part of a vibrant community of talented professionals</li>
 		</ul>
+		<%- else -%>
+		<h3>Welcome to Ventwits</h3>
+		<ul>
+			<li>To create a new venture type a message into the Twitter box to the left, name your venture with <strong>^</strong> tag</li>
+			<li>Participate in the discussions using the Twitter box on this site, or just by using Twitter like you normally do. Just include a venture tag (<strong>^</strong>) in your tweet.</li>
+		<%- end -%>
 	</div>
 </div>
 
-<%- end -%>
 <hr>
 
 <div id="main-content" class="vtcolumn vtspan-5">
