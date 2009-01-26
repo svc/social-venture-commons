@@ -14,4 +14,13 @@ namespace :stream do
     puts "New Needs: #{Need.count - needs_count}"
     puts "New Ventures: #{Venture.count - venture_count}"
   end
+  
+  task :daemon => :environment do
+    loop do
+      Rake::Task['stream:fetch'].execute
+      sleep 60
+    end
+  end
+  
+  
 end
