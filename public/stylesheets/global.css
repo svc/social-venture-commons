@@ -55,6 +55,11 @@ label, .label {
   margin-bottom: 1em;
 }
 
+#additional-content div {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 1em;
+}
+
 #additional-content ul {
   list-style-type: none;
   padding: 0;
