@@ -15,7 +15,13 @@
 	<body>
 		<div id="header">
 			<div class="vtcontainer">
-				<div class="vtspan-2"><h1>Ventwits</h1></div>
+				<div id="user-nav" class="vtspan-8">
+					<%- if logged_in? -%>
+						Hello, <%= current_user.screen_name %> | 
+						<%= link_to "Log Out", "/sessions/destroy" %>
+					<%- end -%>
+				</div>
+				<div class="vtspan-2"><h1><%= link_to "Ventwits", "/" %></h1></div>
 
 				<div id="main-nav" class="vtspan-3">
 					<%= link_to 'All Ventures', '/' %>
@@ -32,7 +38,7 @@
 		</div>
 
 		<div class="vtcontainer">
-			<div>
+			<div class="system-messages">
         <%= flash[:notice] %>
       </div>
 			<%= yield %>

@@ -5,9 +5,16 @@
 <div class="vtspan-3 vtlast">
 	<div id="actions">
 	  <h3><%=h @need.name %></h3>
-	  <%- if @need.description -%><p><span class="label">Description</span> <%=h @need.description %></p><%- end -%>
-	  <p><span class="label">Tag</span> <%=h @need.tag %></p>
-		<p><%= link_to "Complete this need" %></p>
+		<script type="text/javascript" charset="utf-8">
+			$(document).ready(function() {
+				$("#need_name").editable('/need/update/<%= @need.id %>.part', $.extend({}, editableOpts, {name: "need[name]"}));
+			});
+		</script>
+	
+		<%= render :partial => 'shared/editable_field', :locals => {:label => "Description", :name => "need[description]", :value => @need.description} %>
+		
+		<p><span class="label">Tag</span> <%= render :partial => 'shared/editable_value', :locals => {:value => @need.tag} %></p>
+		
 	</div>
 </div>
 

@@ -4,6 +4,6 @@
 
 <script type="text/javascript" charset="utf-8">
 	$(document).ready(function() {
-		$("#<%= local_id %>").editable('/ventures/update/<%= @venture.id %>.part', $.extend({}, editableOpts, {name: "<%= name %>"}));
+		$("#<%= local_id %>").editable('/<%= params[:controller] %>/update/<%= params[:id] %>.part', $.extend({}, editableOpts, {name: "<%= name %>"}));
 	});
 </script>

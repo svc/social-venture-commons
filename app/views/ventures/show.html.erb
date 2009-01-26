@@ -12,7 +12,7 @@
 		
 		<%= render :partial => 'shared/editable_field', :locals => {:label => "Description", :name => "venture[description]", :value => @venture.description} %>
 		<%= render :partial => 'shared/editable_field', :locals => {:label => "Url", :name => "venture[url]", :value => @venture.url} %>
-		<%= render :partial => 'shared/editable_field', :locals => {:label => "Venture Tag", :name => "venture[tag]", :value => @venture.tag} %>
+		<p><span class="label">Tag</span> <%= render :partial => 'shared/editable_value', :locals => {:value => @venture.tag} %></p>		
 	</div>
 </div>
 

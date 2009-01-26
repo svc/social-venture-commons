@@ -1,5 +1,6 @@
 <%= render :partial => 'shared/twitter',:locals =>{:initial_value => ''}  %>
 
+<%- if !logged_in? -%>
 <div class="vtspan-3 vtlast">
 	<div id="actions">
 		<h3>Log in to Ventwits so you can:</h3>
@@ -12,6 +13,7 @@
 	</div>
 </div>
 
+<%- end -%>
 <hr>
 
 <div id="main-content" class="vtcolumn vtspan-5">
