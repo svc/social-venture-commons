@@ -17,6 +17,7 @@ class NeedsController < ApplicationController
   def show
     @need = Need.find(params[:id])
     @need_messages = @need.messages
+    @contributors = @need.messages.collect{|m| m.account}.uniq
     
     respond_to do |format|
       format.html # show.html.erb

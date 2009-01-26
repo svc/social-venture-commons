@@ -22,9 +22,9 @@
 		<div class="vtspan-3 ">
 				<h3>People working on this need</h3>
 				<ul>
-					<li><%= link_to '@emenel' %></li>
-					<li><%= link_to '@igniter' %></li>
-					<li><%= link_to '@josephdee' %></li>
+				  <%- @contributors.each do |c| -%>
+					  <li><%= link_to c.screen_name, user_path(c) %></li>
+					<%- end -%>
 				</ul>
 		</div>
 	</div>

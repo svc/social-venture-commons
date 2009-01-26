@@ -19,6 +19,7 @@ class VenturesController < ApplicationController
   def show
     @venture = Venture.find(params[:id])
     @venture_messages = @venture.messages.all(:order=>'created_at DESC')
+    @contributors = @venture.messages.collect{|m| m.account}.uniq
     
     respond_to do |format|
       format.html # show.html.erb
