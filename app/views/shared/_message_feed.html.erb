@@ -15,10 +15,19 @@
             end
 	            
 	          -%>
-	    		<%= "#{message.account.name}: #{message.text}" %>
-	    		<span class="tweet-meta"><%=time_ago_in_words(message.created_at)%> · <%=link_to 'Reply',"http://twitter.com/home?status=@#{message.account.screen_name}" %> · <%= link_to 'View Tweet',"http://www.twitter.com/#{message.account.screen_name}/statuses/#{message.twitter_id}" %></span>
+	    		<%= "#{message.account.screen_name}: #{message.text}" %>
+					<%- reply_id = "reply#{srand}" -%>
+	    		<span class="tweet-meta"><%=time_ago_in_words(message.created_at)%> &middot; <%=link_to 'Reply',"http://twitter.com/home?status=@#{message.account.screen_name}", {:id => reply_id} %> &middot; <%= link_to 'View Tweet',"http://www.twitter.com/#{message.account.screen_name}/statuses/#{message.twitter_id}" %></span>
 	    	</div>
 	    </div>
+			<script type="text/javascript" charset="utf-8">
+				$(document).ready(function() {
+					$("#<%= reply_id %>").click(function(event) {
+						event.preventDefault();
+						$("#twitter_message_box").val("@<%= message.account.screen_name %> "+$("#twitter_message_box").val());
+					});
+				});
+			</script>
     <%- end -%>
 	</div>
 </div>
