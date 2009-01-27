@@ -30,7 +30,6 @@ class UsersController < ApplicationController
   # GET /users/1.xml
   def show
     @user = Account.find_by_screen_name(params[:id])
-    
 
 
     respond_to do |format|

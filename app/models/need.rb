@@ -9,4 +9,8 @@ class Need < ActiveRecord::Base
   def short_tag
     tag
   end
+  
+  def to_s
+    tag
+  end
 end
