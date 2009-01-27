@@ -4,15 +4,15 @@
   <h3><%=h @user.name %></h3>
 	<%= image_tag('test_avatars/default.png') %>
 	<div class="data">
-	  <%- unless @user.bio.empty? -%><p><span class="label">Bio</span> <%=h @user.bio %></p><%- end -%>
-	  <%- unless @user.url.empty? -%><p><span class="label">Url</span> <%=h @user.url %></p><%- end -%>
+	  <%- unless @user.description.empty? -%><p><span class="label">Bio</span> <%=h @user.description %></p><%- end -%>
+	  <%- unless @user.url.empty? -%><p><span class="label">Url</span> <%= link_to @user.url,@user.url %></p><%- end -%>
 	</div>
 </div>
 
 <hr>
 
 <div class="vtcolumn vtspan-5">
-	<%= render :partial => 'shared/twitter_feed' %>
+	<%= render :partial => 'shared/message_feed', :locals =>{:messages => @user.messages} %>
 </div>
 
 <div class="vtcolumn vtspan-3 vtlast">

@@ -13,6 +13,10 @@
 	          message.needs.each do |n|
 	            message.text.gsub! n.tag.downcase, link_to(n.tag, need_path(n))
             end
+            
+            message.text.scan(/(@[a-z0-9_-]+)/).each do |match|
+              message.text.gsub! match[0], link_to(match[0], user_path(match[0][1..match[0].length]))
+            end
 	            
 	          -%>
 	    		<%= "#{message.account.name}: #{message.text}" %>
