@@ -18,14 +18,14 @@
 				<div id="user-nav" class="vtspan-8">
 					<%- if logged_in? -%>
 						Hello, <%= current_user.screen_name %> | 
-						<%= link_to "Log Out", "/sessions/destroy" %>
+						<%= link_to "Log Out", logout_path %>
 					<%- end -%>
 				</div>
-				<div class="vtspan-2"><h1><%= link_to "Ventwits", "/" %></h1></div>
+				<div class="vtspan-2"><h1><%= link_to "Ventwits", root_path %></h1></div>
 
 				<div id="main-nav" class="vtspan-3">
 					<%= link_to 'All Ventures', '/' %>
-					<%= link_to 'My Ventures', logged_in? ? "/users/show/#{current_user.id}" : "/sessions/new" %>
+					<%= link_to 'My Ventures', logged_in? ? user_path(current_user) : session_path %>
 				</div>
 			
 				<div class="vtspan-3 vtlast">

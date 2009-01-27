@@ -8,7 +8,7 @@
   require: []
   user: nginx
   group: nginx
-  servers: 2
+  servers: 6
   socket: /var/www/applications/svc.itthugs.com/shared/sockets/thin.sock
 
   daemonize: true
