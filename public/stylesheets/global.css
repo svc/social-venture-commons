@@ -55,6 +55,11 @@ label, .label {
   margin-bottom: 1em;
 }
 
+#additional-content div {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 1em;
+}
+
 #additional-content ul {
   list-style-type: none;
   padding: 0;
@@ -73,12 +78,17 @@ label, .label {
 
 #footer {
   margin: 1em 0 0 0;
+  padding: 1em 0;
   background: #ddd;
 }
 
+#footer .vtlast {
+  text-align: right;
+}
+
 #twitter textarea {
-  width: 345px;
-  height: 75px;
+  width: 430px;
+  height: 50px;
 }
 
 #profile .data {
@@ -95,6 +105,10 @@ label, .label {
 
 .tweet {
   padding: 1em;
+}
+
+.twitter-posts .odd {
+  background-color: #DDD;
 }
 
 .tweet .tweet-content {

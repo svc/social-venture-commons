@@ -25,7 +25,7 @@
 
 				<div id="main-nav" class="vtspan-3">
 					<%= link_to 'All Ventures', '/' %>
-					<%= link_to 'My Ventures', 'user/show' %>
+					<%= link_to 'My Ventures', logged_in? ? "/users/show/#{current_user.id}" : "/sessions/new" %>
 				</div>
 			
 				<div class="vtspan-3 vtlast">
@@ -44,7 +44,10 @@
 			<%= yield %>
 		</div>
 		<div id="footer">
-			Footer
+			<div class="vtcontainer">
+				<div class="vtspan-2">Ventwits</div>
+				<div class="vtspan-6 vtlast"><%= link_to "About", "/info/about" %> &bull; <%= link_to "Blog" %> &bull; <%= link_to "Terms of Service", "/info/terms" %> &bull; <%= link_to "Privacy Policy", "/info/privacy" %> &bull; <%= link_to "Contact Us", "/info/contact" %></div>
+			</div>
 		</div>
 	</body>
 </html>
