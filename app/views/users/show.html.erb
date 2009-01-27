@@ -1,8 +1,7 @@
 <%= render :partial => 'shared/twitter',:locals=>{:initial_value=>''} %>	
 
-<div id="profile" class="vtspan-3  vtclearfix">
-  <h3><%=h @user.name %></h3>
-	<%= image_tag('test_avatars/default.png') %>
+<div id="profile" class="vtspan-3 vtlast vtclearfix">
+  <h3><%=h @user.screen_name %></h3>
 	<div class="data">
 	  <%- unless @user.description.empty? -%><p><span class="label">Bio</span> <%=h @user.description %></p><%- end -%>
 	  <%- unless @user.url.empty? -%><p><span class="label">Url</span> <%= link_to @user.url,@user.url %></p><%- end -%>
