@@ -68,6 +68,14 @@ class NeedsController < ApplicationController
         flash[:notice] = 'Need was successfully updated.'
         format.html { redirect_to([@venture, @need]) }
         format.xml  { head :ok }
+				format.part do
+					if params[:need].key?(:description)
+						value = @need.description
+					elsif params[:need].key?(:name)
+						value = @need.name
+					end
+					render :partial => 'shared/editable_value', :locals => {:value => value}
+				end
       else
         format.html { render :action => "edit" }
         format.xml  { render :xml => @need.errors, :status => :unprocessable_entity }

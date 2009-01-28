@@ -1,9 +1,34 @@
-<%- local_id = "editor#{srand}" -%>
+<%- local_id = srand -%>
 
-<p><span class="label"><%= label %></span> <span id="<%= local_id %>"><%= render :partial => 'shared/editable_value', :locals => {:value => value} %></span></p>
+<p><span class="label"><%= label %></span> <span id="<%= "edit#{local_id}" %>"><%= render :partial => 'shared/editable_value', :locals => {:value => value} %></span> <%= link_to "(edit)", "", {:class => "edit-link", :id => "editLink#{local_id}"} %></p>
 
 <script type="text/javascript" charset="utf-8">
 	$(document).ready(function() {
-		$("#<%= local_id %>").editable('/<%= params[:controller] %>/update/<%= params[:id] %>.part', $.extend({}, editableOpts, {name: "<%= name %>"}));
+		
+		var resetEditButton = function () {
+			$('#<%= "editLink#{local_id}" %>').show();
+		};
+		
+		$('#<%= "editLink#{local_id}" %>').click(function (event) {
+			event.preventDefault();
+			$("#edit<%= local_id %>").click();
+		});
+		
+		$("#edit<%= local_id %>").click(function (event){
+			$('#<%= "editLink#{local_id}" %>').hide();
+		});
+		
+		$("#edit<%= local_id %>").editable('/<%= params[:controller] %>/update/<%= params[:id] %>.part', $.extend({}, editableOpts, {
+			name: "<%= name %>",
+			callback: function() {
+				resetEditButton();
+			},
+			onreset: function() {
+				resetEditButton();
+			},
+			onerror: function() {
+				resetEditButton();
+			}			
+		}));
 	});
 </script>

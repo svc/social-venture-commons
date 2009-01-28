@@ -103,12 +103,16 @@ label, .label {
   margin: 0 10px 0 0;
 }
 
+.edit-link {
+  text-decoration: underline;
+}
+
 .tweet {
   padding: 1em;
 }
 
 .twitter-posts .odd {
-  background-color: #DDD;
+  background-color: #eee;
 }
 
 .tweet .tweet-content {
