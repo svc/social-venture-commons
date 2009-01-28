@@ -91,11 +91,11 @@ label, .label {
   height: 50px;
 }
 
-#profile .data {
+/*#profile .data {
   float: left;
   width: 100px;
 }
-
+*/
 #profile img, .tweet img {
   float: left;
   width: 48px;
