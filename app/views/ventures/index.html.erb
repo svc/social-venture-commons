@@ -30,7 +30,7 @@
 			<h3>Most Active Ventures</h3>
 			<ul>
 			  <%- @top_ventures.each do |v| -%>
-				  <li><%= link_to v, venture_path(v) %></li>
+				  <li><%= link_to v.tag, venture_path(v) %></li>
 				<%- end %>
 			</ul>
 	</div>
@@ -38,7 +38,7 @@
 			<h3>Newest Ventures</h3>
 			<ul>
 				<%- @newest_ventures.each do |v| -%>
-					<li><%= link_to(v, venture_path(v)) %></li>
+					<li><%= link_to(v.tag, venture_path(v)) %></li>
 				<%- end -%>
 			</ul>
 	</div>
