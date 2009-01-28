@@ -2,7 +2,7 @@
 
 <div class="vtspan-3 vtlast">
 	<div id="actions">
-		<h3 id="venture_name"><%=h @venture.name %></h3>
+		<h3 id="venture_name"><%=h @venture %></h3>
 		
 		<script type="text/javascript" charset="utf-8">
 			$(document).ready(function() {
@@ -19,9 +19,9 @@
 <hr>
 
 <div class="vtcolumn vtspan-5">
-	<div id="venture-graph" class="">
-		<h3>GRAPH</h3>
-	</div>
+	<!-- <div id="venture-graph" class="">
+			<h3>GRAPH</h3>
+		</div> -->
 	<%= render :partial => 'shared/message_feed',:locals=>{:messages => @venture_messages} %>
 </div>
 

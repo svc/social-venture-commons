@@ -12,7 +12,7 @@
 ----------------------------------------------------------------------- */
 
 /* reset.css */
-html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {margin:0;padding:0;border:0;font-weight:inherit;font-style:inherit;font-size:102%;font-family:inherit;vertical-align:baseline;}
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {margin:0;padding:0;border:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;vertical-align:baseline;}
 body {line-height:1.5;}
 table {border-collapse:separate;border-spacing:0;}
 caption, th, td {text-align:left;font-weight:normal;}
@@ -74,58 +74,59 @@ caption {background:#eee;}
 .vtbottom {margin-bottom:0;padding-bottom:0;}
 
 /* grid.css */
-.vtcontainer {width:774px;margin:0 auto;}
-.vtcolumn, div.vtspan-1, div.vtspan-2, div.vtspan-3, div.vtspan-4, div.vtspan-5, div.vtspan-6, div.vtspan-7, div.vtspan-8 {float:left;margin-right:10px;}
+.vtcontainer {width:745px;margin:0 auto;}
+.vtshowgrid {background:url(src/grid.png);}
+.vtcolumn, div.vtspan-1, div.vtspan-2, div.vtspan-3, div.vtspan-4, div.vtspan-5, div.vtspan-6, div.vtspan-7, div.vtspan-8 {float:left;margin-right:15px;}
 .vtlast, div.vtlast {margin-right:0;}
-.vtspan-1 {width:88px;}
-.vtspan-2 {width:186px;}
-.vtspan-3 {width:284px;}
-.vtspan-4 {width:382px;}
-.vtspan-5 {width:480px;}
-.vtspan-6 {width:578px;}
-.vtspan-7 {width:676px;}
-.vtspan-8, div.vtspan-8 {width:774px;margin-left:0;margin-right:0;}
-input.vtspan-1, textarea.vtspan-1, select.vtspan-1 {width:88px!important;}
-input.vtspan-2, textarea.vtspan-2, select.vtspan-2 {width:166px!important;}
-input.vtspan-3, textarea.vtspan-3, select.vtspan-3 {width:264px!important;}
-input.vtspan-4, textarea.vtspan-4, select.vtspan-4 {width:362px!important;}
-input.vtspan-5, textarea.vtspan-5, select.vtspan-5 {width:460px!important;}
-input.vtspan-6, textarea.vtspan-6, select.vtspan-6 {width:558px!important;}
-input.vtspan-7, textarea.vtspan-7, select.vtspan-7 {width:656px!important;}
-input.vtspan-8, textarea.vtspan-8, select.vtspan-8 {width:764px!important;}
-.vtappend-1 {padding-right:98px;}
-.vtappend-2 {padding-right:196px;}
-.vtappend-3 {padding-right:294px;}
-.vtappend-4 {padding-right:392px;}
-.vtappend-5 {padding-right:490px;}
-.vtappend-6 {padding-right:588px;}
-.vtappend-7 {padding-right:686px;}
-.vtprepend-1 {padding-left:98px;}
-.vtprepend-2 {padding-left:196px;}
-.vtprepend-3 {padding-left:294px;}
-.vtprepend-4 {padding-left:392px;}
-.vtprepend-5 {padding-left:490px;}
-.vtprepend-6 {padding-left:588px;}
-.vtprepend-7 {padding-left:686px;}
-div.vtborder {padding-right:4px;margin-right:5px;border-right:1px solid #eee;}
-div.vtcolborder {padding-right:82px;margin-right:83px;border-right:1px solid #eee;}
-.vtpull-1 {margin-left:-98px;}
-.vtpull-2 {margin-left:-196px;}
-.vtpull-3 {margin-left:-294px;}
-.vtpull-4 {margin-left:-392px;}
-.vtpull-5 {margin-left:-490px;}
-.vtpull-6 {margin-left:-588px;}
-.vtpull-7 {margin-left:-686px;}
-.vtpull-8 {margin-left:-784px;}
+.vtspan-1 {width:80px;}
+.vtspan-2 {width:175px;}
+.vtspan-3 {width:270px;}
+.vtspan-4 {width:365px;}
+.vtspan-5 {width:460px;}
+.vtspan-6 {width:555px;}
+.vtspan-7 {width:650px;}
+.vtspan-8, div.vtspan-8 {width:745px;margin:0;}
+input.vtspan-1, textarea.vtspan-1, select.vtspan-1 {width:80px!important;}
+input.vtspan-2, textarea.vtspan-2, select.vtspan-2 {width:150px!important;}
+input.vtspan-3, textarea.vtspan-3, select.vtspan-3 {width:245px!important;}
+input.vtspan-4, textarea.vtspan-4, select.vtspan-4 {width:340px!important;}
+input.vtspan-5, textarea.vtspan-5, select.vtspan-5 {width:435px!important;}
+input.vtspan-6, textarea.vtspan-6, select.vtspan-6 {width:530px!important;}
+input.vtspan-7, textarea.vtspan-7, select.vtspan-7 {width:625px!important;}
+input.vtspan-8, textarea.vtspan-8, select.vtspan-8 {width:735px!important;}
+.vtappend-1 {padding-right:95px;}
+.vtappend-2 {padding-right:190px;}
+.vtappend-3 {padding-right:285px;}
+.vtappend-4 {padding-right:380px;}
+.vtappend-5 {padding-right:475px;}
+.vtappend-6 {padding-right:570px;}
+.vtappend-7 {padding-right:665px;}
+.vtprepend-1 {padding-left:95px;}
+.vtprepend-2 {padding-left:190px;}
+.vtprepend-3 {padding-left:285px;}
+.vtprepend-4 {padding-left:380px;}
+.vtprepend-5 {padding-left:475px;}
+.vtprepend-6 {padding-left:570px;}
+.vtprepend-7 {padding-left:665px;}
+div.vtborder {padding-right:6px;margin-right:7px;border-right:1px solid #eee;}
+div.vtcolborder {padding-right:71px;margin-right:72px;border-right:1px solid #eee;}
+.vtpull-1 {margin-left:-95px;}
+.vtpull-2 {margin-left:-190px;}
+.vtpull-3 {margin-left:-285px;}
+.vtpull-4 {margin-left:-380px;}
+.vtpull-5 {margin-left:-475px;}
+.vtpull-6 {margin-left:-570px;}
+.vtpull-7 {margin-left:-665px;}
+.vtpull-8 {margin-left:-760px;}
 .vtpull-1, .vtpull-2, .vtpull-3, .vtpull-4, .vtpull-5, .vtpull-6, .vtpull-7, .vtpull-8 {float:left;position:relative;}
-.vtpush-1 {margin:0 -98px 1.5em 98px;}
-.vtpush-2 {margin:0 -196px 1.5em 196px;}
-.vtpush-3 {margin:0 -294px 1.5em 294px;}
-.vtpush-4 {margin:0 -392px 1.5em 392px;}
-.vtpush-5 {margin:0 -490px 1.5em 490px;}
-.vtpush-6 {margin:0 -588px 1.5em 588px;}
-.vtpush-7 {margin:0 -686px 1.5em 686px;}
-.vtpush-8 {margin:0 -784px 1.5em 784px;}
+.vtpush-1 {margin:0 -95px 1.5em 95px;}
+.vtpush-2 {margin:0 -190px 1.5em 190px;}
+.vtpush-3 {margin:0 -285px 1.5em 285px;}
+.vtpush-4 {margin:0 -380px 1.5em 380px;}
+.vtpush-5 {margin:0 -475px 1.5em 475px;}
+.vtpush-6 {margin:0 -570px 1.5em 570px;}
+.vtpush-7 {margin:0 -665px 1.5em 665px;}
+.vtpush-8 {margin:0 -760px 1.5em 760px;}
 .vtpush-1, .vtpush-2, .vtpush-3, .vtpush-4, .vtpush-5, .vtpush-6, .vtpush-7, .vtpush-8 {float:right;position:relative;}
 .vtprepend-top {margin-top:1.5em;}
 .vtappend-bottom {margin-bottom:1.5em;}

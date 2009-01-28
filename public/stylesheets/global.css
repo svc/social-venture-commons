@@ -47,7 +47,7 @@ label, .label {
 }
 
 #header form input#search {
-  width: 209px;
+  width: 195px;
   margin-right: 10px;
 }
 
@@ -113,7 +113,7 @@ label, .label {
 
 .tweet .tweet-content {
   float: left;
-  width: 392px;
+  width: 377px;
 }
 
 .tweet .tweet-meta {
