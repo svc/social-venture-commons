@@ -29,7 +29,7 @@
 	<div id="additional-content" class="vtclearfix">
 	  <% if @venture.needs.any? %>
 		<div class="vtspan-3 vtlast">
-				<h3>Current Needs</h3>
+				<h3>Current Threads</h3>
 				<ul>
 				  <% @venture.needs.each do |need| %>
 					<li><%= link_to need.tag,[@venture, need] %></li>

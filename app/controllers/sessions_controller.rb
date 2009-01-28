@@ -7,6 +7,10 @@ class SessionsController < ApplicationController
   def new
   end
 
+	def show
+		render :action => :new
+	end
+
   def create
     logout_keeping_session!
     account = Account.authenticate(params[:login], params[:password])
