@@ -1,13 +1,8 @@
 <div class="vtspan-3 vtlast">
   <div id="twitter">
   	<% if not logged_in? -%>
-<<<<<<< HEAD:app/views/shared/_twitter.html.erb
-        <%= render :partial => 'shared/login' %>
-  		<p class="vtsmall vtquiet">We do not store your user name or password, it is used only to retrieve data. 
-=======
       <%= render :partial => 'shared/login' %>
   		<p class="vtsmall vtquiet">We do not store your user name or password, it is used only to retrieve data from 
->>>>>>> f9c2bf423d45c746ad899c3e29b2a59add5a36bc:app/views/shared/_twitter.html.erb
   	<% else %>
   		<h3>What are you working on?</h3>
   		<%= render :partial => 'shared/tweet_box', :locals => {:initial_value => initial_value} %>
