@@ -6,7 +6,8 @@ var editableOpts = {
   tooltip: 'Click to edit...',
   cancel: 'Cancel',
   submit: 'OK',
-	tooltip: 'Click to edit'
+	tooltip: 'Click to edit',
+	cssclass: 'edit-form'
 };
 
 $(document).ajaxSend(function(event, request, settings) {

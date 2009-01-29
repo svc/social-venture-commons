@@ -5,11 +5,7 @@
 <%- if logged_in? -%>
 <script type="text/javascript" charset="utf-8">
 	$(document).ready(function() {
-		
-		var resetEditButton = function () {
-			$('#<%= "editLink#{local_id}" %>').show();
-		};
-		
+				
 		$('#<%= "editLink#{local_id}" %>').click(function (event) {
 			event.preventDefault();
 			$("#edit<%= local_id %>").click();
@@ -22,13 +18,13 @@
 		$("#edit<%= local_id %>").editable('/<%= params[:controller] %>/update/<%= params[:id] %>.part', $.extend({}, editableOpts, {
 			name: "<%= name %>",
 			callback: function() {
-				resetEditButton();
+				$('#<%= "editLink#{local_id}" %>').show();
 			},
 			onreset: function() {
-				resetEditButton();
+				$('#<%= "editLink#{local_id}" %>').show();
 			},
 			onerror: function() {
-				resetEditButton();
+				$('#<%= "editLink#{local_id}" %>').show();
 			}			
 		}));
 	});

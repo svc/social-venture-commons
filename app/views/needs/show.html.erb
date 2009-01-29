@@ -6,13 +6,44 @@
 
 <div class="vtspan-3 vtlast">
 	<div id="actions">
-		<h3><%=h @need %></h3>
+		<h3>
+			<span id="thread_name"><%=h @need %></span>
+			<%= link_to "(edit)", "", {:class => "edit-link", :class => "editLinkThreadName"} if logged_in? %>	
+		</h3>
+				
+		<%- if @venture.name.blank? %>
+			<p><%= link_to "Give this venture a full name", "", {:class => "editLinkThreadName"} %></p>
+		<%- end -%>
+				
 		<script type="text/javascript" charset="utf-8">
 			$(document).ready(function() {
-				$("#need_name").editable('/need/update/<%= @need.id %>.part', $.extend({}, editableOpts, {name: "need[name]"}));
+				
+				$(".editLinkThreadName").click(function (event) {
+					event.preventDefault();
+					$("#thread_name").click();
+					$('.editLinkThreadName').hide();
+				});
+						
+				$("#thread_name").click(function (event){
+					$('.editLinkThreadName').hide();
+				});
+				
+				$("#thread_name").editable('/needs/update/<%= @need.id %>.part', $.extend({}, editableOpts, {
+					name: "venture[name]",
+					callback: function() {
+						$('.editLinkThreadName').show();
+					},
+					onreset: function() {
+						$('.editLinkThreadName').show();
+					},
+					onerror: function() {
+						$('.editLinkThreadName').show();
+					}
+				}));
+				
 			});
 		</script>
-	
+		
 		<%= render :partial => 'shared/editable_field', :locals => {:label => "Description", :name => "need[description]", :value => @need.description} %>
 		
 		<p><span class="label">Tag</span> <%= render :partial => 'shared/editable_value', :locals => {:value => @need.tag} %></p>

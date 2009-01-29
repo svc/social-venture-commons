@@ -103,8 +103,18 @@ label, .label {
   margin: 0 10px 0 0;
 }
 
+h3 .editLinkVentureName, h3 .editLinkThreadName {
+  font-size: 0.7em;
+}
+
 .edit-link {
   text-decoration: underline;
+}
+
+.edit-form input {
+  display: block;
+  width: 240px !important;
+  margin: 0.5em 0;
 }
 
 .tweet {
