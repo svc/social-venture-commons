@@ -127,9 +127,11 @@ h3 .editLinkVentureName, h3 .editLinkThreadName {
 
 .tweet .tweet-content {
   float: left;
-  width: 377px;
+  width: 370px;
 }
 
 .tweet .tweet-meta {
   display: block;
+  margin-top: 0.25em;
+  font-size: 0.9em;
 }
