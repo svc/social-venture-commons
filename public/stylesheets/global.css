@@ -13,8 +13,8 @@ label, .label {
 #header {
   padding: 0.5em 0 0 0;
   margin-bottom: 1.5em;
-  background: #eee;
-  border-bottom: 0.25em solid #ddd;
+  height:152px;
+
 }
 
 #header #main-nav {
@@ -28,9 +28,9 @@ label, .label {
 
 #header #user-nav {
   margin-bottom: 1em;
-  padding-bottom: 0.5em;
+  padding:3px 10px; 
   text-align: right;
-  border-bottom: 1px solid #ccc;
+  background:#ff7f00;
 }
 
 #header h1 {
