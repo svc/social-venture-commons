@@ -18,32 +18,21 @@
 				<div class="vtspan-6 topBorder">&nbsp;</div>
 				<div id="top-bar" class="vtspan-2 vtlast">
 					<div id="user-nav" >
-					
 						<%- if logged_in? -%>
-							Hello, <%= current_user.screen_name %> | 
-							<%= link_to "Log Out", logout_path %>
-							
+							Hello, <%= current_user.screen_name %> | <%= link_to "Log Out", logout_path %>
 						<%- else -%>
 							Hello, <%= link_to "Log In", login_path %>
 						<%- end -%>
-						</div>
-						
+					</div>		
 				</div>
+				
 				<div class="vtspan-5"><a href="/"><h1 id="logo">VenTwits</h1></a></div>
 
 				<div id="main-nav" class="vtspan-3 vtlast">
 					<div class="margin10"><%= link_to 'All Ventures', '/' %></div>
 					<%= link_to 'My Ventures', '/users' %>
 				</div>
-				<br style="clear:both;margin:0;height:0" />
-				
-			
-				<!-- <div class="vtspan-3 vtlast">
-					<%- form_tag('search') do -%>
-						<%= text_field_tag 'search' %>
-						<%= submit_tag 'Search' %>
-					<%- end -%>
-				</div> -->
+				<br class="clear">
 			</div>
 		</div>
 
@@ -56,7 +45,7 @@
 		<div id="footer">
 			<div class="vtcontainer">
 				<div class="vtspan-2">VenTwits</div>
-				<div class="vtspan-6 vtlast"><%= link_to "About", "/info/about" %> &bull; <%= link_to "Blog" %> &bull; <%= link_to "Terms of Service", "/info/terms" %> &bull; <%= link_to "Privacy Policy", "/info/privacy" %> &bull; <%= link_to "Contact Us", "/info/contact" %></div>
+				<div class="vtspan-6 vtlast"><%= link_to "About", "/info/about" %> &bull; <%= link_to "Terms of Service", "/info/terms" %> &bull; <%= link_to "Privacy Policy", "/info/privacy" %> &bull; <%= link_to "Contact Us", "/info/contact" %></div>
 			</div>
 		</div>
 	</body>
