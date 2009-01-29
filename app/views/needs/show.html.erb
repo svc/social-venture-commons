@@ -1,4 +1,4 @@
-<h2><%= "#{link_to @venture.tag, venture_path(@venture)} &raquo;" rescue nil %> <%=h @need.tag %></h2>
+<h2><%= "#{link_to @venture.tag, venture_path(@venture)} &raquo;" rescue nil %> <%= @need.tag %></h2>
 
 <div class="vtcolumn vtspan-5">
 	<%= render :partial => 'shared/twitter', :locals=>{:initial_value => @venture ? "#{@venture.tag} #{@need.tag}" : @need.tag} %>
@@ -7,7 +7,7 @@
 <div class="vtspan-3 vtlast">
 	<div id="actions">
 		<h3>
-			<span id="thread_name"><%=h @need %></span>
+			<span id="thread_name"><%= @need %></span>
 			<%= link_to "(edit)", "", {:class => "edit-link", :class => "editLinkThreadName"} if logged_in? %>	
 		</h3>
 				
