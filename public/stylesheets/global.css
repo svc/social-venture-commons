@@ -29,7 +29,7 @@ label, .label {
 #header #user-nav {
   margin-bottom: 1em;
   padding:3px 10px; 
-  text-align: right;
+  text-align: center;
   background:#ff7f00;
 }
 
@@ -87,7 +87,7 @@ label, .label {
 }
 
 #twitter textarea {
-  width: 430px;
+  width: 255px;
   height: 50px;
 }
 
