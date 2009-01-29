@@ -118,11 +118,12 @@ h3 .editLinkVentureName, h3 .editLinkThreadName {
 }
 
 .tweet {
-  padding: 1em;
+  padding: 0.5em;
+  margin: 0.5em 0;
 }
 
-.twitter-posts .odd {
-  background-color: #eee;
+.twitter-posts .even {
+  background-color: #f2ead8;
 }
 
 .tweet .tweet-content {
