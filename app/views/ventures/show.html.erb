@@ -3,7 +3,7 @@
 <%= render :partial => 'shared/twitter',:locals =>{:initial_value=>@venture.tag} %>
 
 <div class="vtspan-3 vtlast">
-	<div id="actions">
+	<div id="actions-narrow">
 		<h3>
 			<span id="venture_name"><%= @venture %></span>
 			<%= link_to "(edit)", "", {:class => "edit-link", :class => "editLinkVentureName"} if logged_in? %>	

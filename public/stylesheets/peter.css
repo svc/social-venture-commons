@@ -7,10 +7,13 @@ h1#logo {background:url(/images/logo2.png) no-repeat;width:334px; height:139px;t
 .system-messages {text-align:center;font-weight:bold;margin:5px 0 20px 0;background: #fff;}
 
 #actions {background: url(/images/actionsbg.png) no-repeat;padding:15px;}
+#actions-narrow {background: url(/images/actions-narrowbg.png) no-repeat;padding:15px;}
+#actions ul, #actions-narrow ul {margin:0;width:96%	;}
+#actions li, #actions-narrow li {list-style-type:none;border-bottom:1px solid #7B3580;padding:3px 0;}
 #actions h3 {font-weight:bold;font-size:1.7em;}
 
 input#login, input#password {width:80px;}
 
-#main-content-container {}
-
+#main-content-container {background: url(/images/main-content-container.png) no-repeat top center;}
+#main-content {;}
 h3 {margin-bottom:.5em;font-weight:bold;}

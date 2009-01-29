@@ -1,23 +1,31 @@
-
-<div class="vtspan-5">
-	<div id="actions">
-		<%- if !logged_in? -%>
+<%- if !logged_in? -%>
+	<div class="vtspan-5">
+		<div id="actions">
 			<h3>Login to Ventwits to:</h3>
 			<ul>
-				<li>Create new Ventures and engage in discussions</li>
-				<li>Participate in on going Ventures</li>
-				<li>Become part of a vibrant community of talented professionals</li>
+				<li><strong>Create</strong> new Ventures and engage in discussions</li>
+				<li><strong>Participate</strong> in on going Ventures</li>
+				<li><strong>Become</strong> part of a vibrant community of talented professionals</li>
 			</ul>
-			<%- else -%>
-			<h3>Welcome to Ventwits!</h3>
+		</div>
+	</div>	
+	<%= render :partial => 'shared/twitter',:locals =>{:initial_value => ''}  %>
+	
+	<%- else -%>
+	
+	<%= render :partial => 'shared/twitter',:locals =>{:initial_value => ''}  %>
+	
+	<div class="vtspan-3 vtlast">
+		<div id="actions-narrow">
+			<h3>How to use Ventwits</h3>
 			<ul>
-				<li>To create a new venture type a message into the Twitter box to the left, name your venture with <strong>^</strong> tag</li>
+				<li>To create a new venture name your venture with <strong>^</strong> tag</li>
 				<li>Participate in the discussions using the Twitter box on this site, or just by using Twitter like you normally do. Just include a venture tag (<strong>^</strong>) in your tweet.</li>
-			</ul>
-		<%- end -%>
+				</ul>
+			</div>
 	</div>
-</div>
-<%= render :partial => 'shared/twitter',:locals =>{:initial_value => ''}  %>
+	<%- end -%>
+
 </div>
 <div id="main-content-container">
 <div class="vtcontainer"
