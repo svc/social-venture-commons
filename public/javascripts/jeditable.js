@@ -102,7 +102,7 @@
         if  (!$.isFunction($(this)[settings.event])) {
             $.fn[settings.event] = function(fn){
                 return fn ? this.bind(settings.event, fn) : this.trigger(settings.event);
-            }
+            };
         }
           
         /* show tooltip */
@@ -343,7 +343,7 @@
                                   error   : function(xhr, status, error) {
                                       onerror.apply(form, [settings, self, xhr]);
                                   }
-                              }
+                              };
                               
                               /* override with what is given in settings.ajaxoptions */
                               $.extend(ajaxoptions, settings.ajaxoptions);   
@@ -375,7 +375,7 @@
                         $(self).attr('title', settings.tooltip);                
                     }                    
                 }
-            }            
+            };            
         });
 
     };

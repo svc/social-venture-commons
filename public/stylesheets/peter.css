@@ -4,7 +4,8 @@ h1#logo {background:url(/images/logo.png) no-repeat;width:334px; height:139px;te
 #header #main-nav {margin-top:75px;}
 #header #main-nav a:link, #header #main-nav a:visited {background: #7b3580; padding:5px;color: #fff;display:block;float:left;text-align:center;width:120px;}
 .margin10 a {margin:0 10px 0 0;}
-.system-messages {text-align:center;font-weight:bold;margin:5px 0 20px 0;background: #fff;}
+.system-messages {text-align:center;font-weight:bold;}
+.system-messages .message {background:#fff;}
 
 #actions {background: url(/images/actionsbg.png) no-repeat;padding:15px;}
 #actions-narrow {background: url(/images/actions-narrowbg.png) no-repeat;padding:15px;}

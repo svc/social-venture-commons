@@ -16,3 +16,7 @@ $(document).ajaxSend(function(event, request, settings) {
   settings.data = settings.data || "";
   settings.data += (settings.data ? "&" : "") + "authenticity_token=" + encodeURIComponent(AUTH_TOKEN);
 });
+
+$(document).ready(function() {
+  $(".system-messages").delay(2500).fadeTo("medium", 0);
+});
