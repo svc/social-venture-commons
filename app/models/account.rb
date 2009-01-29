@@ -14,6 +14,7 @@ class Account < ActiveRecord::Base
   end
   
   def ventures(options ={:limit=>5})
+		# TODO: dan - make this work :)
     messages.sort{|x,y| x.id <=> y.id}.collect! {|m| m.ventures}.flatten.uniq[0...options[:limit]]
   end
   

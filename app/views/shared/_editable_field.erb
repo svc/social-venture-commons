@@ -1,7 +1,8 @@
 <%- local_id = srand -%>
 
-<p><span class="label"><%= label %></span> <span id="<%= "edit#{local_id}" %>"><%= render :partial => 'shared/editable_value', :locals => {:value => value || "Click to add a #{label.downcase}"} %></span> <%= link_to "(edit)", "", {:class => "edit-link", :id => "editLink#{local_id}"} %></p>
+<p><span class="label"><%= label %></span> <span id="<%= "edit#{local_id}" %>"><%= render :partial => 'shared/editable_value', :locals => {:value => value || "Click to add a #{label.downcase}"} %></span> <%= link_to "(edit)", "", {:class => "edit-link", :id => "editLink#{local_id}"} if logged_in? %></p>
 
+<%- if logged_in? -%>
 <script type="text/javascript" charset="utf-8">
 	$(document).ready(function() {
 		
@@ -32,3 +33,4 @@
 		}));
 	});
 </script>
+<%- end -%>
