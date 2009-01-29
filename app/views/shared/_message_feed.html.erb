@@ -3,7 +3,7 @@
 	<div class="twitter-posts">
     <%- messages.each do |message| -%>
 	    <div class="tweet vtclearfix <%= cycle("odd", "even") %>">
-	    	<%= image_tag(message.account.profile_image_url) %>
+	    	<%= link_to image_tag(message.account.profile_image_url), user_path(message.account) %>
 	    	<div class="tweet-content">
 	    	  <%- 
 	    	    message.ventures.each do |v| 
