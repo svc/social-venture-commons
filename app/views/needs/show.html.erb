@@ -11,7 +11,7 @@
 			<%= link_to "(edit)", "", {:class => "edit-link", :class => "editLinkThreadName"} if logged_in? %>	
 		</h3>
 				
-		<%- if @venture.name.blank? %>
+		<%- if @venture && @venture.name.blank? %>
 			<p><%= link_to "Give this venture a full name", "", {:class => "editLinkThreadName"} %></p>
 		<%- end -%>
 				
