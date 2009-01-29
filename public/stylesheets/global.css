@@ -47,7 +47,7 @@ label, .label {
 }
 
 #header form input#search {
-  width: 209px;
+  width: 195px;
   margin-right: 10px;
 }
 
@@ -103,17 +103,21 @@ label, .label {
   margin: 0 10px 0 0;
 }
 
+.edit-link {
+  text-decoration: underline;
+}
+
 .tweet {
   padding: 1em;
 }
 
 .twitter-posts .odd {
-  background-color: #DDD;
+  background-color: #eee;
 }
 
 .tweet .tweet-content {
   float: left;
-  width: 392px;
+  width: 377px;
 }
 
 .tweet .tweet-meta {
