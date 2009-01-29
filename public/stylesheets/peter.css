@@ -1,6 +1,6 @@
 body {background: url(/images/bodybg.png) repeat-x;}
 #header {padding:0;}
-h1#logo {background:url(/images/logo2.png) no-repeat;width:334px; height:139px;text-indent:-9999px;margin-top:-30px;}
+h1#logo {background:url(/images/logo.png) no-repeat;width:334px; height:139px;text-indent:-9999px;margin-top:-30px;}
 #header #main-nav {margin-top:75px;}
 #header #main-nav a:link, #header #main-nav a:visited {background: #7b3580; padding:5px;color: #fff;display:block;float:left;text-align:center;width:120px;}
 .margin10 a {margin:0 10px 0 0;}
