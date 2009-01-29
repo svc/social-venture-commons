@@ -1,10 +1,12 @@
+<h2><%= "#{link_to @venture.tag, venture_path(@venture)} &raquo;" rescue nil %> <%=h @need.tag %></h2>
+
 <div class="vtcolumn vtspan-5">
 	<%= render :partial => 'shared/twitter', :locals=>{:initial_value => @venture ? "#{@venture.tag} #{@need.tag}" : @need.tag} %>
 </div>
 
 <div class="vtspan-3 vtlast">
 	<div id="actions">
-	  <h3><%=h @need.name %></h3>
+		<h3><%=h @need %></h3>
 		<script type="text/javascript" charset="utf-8">
 			$(document).ready(function() {
 				$("#need_name").editable('/need/update/<%= @need.id %>.part', $.extend({}, editableOpts, {name: "need[name]"}));
@@ -27,7 +29,7 @@
 <div class="vtcolumn vtspan-3 vtlast">
 	<div id="additional-content" class="vtspan-3 vtlast">
 		<div class="vtspan-3 ">
-				<h3>People working on this need</h3>
+				<h3>People active in this thread</h3>
 				<ul>
 				  <%- @contributors.each do |c| -%>
 					  <li><%= link_to c.screen_name, user_path(c) %></li>
