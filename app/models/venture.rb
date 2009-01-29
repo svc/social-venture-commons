@@ -10,6 +10,6 @@ class Venture < ActiveRecord::Base
   end
   
 	def to_s
-	 name || tag
+	 name || tag || ""
 	end
 end
