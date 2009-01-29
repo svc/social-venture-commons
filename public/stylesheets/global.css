@@ -145,3 +145,7 @@ h3 .editLinkVentureName, h3 .editLinkThreadName {
   text-decoration: none;
   color: #000;
 }
+
+p.tabs {
+  margin: -0.5em 0 0.5em 0;
+}
