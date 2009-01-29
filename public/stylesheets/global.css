@@ -142,4 +142,5 @@ h3 .editLinkVentureName, h3 .editLinkThreadName {
 
 .active-tab {
   text-decoration: none;
+  color: #000;
 }
