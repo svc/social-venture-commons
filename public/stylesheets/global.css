@@ -135,3 +135,11 @@ h3 .editLinkVentureName, h3 .editLinkThreadName {
   margin-top: 0.25em;
   font-size: 0.9em;
 }
+
+.hideme {
+  display: none;
+}
+
+.active-tab {
+  text-decoration: none;
+}

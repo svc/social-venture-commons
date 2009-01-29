@@ -3,10 +3,14 @@ class VenturesController < ApplicationController
   # GET /ventures.xml
   def index
     @svc_messages = Message.all(:order=>'created_at DESC')
-		@newest_ventures = Venture.all(:order=>'id DESC')
+
+		@newest_ventures = Venture.all(:order=>'id DESC', :limit => 10)
+    @top_ventures = Venture.with_message_counts(:limit=>5)
     
     @top_contributors = Account.with_message_counts(:limit=>5)
-    @top_ventures = Venture.with_message_counts(:limit=>5)
+
+		@newest_threads = Need.all(:order=>'id DESC', :limit => 10)
+		# @top_threads = Need.with_message_counts(:limi=>5)
     
     respond_to do |format|
       format.html # index.html.erb

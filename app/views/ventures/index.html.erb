@@ -3,17 +3,18 @@
 <div class="vtspan-3 vtlast">
 	<div id="actions">
 		<%- if !logged_in? -%>
-		<h3>Log in to Ventwits so you can:</h3>
-		<ul>
-			<li>Create new Ventures and engage in discussions</li>
-			<li>Participate in on going Ventures</li>
-			<li>Become part of a vibrant community of talented professionals</li>
-		</ul>
-		<%- else -%>
-		<h3>Welcome to Ventwits</h3>
-		<ul>
-			<li>To create a new venture type a message into the Twitter box to the left, name your venture with <strong>^</strong> tag</li>
-			<li>Participate in the discussions using the Twitter box on this site, or just by using Twitter like you normally do. Just include a venture tag (<strong>^</strong>) in your tweet.</li>
+			<h3>Log in to Ventwits so you can:</h3>
+			<ul>
+				<li>Create new Ventures and engage in discussions</li>
+				<li>Participate in on going Ventures</li>
+				<li>Become part of a vibrant community of talented professionals</li>
+			</ul>
+			<%- else -%>
+			<h3>Welcome to Ventwits</h3>
+			<ul>
+				<li>To create a new venture type a message into the Twitter box to the left, name your venture with <strong>^</strong> tag</li>
+				<li>Participate in the discussions using the Twitter box on this site, or just by using Twitter like you normally do. Just include a venture tag (<strong>^</strong>) in your tweet.</li>
+			</ul>
 		<%- end -%>
 	</div>
 </div>
@@ -25,28 +26,95 @@
 </div>
 
 <div id="additional-content" class="vtspan-3 vtlast vtclearfix">
+
 	<div class="vtspan-3 vtlast">
-			<h3>Most Active Ventures</h3>
-			<ul>
-			  <%- @top_ventures.each do |v| -%>
-				  <li><%= link_to v.tag, venture_path(v) %></li>
-				<%- end %>
-			</ul>
+		<h3>Ventures</h3>
+		
+		<p class="tabs"><%= link_to 'Newest', '', {:class => "active-tab", :id => "ventures-newest-button"} %> | <%= link_to 'Most Active', '', {:id => "ventures-top-button"} %></p>
+				
+		<ul id="ventures-newest">
+			<%- @newest_ventures.each do |v| -%>
+				<li><%= link_to(v.tag, venture_path(v)) %></li>
+			<%- end -%>
+		</ul>
+		
+		<ul id="ventures-top" class="hideme">
+		  <%- @top_ventures.each do |v| -%>
+			  <li><%= link_to v.tag, venture_path(v) %></li>
+			<%- end %>
+		</ul>
+		
+		<script type="text/javascript" charset="utf-8">
+			$(document).ready(function() {
+				$("#ventures-newest-button").click(function (event) {
+					event.preventDefault();
+					$("#ventures-top-button").removeClass('active-tab');
+					$("#ventures-top").addClass('hideme');
+
+					$("#ventures-newest").removeClass('hideme');
+					$("#ventures-newest-button").addClass('active-tab');
+				});
+				
+				$("#ventures-top-button").click(function (event) {
+					event.preventDefault();
+					$("#ventures-newest-button").removeClass('active-tab');
+					$("#ventures-newest").addClass('hideme');
+
+					$("#ventures-top").removeClass('hideme');
+					$("#ventures-top-button").addClass('active-tab');
+				});
+				
+			});
+		</script>
 	</div>
+
+	<div class="vtspan-3 vtlast">
+		<h3>Threads</h3>
+		
+		<p class="tabs"><%= link_to 'Newest', '', {:class => "active-tab", :id => "threads-newest-button"} %> | <%= link_to 'Most Active', '', {:id => "threads-top-button"} %></p>
+				
+		<ul id="threads-newest">
+			<%- @newest_threads.each do |v| -%>
+				<li><%= link_to(v.tag, need_path(v)) %></li>
+			<%- end -%>
+		</ul>
+		
+		<ul id="threads-top" class="hideme">
+		  <%# @top_threads.each do |v| %>
+			  <li><%# link_to v.tag, venture_path(v) %></li>
+			<%# end %>
+		</ul>
+		
+		<script type="text/javascript" charset="utf-8">
+			$(document).ready(function() {
+				$("#threads-newest-button").click(function (event) {
+					event.preventDefault();
+					$("#threads-top-button").removeClass('active-tab');
+					$("#threads-top").addClass('hideme');
+
+					$("#threads-newest").removeClass('hideme');
+					$("#threads-newest-button").addClass('active-tab');
+				});
+				
+				$("#threads-top-button").click(function (event) {
+					event.preventDefault();
+					$("#threads-newest-button").removeClass('active-tab');
+					$("#threads-newest").addClass('hideme');
+
+					$("#threads-top").removeClass('hideme');
+					$("#threads-top-button").addClass('active-tab');
+				});
+				
+			});
+		</script>
+	</div>	
+	
 	<div class="vtspan-3  vtlast">
-			<h3>Newest Ventures</h3>
-			<ul>
-				<%- @newest_ventures.each do |v| -%>
-					<li><%= link_to(v.tag, venture_path(v)) %></li>
-				<%- end -%>
-			</ul>
-	</div>
-	<div class="vtspan-3  vtlast">
-			<h3>Top Contributors</h3>
-			<ul>
-			  <%- @top_contributors.each do |c| -%>
-				  <li><%= link_to c.screen_name, user_path(c) %></li>
-				<%- end %>
-			</ul>
+		<h3>Top Contributors</h3>
+		<ul>
+		  <%- @top_contributors.each do |c| -%>
+			  <li><%= link_to c.screen_name, user_path(c) %></li>
+			<%- end %>
+		</ul>
 	</div>
 </div>
