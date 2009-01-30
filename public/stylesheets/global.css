@@ -13,8 +13,8 @@ label, .label {
 #header {
   padding: 0.5em 0 0 0;
   margin-bottom: 1.5em;
-  background: #eee;
-  border-bottom: 0.25em solid #ddd;
+  height:152px;
+
 }
 
 #header #main-nav {
@@ -28,9 +28,9 @@ label, .label {
 
 #header #user-nav {
   margin-bottom: 1em;
-  padding-bottom: 0.5em;
-  text-align: right;
-  border-bottom: 1px solid #ccc;
+  padding:3px 10px; 
+  text-align: center;
+  background:#ff7f00;
 }
 
 #header h1 {
@@ -88,7 +88,7 @@ label, .label {
 
 #twitter textarea {
   width: 430px;
-  height: 50px;
+  height: 70px;
 }
 
 /*#profile .data {
@@ -103,23 +103,52 @@ label, .label {
   margin: 0 10px 0 0;
 }
 
+h3 .editLinkVentureName, h3 .editLinkThreadName {
+  font-size: 0.7em;
+}
+
 .edit-link {
   text-decoration: underline;
 }
 
+.edit-form input {
+  display: block;
+  width: 240px !important;
+  margin: 0.5em 0;
+}
+
 .tweet {
-  padding: 1em;
+  padding: 1em 0.5em;
+  margin: -1px 0 0 0;
+  border-width: 1px 0;
+  border-style: solid;
+  border-color: #ddd;
 }
 
-.twitter-posts .odd {
-  background-color: #eee;
+/*.twitter-posts .even {
+  background-color: #f2ead8;
 }
-
+*/
 .tweet .tweet-content {
   float: left;
-  width: 377px;
+  width: 370px;
 }
 
 .tweet .tweet-meta {
   display: block;
+  margin-top: 0.25em;
+  font-size: 0.9em;
+}
+
+.hideme {
+  display: none;
+}
+
+.active-tab {
+  text-decoration: none;
+  color: #000;
+}
+
+p.tabs {
+  margin: -0.5em 0 0.5em 0;
 }

@@ -1,14 +1,45 @@
-<h2><%=h @venture.tag %></h2>
+<h2><%= @venture.tag %></h2>
 
 <%= render :partial => 'shared/twitter',:locals =>{:initial_value=>@venture.tag} %>
 
 <div class="vtspan-3 vtlast">
-	<div id="actions">
-		<h3 id="venture_name"><%=h @venture %></h3>
-		
+	<div id="actions-narrow">
+		<h3>
+			<span id="venture_name"><%= @venture %></span>
+			<%= link_to "(edit)", "", {:class => "edit-link", :class => "editLinkVentureName"} if logged_in? %>	
+		</h3>
+				
+		<%- if @venture.name.blank? %>
+			<p><%= link_to "Give this venture a full name", "", {:class => "editLinkVentureName", :id => "no-name-venture"} %></p>
+		<%- end -%>
+				
 		<script type="text/javascript" charset="utf-8">
 			$(document).ready(function() {
-				$("#venture_name").editable('/ventures/update/<%= @venture.id %>.part', $.extend({}, editableOpts, {name: "venture[name]"}));
+				
+				$(".editLinkVentureName").click(function (event) {
+					event.preventDefault();
+					$("#venture_name").click();
+					$('.editLinkVentureName').hide();
+				});
+						
+				$("#venture_name").click(function (event){
+					$('.editLinkVentureName').hide();
+				});
+				
+				$("#venture_name").editable('/ventures/update/<%= @venture.id %>.part', $.extend({}, editableOpts, {
+					name: "venture[name]",
+					callback: function() {
+						$('.editLinkVentureName').show();
+						$("#no-name-venture").hide();
+					},
+					onreset: function() {
+						$('.editLinkVentureName').show();
+					},
+					onerror: function() {
+						$('.editLinkVentureName').show();
+					}
+				}));
+				
 			});
 		</script>
 		

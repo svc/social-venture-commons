@@ -1,14 +1,17 @@
-<h3>Please log in with you Twitter account</h3>
+<h3>Login with you Twitter account</h3>
 <% form_tag session_path do -%>
 	<div class="vtclearfix">
-		<div class="vtspan-2">
+		<div class="vtspan-1">
 			<%= label_tag 'login' %>
 			<%= text_field_tag 'login', @login %>
 		</div>
-		<div class="vtspan-2 last">
+		<div class="vtspan-1 ">
 			<%= label_tag 'password' %>
 			<%= password_field_tag 'password', nil %>
 		</div>
-	</div><br>
-	<p><%= submit_tag 'Log in' %></p>
+	<div class="vtspan-1 last">
+	<%= submit_tag 'Log in' %>
+	</div>
+	</div>
+	
 <% end %>

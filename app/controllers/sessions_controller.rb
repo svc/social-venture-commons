@@ -5,12 +5,10 @@ class SessionsController < ApplicationController
 
   # render new.rhtml
   def new
-  end
-
-	def show
 		render :action => :new
-	end
-
+  end
+	alias :index :new
+		
   def create
     logout_keeping_session!
     account = Account.authenticate(params[:login], params[:password])
