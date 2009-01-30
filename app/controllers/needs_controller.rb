@@ -16,7 +16,7 @@ class NeedsController < ApplicationController
   # GET /needs/1.xml
   def show
     @need = Need.find(params[:id])
-    @need_messages = @need.messages
+    @need_messages = @need.messages.paginate(:order=>'created_at DESC',:page=>params[:page])
     @contributors = @need.messages.collect{|m| m.account}.uniq
     
     respond_to do |format|

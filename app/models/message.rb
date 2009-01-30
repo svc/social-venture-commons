@@ -1,5 +1,9 @@
 class Message < ActiveRecord::Base
 	default_scope :order=>'created_at DESC'
+	
+  cattr_reader :per_page
+  @@per_page = 20
+
   
   belongs_to :account
 
