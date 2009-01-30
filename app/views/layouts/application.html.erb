@@ -42,8 +42,10 @@
 				<%- if !flash[:notice].blank? -%><p class="message"><%= flash[:notice] %></p><%- end -%>
 				<%- if !flash[:error].blank? -%><p class="error"><%= flash[:error] %></p><%- end -%>
       </div>
-			<%= yield %>
 		</div>
+
+		<%= yield %>
+
 		<div id="footer">
 			<div class="vtcontainer">
 				<div class="vtspan-2">VenTwits</div>
