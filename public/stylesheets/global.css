@@ -131,8 +131,16 @@ form .vtsmall {
   height: 70px;
 }
 
+#profile .data {
+  margin: 1em 0 0 0;
+}
+
 #profile .data p {
   margin: 0.25em 0;
+}
+
+#profile img {
+  border: 2px solid #7b3580;
 }
 
 #profile img, .tweet img {
