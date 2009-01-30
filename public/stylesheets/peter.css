@@ -12,7 +12,7 @@ h1#logo {background:url(/images/logo.png) no-repeat;width:334px; height:139px;te
 #actions ul, #actions-narrow ul {margin:0;width:96%	;}
 #actions li, #actions-narrow li {list-style-type:none;border-bottom:1px solid #7B3580;padding:3px 0;}
 #actions h3 {font-weight:bold;font-size:1.7em;}
-
+#actions p {margin-top: 10px;font-size:1.2em;}
 /*input#login, input#password {width:80px;}*/
 
 #main-content-container {background: url(/images/main-content-container.png) no-repeat top center;}
