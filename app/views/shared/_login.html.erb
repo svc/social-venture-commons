@@ -1,19 +1,25 @@
 <h4>Login with you Twitter account</h4>
-<% form_tag session_path do -%>
-	<div class="vtclearfix">
-		<div class="vtspan-1">
+<% form_tag session_path, {:id => "login-form"} do -%>
+	<fieldset class="vtclearfix">
+		<div>
 			<%= label_tag 'user name' %>
 			<%= text_field_tag 'login', @login %>
 		</div>
-		<div class="vtspan-1">
+		<div class="vtlast">
 			<%= label_tag 'password' %>
 			<%= password_field_tag 'password', nil %>
 		</div>
-	</div>
+	</fieldset>
 
-	<%= submit_tag 'Log in' %>
+	<div class="vtspan-1">
+		<%= submit_tag 'Log in' %>
+	</div>
 	
-	<p>Don't have a Twitter account? <%= link_to "Sign up for one now.", "https://twitter.com/signup" %></p>
+	<div class="vtspan-2 vtlast">
+		<p>Don't have a Twitter account? <%= link_to "Sign up for one now.", "https://twitter.com/signup" %></p>
+	</div>
+	
+	<br class="clear">
 
 	<p class="vtsmall vtquiet">Your user name or password is not stored, they are used only to retrieve data.
 		<br>By clicking sign-up you are over 13 years of age and agree to our <%= link_to "terms of use", "/info/terms" %>.</p>

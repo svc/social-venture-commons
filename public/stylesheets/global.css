@@ -16,6 +16,7 @@ h4 {
 
 label {
   font-weight: normal;
+  display: block;
 }
 
 form .vtsmall {
@@ -60,6 +61,30 @@ form .vtsmall {
 #header form input#search {
   width: 195px;
   margin-right: 10px;
+}
+
+#login-form fieldset {
+  border: none;
+  padding: 0;
+  margin: 0 0 1em 0;
+}
+
+#login-form fieldset div {
+  float: left;
+  width: 125px;
+  margin: 0 15px 0 0;
+}
+
+#login-form fieldset div.vtlast {
+  margin: 0;
+}
+
+#login-form fieldset div input {
+  width: 125px;
+}
+
+#login-form p {
+  font-size: 0.9em;
 }
 
 #profile, #actions, #twitter, #additional-content div {
