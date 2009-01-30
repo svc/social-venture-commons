@@ -1,82 +1,84 @@
 <h2><%= @venture.tag %></h2>
 
-<%= render :partial => 'shared/twitter',:locals =>{:initial_value=>@venture.tag} %>
+<div class="vtclearfix vtcontainer">
+	<%= render :partial => 'shared/twitter',:locals =>{:initial_value=>@venture.tag} %>
 
-<div class="vtspan-3 vtlast">
-	<div id="actions-narrow">
-		<h3>
-			<span id="venture_name"><%= @venture %></span>
-			<%= link_to "(edit)", "", {:class => "edit-link", :class => "editLinkVentureName"} if logged_in? %>	
-		</h3>
+	<div class="vtspan-3 vtlast">
+		<div id="actions-narrow">
+			<h3>
+				<span id="venture_name"><%= @venture %></span>
+				<%= link_to "(edit)", "", {:class => "edit-link", :class => "editLinkVentureName"} if logged_in? %>	
+			</h3>
 				
-		<%- if @venture.name.blank? %>
-			<p><%= link_to "Give this venture a full name", "", {:class => "editLinkVentureName", :id => "no-name-venture"} %></p>
-		<%- end -%>
+			<%- if @venture.name.blank? %>
+				<p><%= link_to "Give this venture a full name", "", {:class => "editLinkVentureName", :id => "no-name-venture"} %></p>
+			<%- end -%>
 				
-		<script type="text/javascript" charset="utf-8">
-			$(document).ready(function() {
+			<script type="text/javascript" charset="utf-8">
+				$(document).ready(function() {
 				
-				$(".editLinkVentureName").click(function (event) {
-					event.preventDefault();
-					$("#venture_name").click();
-					$('.editLinkVentureName').hide();
-				});
+					$(".editLinkVentureName").click(function (event) {
+						event.preventDefault();
+						$("#venture_name").click();
+						$('.editLinkVentureName').hide();
+					});
 						
-				$("#venture_name").click(function (event){
-					$('.editLinkVentureName').hide();
+					$("#venture_name").click(function (event){
+						$('.editLinkVentureName').hide();
+					});
+				
+					$("#venture_name").editable('/ventures/update/<%= @venture.id %>.part', $.extend({}, editableOpts, {
+						name: "venture[name]",
+						callback: function() {
+							$('.editLinkVentureName').show();
+							$("#no-name-venture").hide();
+						},
+						onreset: function() {
+							$('.editLinkVentureName').show();
+						},
+						onerror: function() {
+							$('.editLinkVentureName').show();
+						}
+					}));
+				
 				});
-				
-				$("#venture_name").editable('/ventures/update/<%= @venture.id %>.part', $.extend({}, editableOpts, {
-					name: "venture[name]",
-					callback: function() {
-						$('.editLinkVentureName').show();
-						$("#no-name-venture").hide();
-					},
-					onreset: function() {
-						$('.editLinkVentureName').show();
-					},
-					onerror: function() {
-						$('.editLinkVentureName').show();
-					}
-				}));
-				
-			});
-		</script>
+			</script>
 		
-		<%= render :partial => 'shared/editable_field', :locals => {:label => "Description", :name => "venture[description]", :value => @venture.description} %>
-		<%= render :partial => 'shared/editable_field', :locals => {:label => "Url", :name => "venture[url]", :value => @venture.url} %>
-		<p><span class="label">Tag</span> <%= render :partial => 'shared/editable_value', :locals => {:value => @venture.tag} %></p>		
+			<%= render :partial => 'shared/editable_field', :locals => {:label => "Description", :name => "venture[description]", :value => @venture.description} %>
+			<%= render :partial => 'shared/editable_field', :locals => {:label => "Url", :name => "venture[url]", :value => @venture.url} %>
+			<p><span class="label">Tag</span> <%= render :partial => 'shared/editable_value', :locals => {:value => @venture.tag} %></p>		
+		</div>
 	</div>
 </div>
 
-<hr>
-
-<div class="vtcolumn vtspan-5">
-	<!-- <div id="venture-graph" class="">
-			<h3>GRAPH</h3>
-		</div> -->
-	<%= render :partial => 'shared/message_feed',:locals=>{:messages => @venture_messages} %>
-</div>
-
-<div class="vtcolumn vtspan-3 vtlast">
-	<div id="additional-content" class="vtclearfix">
-	  <% if @venture.needs.any? %>
-		<div class="vtspan-3 vtlast">
-				<h3>Current Threads</h3>
-				<ul>
-				  <% @venture.needs.each do |need| %>
-					<li><%= link_to need.tag,[@venture, need] %></li>
-					<% end %>
-				</ul>
+<div id="main-content-container" class="vtclearfix vtcontainer">
+	
+	<div class="vtspan-5">
+		<div id="main-content">
+			<%= render :partial => 'shared/message_feed',:locals=>{:messages => @venture_messages} %>
 		</div>
-		<% end %>
-		<div class="vtspan-3 vtlast">
-				<h3>Contributors</h3>
-				<ul>
-				  <%- @contributors.each do |c| -%>
-					  <li><%= link_to c.screen_name, user_path(c) %></li>
-					<%- end -%>
-				</ul>
+	</div>
+
+	<div class="vtcolumn vtspan-3 vtlast">
+		<div id="additional-content" class="vtclearfix">
+		  <% if @venture.needs.any? %>
+			<div class="vtspan-3 vtlast">
+					<h3>Current Threads</h3>
+					<ul>
+					  <% @venture.needs.each do |need| %>
+						<li><%= link_to need.tag,[@venture, need] %></li>
+						<% end %>
+					</ul>
+			</div>
+			<% end %>
+			<div class="vtspan-3 vtlast">
+					<h3>Contributors</h3>
+					<ul>
+					  <%- @contributors.each do |c| -%>
+						  <li><%= link_to c.screen_name, user_path(c) %></li>
+						<%- end -%>
+					</ul>
+			</div>
 		</div>
 	</div>
 </div>
