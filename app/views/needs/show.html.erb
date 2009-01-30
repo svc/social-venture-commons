@@ -62,13 +62,13 @@
 
 	<div class="vtcolumn vtspan-3 vtlast">
 		<div id="additional-content">
-			<div class="vtspan-3">
-					<h3>People active in this thread</h3>
-					<ul>
-					  <%- @contributors.each do |c| -%>
-						  <li><%= link_to c.screen_name, user_path(c) %></li>
-						<%- end -%>
-					</ul>
+			<div>
+				<h3>People active in this thread</h3>
+				<ul>
+				  <%- @contributors.each do |c| -%>
+					  <li><%= link_to c.screen_name, user_path(c) %></li>
+					<%- end -%>
+				</ul>
 			</div>
 		</div>
 	</div>

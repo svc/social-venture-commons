@@ -10,15 +10,22 @@ h4 {
   background-color: #DDD;
 }
 
-label, .label {
+.label {
   font-weight: bold;
+}
+
+label {
+  font-weight: normal;
+}
+
+form .vtsmall {
+  line-height: 1.5;
 }
 
 #header {
   padding: 0.5em 0 0 0;
   margin-bottom: 1.5em;
   height:152px;
-
 }
 
 #header #main-nav {
