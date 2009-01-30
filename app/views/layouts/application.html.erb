@@ -28,18 +28,11 @@
 				
 				<div class="vtspan-5"><a href="/"><h1 id="logo">VenTwits</h1></a></div>
 
-				<div id="main-nav" class="vtspan-3">
+				<div id="main-nav" class="vtspan-3 vtlast">
 					<%= link_to 'All Ventures', '/' %>
 					<%= link_to 'My Ventures', logged_in? ? user_path(current_user) : login_path %>
 				</div>
 			
-				<div class="vtspan-3 vtlast">
-					<%- form_tag('search') do -%>
-						<%= text_field_tag 'search' %>
-						<%= submit_tag 'Search' %>
-					<%- end -%>
-
-				</div>
 				<br class="clear">
 			</div>
 		</div>
