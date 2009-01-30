@@ -14,12 +14,11 @@ class Account < ActiveRecord::Base
   end
   
   def ventures(options ={:limit=>5})
-		# TODO: dan - make this work :)
-    messages.sort{|x,y| x.id <=> y.id}.collect! {|m| m.ventures}.flatten.uniq[0...options[:limit]]
+		messages.collect {|m| m.ventures}.flatten.uniq[0...options[:limit]]
   end
   
-  def needs
-    messages.collect! {|m| m.needs}.flatten.uniq
+  def needs(options ={:limit=>5})
+    messages.collect {|m| m.needs}.flatten.uniq[0...options[:limit]]
   end
 end
 

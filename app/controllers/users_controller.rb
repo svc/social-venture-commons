@@ -30,7 +30,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.xml
   def show
-    @user = Account.find_by_screen_name(params[:id])
+    @user = Account.find_by_screen_name(params[:id],:include=>[:messages])
 		
     respond_to do |format|
       format.html # show.html.erb
