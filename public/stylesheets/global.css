@@ -2,6 +2,10 @@ body, h1, h2, h3, h4, h5 {
   color: #222;
 }
 
+a {
+  color: #7b3580;
+}
+
 h4 {
   font-weight: bold;
 }
