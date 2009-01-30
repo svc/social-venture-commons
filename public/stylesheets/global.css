@@ -126,6 +126,10 @@ form .vtsmall {
   text-align: right;
 }
 
+#twitter {
+  padding-top: 1em;
+}
+
 #twitter textarea {
   width: 395	px;
   height: 70px;
