@@ -1,17 +1,15 @@
 <div class="vtclearfix vtcontainer">
 	<%= render :partial => 'shared/twitter',:locals=>{:initial_value=>''} %>	
 
-	<div id="profile" class="vtspan-3 vtlast vtclearfix">
-
-  	<%= image_tag(@user.profile_image_url) %>
-
-	  <h3><%= @user.screen_name %></h3>
-	
-		<br class="clear">
-		
-		<div class="data">
-		  <%- unless @user.description.empty? -%><p><span class="label">Bio</span> <%= @user.description %></p><%- end -%>
-		  <%- unless @user.url.empty? -%><p><span class="label">Url</span> <%= link_to @user.url,@user.url %></p><%- end -%>
+	<div class="vtspan-3 vtlast vtclearfix">
+		<div id="profile">
+	  	<%= image_tag(@user.profile_image_url) %>
+		  <h3><%= @user.screen_name %></h3>
+			<br class="clear">		
+			<div class="data">
+			  <%- unless @user.description.empty? -%><p><span class="label">Bio</span> <%= @user.description %></p><%- end -%>
+			  <%- unless @user.url.empty? -%><p><span class="label">Url</span> <%= link_to @user.url,@user.url %></p><%- end -%>
+			</div>
 		</div>
 	</div>
 </div>

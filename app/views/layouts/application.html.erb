@@ -37,12 +37,14 @@
 			</div>
 		</div>
 
+		<%- unless flash[:notice].blank? && flash[:error].blank? -%>
 		<div class="vtcontainer">
 			<div class="system-messages">&nbsp;
-				<%- if !flash[:notice].blank? -%><p class="message"><%= flash[:notice] %></p><%- end -%>
-				<%- if !flash[:error].blank? -%><p class="error"><%= flash[:error] %></p><%- end -%>
+				<%- unless flash[:notice].blank? -%><p class="vtnotice"><%= flash[:notice] %></p><%- end -%>
+				<%- unless flash[:error].blank? -%><p class="vterror"><%= flash[:error] %></p><%- end -%>
       </div>
 		</div>
+		<%- end -%>
 
 		<%= yield %>
 
