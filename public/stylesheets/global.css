@@ -131,11 +131,10 @@ form .vtsmall {
   height: 70px;
 }
 
-/*#profile .data {
-  float: left;
-  width: 100px;
+#profile .data p {
+  margin: 0.25em 0;
 }
-*/
+
 #profile img, .tweet img {
   float: left;
   width: 48px;
