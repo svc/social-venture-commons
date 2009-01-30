@@ -2,13 +2,13 @@
 <%- if !logged_in? -%>
 	<div class="vtspan-5">
 		<div id="actions">
+					<p>Ventwits is an open platform designed to make it easy for people to build the things they care about. Use it to collaborate with smart people to spec, track, test, and <strong>build the future</strong>.</p>
 			<h3>Login to Ventwits to:</h3>
 			<ul>
 				<li><strong>Tag</strong> new ventures</li>
 				<li><strong>Participate</strong> in conversations</li>
 				<li><strong>Discover</strong> your community</li>
 			</ul>
-			<p>Ventwits is an open platform designed to make it easy for people to build the things they care about. Use it to collaborate with smart people to spec, track, test, and build the future.</p>
 		</div>
 	</div>	
 	<%= render :partial => 'shared/twitter',:locals =>{:initial_value => ''}  %>
