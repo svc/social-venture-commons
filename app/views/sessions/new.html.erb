@@ -1,3 +1,11 @@
-<h2>Log In</h2>
-
-<%= render :partial => 'shared/twitter' %>
+<div class="vtspan-5">
+	<div id="actions">
+		<h3>Login to Ventwits to:</h3>
+		<ul>
+			<li><strong>Create</strong> new Ventures and engage in discussions</li>
+			<li><strong>Participate</strong> in on going Ventures</li>
+			<li><strong>Become</strong> part of a vibrant community of talented professionals</li>
+		</ul>
+	</div>
+</div>	
+<%= render :partial => 'shared/twitter',:locals =>{:initial_value => ''}  %>

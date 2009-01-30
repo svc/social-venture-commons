@@ -1,3 +1,4 @@
+<div class="vtclearfix vtcontainer">
 <%- if !logged_in? -%>
 	<div class="vtspan-5">
 		<div id="actions">
@@ -10,22 +11,18 @@
 		</div>
 	</div>	
 	<%= render :partial => 'shared/twitter',:locals =>{:initial_value => ''}  %>
-	
-	<%- else -%>
-	
+<%- else -%>
 	<%= render :partial => 'shared/twitter',:locals =>{:initial_value => ''}  %>
-	
 	<div class="vtspan-3 vtlast">
 		<div id="actions-narrow">
 			<h3>How to use Ventwits</h3>
 			<ul>
 				<li>To create a new venture name your venture with <strong>^</strong> tag</li>
 				<li>Participate in the discussions using the Twitter box on this site, or just by using Twitter like you normally do. Just include a venture tag (<strong>^</strong>) in your tweet.</li>
-				</ul>
-			</div>
+			</ul>
+		</div>
 	</div>
-	<%- end -%>
-
+<%- end -%>
 </div>
 
 <div id="main-content-container" class="vtclearfix vtcontainer">
