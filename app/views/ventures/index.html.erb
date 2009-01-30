@@ -91,9 +91,9 @@
 				</ul>
 		
 				<ul id="threads-top" class="hideme">
-				  <%# @top_threads.each do |v| %>
-					  <li><%# link_to v.tag, venture_path(v) %></li>
-					<%# end %>
+				  <%- @top_threads.each do |n| -%>
+					  <li><%= link_to n.tag, need_path(n) %></li>
+					<%- end -%>
 				</ul>
 		
 				<script type="text/javascript" charset="utf-8">
