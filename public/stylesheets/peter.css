@@ -1,6 +1,6 @@
 body {background: url(/images/bodybg.png) repeat-x;}
 #header {padding:0;}
-h1#logo {background:url(/images/logo.png) no-repeat;width:334px; height:139px;text-indent:-9999px;margin-top:-30px;}
+h1#logo {background:url(/images/logo.png) no-repeat;width:410px; height:139px;text-indent:-9999px;margin-top:-30px;}
 #header #main-nav {margin-top:75px;}
 #header #main-nav a:link, #header #main-nav a:visited {background: #7b3580; padding:5px 7px;color: #fff;display:block;float:left;text-align:center;width:120px;}
 .margin10 a {margin:0 10px 0 0;}
@@ -11,13 +11,13 @@ h1#logo {background:url(/images/logo.png) no-repeat;width:334px; height:139px;te
 #actions-narrow {margin-bottom:15px;;}
 #actions ul, #actions-narrow ul {margin:0;width:96%	;}
 #actions li, #actions-narrow li {list-style-type:none;border-bottom:1px solid #7B3580;padding:0.25em 0;}
-#actions p {margin:0 0 7px 0;;font-size:1.2em;padding-right: 1em;}
+#actions p {margin:0 0 15px 0;;font-size:1.2em;padding-right: 1em;}
 
 #main-content-container {background: url(/images/main-content-container.png) no-repeat top center;}
 #additional-content, #main-content {padding:1.5em 1em;}
 h3 {margin-bottom:.5em;font-weight:bold;}
 
-.vtspan-5 #twitter {background: url(/images/twitterbg.png) no-repeat;padding: 20px;margin-top:-20px;}
+.vtspan-5 #twitter {background: url(/images/twitterbg.png) no-repeat;padding: 20px;}
 
 #footer {background: url(/images/footerbg.png) repeat-x;}
 #additional-content, #main-content {padding:1.5em 1em;}
