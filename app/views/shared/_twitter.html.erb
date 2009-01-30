@@ -1,5 +1,9 @@
-<% if not logged_in? -%>
-	<div class="vtspan-3 vtlast">
+<% if !logged_in? -%>
+	<%- if params[:action] == "index" && params[:controller] == "ventures" -%>
+		<div class="vtspan-3 vtlast">
+	<%- else -%>
+		<div class="vtspan-5">
+	<%- end -%>
   	<div id="twitter">
       <%= render :partial => 'shared/login' %>
 		</div>
