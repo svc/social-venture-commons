@@ -2,7 +2,7 @@ class VenturesController < ApplicationController
   # GET /ventures
   # GET /ventures.xml
   def index
-    @svc_messages = Message.all(:order=>'created_at DESC')
+    @svc_messages = Message.paginate(:order=>'created_at DESC',:page=>params[:page])
 
 		@newest_ventures = Venture.all(:order=>'id DESC', :limit => 10)
     @top_ventures = Venture.with_message_counts(:limit=>10)
@@ -22,7 +22,7 @@ class VenturesController < ApplicationController
   # GET /ventures/1.xml
   def show
     @venture = Venture.find(params[:id])
-    @venture_messages = @venture.messages.all(:order=>'created_at DESC')
+    @venture_messages = @venture.messages.paginate(:order=>'created_at DESC',:page=>params[:page])
     @contributors = @venture.messages.collect{|m| m.account}.uniq
     
     respond_to do |format|
