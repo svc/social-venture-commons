@@ -11,7 +11,7 @@
 <% else %>
 		<div class="vtspan-5">
 			<div id="twitter">
-  			<h4>What are you building?</h4>
+  			<h4><%= call_to_action || "What are you building?" %></h4>
   			<%= render :partial => 'shared/tweet_box', :locals => {:initial_value => initial_value} %>
 			</div>
   </div>

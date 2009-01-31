@@ -71,8 +71,10 @@ class VenturesController < ApplicationController
 
     respond_to do |format|
       if @venture.update_attributes(params[:venture])
-        flash[:notice] = 'Venture was successfully updated.'
-        format.html { redirect_to(@venture) }
+        format.html do
+          flash[:notice] = 'Venture was successfully updated.'
+          redirect_to(@venture) 
+        end
         format.xml  { head :ok }
 				format.part do
 					if params[:venture].key?(:tag)
@@ -83,6 +85,8 @@ class VenturesController < ApplicationController
 						value = @venture.url
 					elsif params[:venture].key?(:name)
 						value = @venture.name
+					elsif params[:venture].key?(:feed)
+						value = @venture.feed.url
 					end
 					render :partial => 'shared/editable_value', :locals => {:value => value}
 				end

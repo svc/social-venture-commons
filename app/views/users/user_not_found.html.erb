@@ -1,0 +1,25 @@
+<div class="vtclearfix vtcontainer">
+<%- if !logged_in? -%>
+	<div class="vtspan-5">
+	  <h2>Un Oh!</h2>
+		<div id="actions">
+					<p>Looks like <%= params[:id]%> isn't using VenTwits! Go ahead and log in so we can tweet them on your behalf to get them in on the action</p>
+			<h3>Login to Ventwits to:</h3>
+			<ul>
+				<li><strong>Tag</strong> new ventures</li>
+				<li><strong>Participate</strong> in conversations</li>
+				<li><strong>Discover</strong> your community</li>
+			</ul>
+		</div>
+	</div>	
+	<%= render :partial => 'shared/twitter',:locals =>{:initial_value => ''}  %>
+<%- else -%>
+<div class="vtspan-5">
+  <h2>Un Oh!</h2>
+	<div id="actions">
+				<p>Looks like <%= params[:id]%> isn't using VenTwits! Go ahead and log in so we can tweet them on your behalf to get them in on the action</p>
+	</div>
+</div>	
+<%= render :partial => 'shared/twitter',:locals =>{:initial_value => "@#{params[:id]}  ",:call_to_action=>"Tell #{params[:id]} why they should  use VenTwits!"}  %>
+<%- end -%>
+</div>
