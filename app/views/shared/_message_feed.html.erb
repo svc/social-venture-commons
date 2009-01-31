@@ -2,37 +2,8 @@
 <div id="twitter-feed" class="vtspan-5">
 	<div class="twitter-posts">
     <%- messages.each do |message| -%>
-	    <div class="tweet vtclearfix <%= cycle("odd", "even") %>">
-	    	<%= link_to image_tag(message.account.profile_image_url), user_path(message.account) %>
-	    	<div class="tweet-content">
-	    	  <%- 
-	    	    message.ventures.each do |v| 
-	            message.text.gsub! v.tag.downcase, link_to(v.tag, venture_path(v))
-	          end 
-	          
-	          message.needs.each do |n|
-	            message.text.gsub! n.tag.downcase, link_to(n.tag, need_path(n))
-            end
-            
-            message.text.scan(/(@[a-z0-9_-]+)/).each do |match|
-              message.text.gsub! match[0], link_to(match[0], user_path(match[0][1..match[0].length]))
-            end
-	            
-	          -%>
-	    		<%= "#{message.account.screen_name}: #{message.text}" %>
-					<%- reply_id = "reply#{srand}" -%>
-	    		<span class="tweet-meta"><%=time_ago_in_words(message.created_at)%> ago &middot; <%=link_to 'Reply',"?status=@#{message.account.screen_name}", {:id => reply_id} %> &middot; <%= link_to 'View Tweet',"http://www.twitter.com/#{message.account.screen_name}/statuses/#{message.twitter_id}" %></span>
-	    	</div>
-	    </div>
-			<script type="text/javascript" charset="utf-8">
-				$(document).ready(function() {
-					$("#<%= reply_id %>").click(function(event) {
-						event.preventDefault();
-						$("#twitter_message_box").val("@<%= message.account.screen_name %> "+$("#twitter_message_box").val());
-						$('html, body').animate({scrollTop:0}, 'fast');
-					});
-				});
-			</script>
+       <%= render :partial=>'shared/message_feed_twitter', :locals=>{:message=>message} if message.type == :twitter %>
+       <%= render :partial=>'shared/message_feed_rss', :locals=>{:message=>message} if message.type == :rss %>
     <%- end -%>
     
     <%= will_paginate messages%>

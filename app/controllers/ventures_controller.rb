@@ -23,7 +23,7 @@ class VenturesController < ApplicationController
   def show
     @venture = Venture.find(params[:id])
     @venture_messages = @venture.messages.paginate(:order=>'created_at DESC',:page=>params[:page])
-    @contributors = @venture.messages.collect{|m| m.account}.uniq
+    @contributors = @venture.messages.tweets.collect{|m| m.account}.uniq
     
     respond_to do |format|
       format.html # show.html.erb
