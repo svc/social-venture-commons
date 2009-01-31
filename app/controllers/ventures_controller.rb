@@ -2,7 +2,7 @@ class VenturesController < ApplicationController
   # GET /ventures
   # GET /ventures.xml
   def index
-    @svc_messages = Message.paginate(:order=>'created_at DESC',:page=>params[:page])
+    @svc_messages = Message.paginate(:order=>'created_at DESC',:page => params[:page])
 
 		@newest_ventures = Venture.all(:order=>'id DESC', :limit => 10)
     @top_ventures = Venture.with_message_counts(:limit=>10)
