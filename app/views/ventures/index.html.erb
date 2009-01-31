@@ -2,11 +2,12 @@
 <%- if !logged_in? -%>
 	<div class="vtspan-5">
 		<div id="actions">
+					<p>Ventwits is an open platform designed to make it easy for people to build the things they care about. Use it to collaborate with smart people to spec, track, test, and <strong>build the future</strong>.</p>
 			<h3>Login to Ventwits to:</h3>
 			<ul>
-				<li><strong>Create</strong> new Ventures and engage in discussions</li>
-				<li><strong>Participate</strong> in on going Ventures</li>
-				<li><strong>Become</strong> part of a vibrant community of talented professionals</li>
+				<li><strong>Tag</strong> new ventures</li>
+				<li><strong>Participate</strong> in conversations</li>
+				<li><strong>Discover</strong> your community</li>
 			</ul>
 		</div>
 	</div>	
@@ -17,15 +18,16 @@
 		<div id="actions-narrow">
 			<h3>How to use Ventwits</h3>
 			<ul>
-				<li>To create a new venture name your venture with <strong>^</strong> tag</li>
-				<li>Participate in the discussions using the Twitter box on this site, or just by using Twitter like you normally do. Just include a venture tag (<strong>^</strong>) in your tweet.</li>
+				<li><strong>Discover</strong> Click some links. Check out some <strong>^</strong>ventures and explore some <strong>!</strong>threads. Follow your interest.</li>
+				<li><strong>Participate</strong> Venture something in the box to left.</li>
+				<li><strong>Tag your tweets</strong> Continue the conversation wherever you twitter. Just use your tags.</li>
 			</ul>
 		</div>
 	</div>
 <%- end -%>
 </div>
 
-<div id="main-content-container" class="vtclearfix vtcontainer">
+<div id="main-content-container"><div class="vtclearfix vtcontainer">
 
 	<div class="vtspan-5">
 		<div id="main-content">
@@ -35,7 +37,7 @@
 	
 	<div class="vtspan-3 vtlast">
 		<div id="additional-content">
-			<div class="vtspan-3 vtlast">
+			<div>
 				<h3>Ventures</h3>
 		
 				<p class="tabs"><%= link_to 'Newest', '', {:class => "active-tab", :id => "ventures-newest-button"} %> | <%= link_to 'Most Active', '', {:id => "ventures-top-button"} %></p>
@@ -76,7 +78,7 @@
 				</script>
 			</div>
 
-			<div class="vtspan-3 vtlast">
+			<div>
 				<h3>Threads</h3>
 		
 				<p class="tabs"><%= link_to 'Newest', '', {:class => "active-tab", :id => "threads-newest-button"} %> | <%= link_to 'Most Active', '', {:id => "threads-top-button"} %></p>
@@ -117,7 +119,7 @@
 				</script>
 			</div>	
 	
-			<div class="vtspan-3  vtlast">
+			<div>
 				<h3>Top Contributors</h3>
 				<ul>
 				  <%- @top_contributors.each do |c| -%>
@@ -127,4 +129,4 @@
 			</div>
 		</div>
 	</div>
-</div>
+</div></div>

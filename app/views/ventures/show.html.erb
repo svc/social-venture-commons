@@ -1,7 +1,5 @@
-<h2><%= @venture.tag %></h2>
-
 <div class="vtclearfix vtcontainer">
-	<%= render :partial => 'shared/twitter',:locals =>{:initial_value=>@venture.tag} %>
+	<%= render :partial => 'shared/twitter',:locals =>{:initial_value => @venture.tag} %>
 
 	<div class="vtspan-3 vtlast">
 		<div id="actions-narrow">
@@ -51,7 +49,7 @@
 	</div>
 </div>
 
-<div id="main-content-container" class="vtclearfix vtcontainer">
+<div id="main-content-container"><div class="vtclearfix vtcontainer">
 	
 	<div class="vtspan-5">
 		<div id="main-content">
@@ -62,23 +60,23 @@
 	<div class="vtcolumn vtspan-3 vtlast">
 		<div id="additional-content" class="vtclearfix">
 		  <% if @venture.needs.any? %>
-			<div class="vtspan-3 vtlast">
-					<h3>Current Threads</h3>
-					<ul>
-					  <% @venture.needs.each do |need| %>
-						<li><%= link_to need.tag,[@venture, need] %></li>
-						<% end %>
-					</ul>
+			<div>
+				<h3>Current Threads</h3>
+				<ul>
+				  <% @venture.needs.each do |need| %>
+					<li><%= link_to need.tag,[@venture, need] %></li>
+					<% end %>
+				</ul>
 			</div>
 			<% end %>
-			<div class="vtspan-3 vtlast">
-					<h3>Contributors</h3>
-					<ul>
-					  <%- @contributors.each do |c| -%>
-						  <li><%= link_to c.screen_name, user_path(c) %></li>
-						<%- end -%>
-					</ul>
+			<div>
+				<h3>Contributors</h3>
+				<ul>
+				  <%- @contributors.each do |c| -%>
+					  <li><%= link_to c.screen_name, user_path(c) %></li>
+					<%- end -%>
+				</ul>
 			</div>
 		</div>
 	</div>
-</div>
+</div></div>

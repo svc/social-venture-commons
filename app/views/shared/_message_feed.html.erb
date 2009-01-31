@@ -6,6 +6,6 @@
        <%= render :partial=>'shared/message_feed_rss', :locals=>{:message=>message} if message.type == :rss %>
     <%- end -%>
     
-    <%= will_paginate messages%>
+    <%= will_paginate messages %>
 	</div>
 </div>

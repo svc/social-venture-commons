@@ -18,5 +18,5 @@ $(document).ajaxSend(function(event, request, settings) {
 });
 
 $(document).ready(function() {
-  $(".system-messages").delay(2500).fadeTo("medium", 0);
+  $(".system-messages").delay(2500).hide("blind", { direction: "vertical" }, 1000);
 });

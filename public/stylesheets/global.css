@@ -2,23 +2,35 @@ body, h1, h2, h3, h4, h5 {
   color: #222;
 }
 
+a {
+  color: #7b3580;
+}
+
 h4 {
   font-weight: bold;
 }
 
-.wireframe {
-  background-color: #DDD;
+.static-content h3 {
+  margin-top: 1em;
 }
 
-label, .label {
+.label {
   font-weight: bold;
+}
+
+label {
+  font-weight: normal;
+  display: block;
+}
+
+form .vtsmall {
+  line-height: 1.5;
 }
 
 #header {
   padding: 0.5em 0 0 0;
   margin-bottom: 1.5em;
   height:152px;
-
 }
 
 #header #main-nav {
@@ -55,6 +67,30 @@ label, .label {
   margin-right: 10px;
 }
 
+#login-form fieldset {
+  border: none;
+  padding: 0;
+  margin: 0 0 1em 0;
+}
+
+#login-form fieldset div {
+  float: left;
+  width: 125px;
+  margin: 0 15px 0 0;
+}
+
+#login-form fieldset div.vtlast {
+  margin: 0;
+}
+
+#login-form fieldset div input {
+  width: 125px;
+}
+
+#login-form p {
+  font-size: 0.9em;
+}
+
 #profile, #actions, #twitter, #additional-content div {
   margin-bottom: 1em;
 }
@@ -62,6 +98,10 @@ label, .label {
 #additional-content div {
   border-bottom: 1px solid #ddd;
   padding-bottom: 1em;
+}
+
+#additional-content h3 {
+  font-size: 1.2em;
 }
 
 #additional-content ul {
@@ -81,25 +121,41 @@ label, .label {
 }
 
 #footer {
-  margin: 1em 0 0 0;
+  margin: 2.5em 0 0 0;
   padding: 1em 0;
-  background: #ddd;
+  height:50px;
+  border-top: 1px solid #7b3580;
 }
 
 #footer .vtlast {
   text-align: right;
 }
 
+#twitter {
+  padding-top: 1em;
+}
+
+h4 {
+  margin-bottom: 0.5em;
+}
+
 #twitter textarea {
-  width: 430px;
+  width: 395	px;
   height: 70px;
 }
 
-/*#profile .data {
-  float: left;
-  width: 100px;
+#profile .data {
+  margin: 1em 0 0 0;
 }
-*/
+
+#profile .data p {
+  margin: 0.25em 0;
+}
+
+#profile img {
+  border: 2px solid #7b3580;
+}
+
 #profile img, .tweet img {
   float: left;
   width: 48px;
@@ -155,4 +211,20 @@ h3 .editLinkVentureName, h3 .editLinkThreadName {
 
 p.tabs {
   margin: -0.5em 0 0.5em 0;
+}
+
+.pagination {
+  margin-top: 1em;
+}
+
+.pagination a, .pagination span {
+  margin: 0 0.25em;
+}
+
+.pagination span.prev_page, .pagination a.prev_page {
+  margin: 0 0.5em 0 0;
+}
+
+.pagination span.next_page, .pagination a.next_page {
+  margin: 0 0 0 0.5em;
 }
