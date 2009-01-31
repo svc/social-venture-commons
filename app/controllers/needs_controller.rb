@@ -18,7 +18,8 @@ class NeedsController < ApplicationController
     @need = Need.find(params[:id])
     @need_messages = @need.messages.paginate(:order=>'created_at DESC',:page=>params[:page])
     @contributors = @need.messages.collect{|m| m.account}.uniq
-    
+    @ventures = @need.ventures
+
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @need }
