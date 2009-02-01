@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090122234341) do
+ActiveRecord::Schema.define(:version => 20090131190904) do
 
   create_table "account_types", :force => true do |t|
     t.text     "name"
@@ -33,12 +33,30 @@ ActiveRecord::Schema.define(:version => 20090122234341) do
 
   add_index "accounts", ["twitter_id"], :name => "index_accounts_on_twitter_id"
 
+  create_table "feeds", :force => true do |t|
+    t.string   "title"
+    t.string   "url"
+    t.integer  "venture_id"
+    t.datetime "last_fetch"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "message_types", :force => true do |t|
+    t.string   "name"
+    t.string   "icon"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "messages", :force => true do |t|
     t.string   "twitter_id"
     t.text     "twitter_text"
     t.integer  "account_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "message_type_id", :default => 1
+    t.string   "original_url"
   end
 
   add_index "messages", ["account_id"], :name => "index_messages_on_user_id"

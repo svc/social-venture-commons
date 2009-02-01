@@ -1,8 +1,5 @@
 .DS_Store
 log/*.log
 tmp/**/*
-db/development.sqlite3
-test/fixtures/feeds.yml
-test/fixtures/message_types.yml
-test/unit/feed_test.rb
-test/unit/message_type_test.rb
+config/database.yml
+db/*.sqlite3

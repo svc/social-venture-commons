@@ -1,0 +1,13 @@
+---
+  chdir: /var/www/applications/www.ventwits.com/current
+  environment: production
+  log: /var/www/applications/www.ventwits.com/shared/log/thin.log
+  pid: /var/www/applications/www.ventwits.com/shared/pids/thin.pid
+  max_conns: 1024
+  max_persistent_conns: 512
+  require: []
+  user: nginx
+  group: nginx
+  servers: 6
+  socket: /var/www/applications/www.ventwits.com/shared/sockets/thin.sock
+  daemonize: true
