@@ -20,9 +20,9 @@ while($running) do
   
   Venture.all.each do |v|
     v.feeds.each do |f|
-      rss = SimpleRSS.parse open(f.url)
-      rss.items.each do |i|
-        begin
+      begin
+        rss = SimpleRSS.parse open(f.url)
+        rss.items.each do |i|
           next if (f.last_fetch &&  i.pubDate < f.last_fetch)
           m = Message.new
           m.twitter_text = "#{i.title} :: #{i.description[0...140]}"[0...140]
@@ -31,12 +31,12 @@ while($running) do
           m.original_url = i.link
           m.created_at = i.pubDate
           m.save!
-        rescue Exception => e
-          next
         end
+        f.last_fetch = Time.now
+        f.save
+      rescue Exception => e
+        next
       end
-      f.last_fetch = Time.now
-      f.save
     end
   end
   
