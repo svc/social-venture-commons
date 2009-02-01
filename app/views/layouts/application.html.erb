@@ -6,7 +6,7 @@
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
 		<title>VenTwits</title>
 		<link rel="shortcut icon" href="/favicon.ico" />
-		<%= stylesheet_link_tag "blueprint/screen", "global", "peter" %>
+		<%= stylesheet_link_tag "blueprint/screen", "global", "peter", :cache=>true %>
 		<%= javascript_include_tag :defaults, 'jeditable', 'jdelay' , 'jquery.curvycorners.min.js', :cache=>true %>
 		
 		<%= javascript_tag "var AUTH_TOKEN = #{form_authenticity_token.inspect};" if protect_against_forgery? %>
