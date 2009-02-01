@@ -43,7 +43,7 @@ namespace :deploy do
   
   task :copy_twitter_login, :roles => :app do
     twitter_login = "/var/www/applications/#{application}/shared/twitter_login.rb"
-    run "cp #{db_config} #{release_path}/config/initializers/twitter_login.rb"
+    run "cp #{twitter_login} #{release_path}/config/initializers/twitter_login.rb"
   end
   
   task :before_finalize_update, :roles=>[:app] do
