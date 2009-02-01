@@ -21,7 +21,7 @@ class VenturesController < ApplicationController
   # GET /ventures/1
   # GET /ventures/1.xml
   def show
-    @venture = Venture.find(params[:id])
+    @venture = Venture.find_by_tag(params[:id])
     @venture_messages = @venture.messages.paginate(:order=>'created_at DESC',:page=>params[:page])
     @contributors = @venture.messages.tweets.collect{|m| m.account}.uniq
     
