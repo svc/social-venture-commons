@@ -15,6 +15,10 @@ class Venture < ActiveRecord::Base
 	 name || tag || ""
 	end
 	
+	def to_param
+    tag
+  end
+	
 	# TODO: danw: Unhack this
 	def feed
 	 feeds[0] = feeds.create unless feeds[0]
