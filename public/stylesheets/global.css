@@ -47,6 +47,7 @@ form .vtsmall {
   padding:3px 10px; 
   text-align: center;
   background:#ff7f00;
+  color: #fff;
 }
 
 #header h1 {
@@ -100,6 +101,10 @@ form .vtsmall {
   padding-bottom: 1em;
 }
 
+#additional-content h3 {
+  font-size: 1.2em;
+}
+
 #additional-content ul {
   list-style-type: none;
   padding: 0;
@@ -117,9 +122,10 @@ form .vtsmall {
 }
 
 #footer {
-  margin: 1em 0 0 0;
-  padding: 2em 0;
+  margin: 2.5em 0 0 0;
+  padding: 1em 0;
   height:50px;
+  border-top: 1px solid #7b3580;
 }
 
 #footer .vtlast {
@@ -128,6 +134,10 @@ form .vtsmall {
 
 #twitter {
   padding-top: 1em;
+}
+
+h4 {
+  margin-bottom: 0.5em;
 }
 
 #twitter textarea {
@@ -202,4 +212,20 @@ h3 .editLinkVentureName, h3 .editLinkThreadName {
 
 p.tabs {
   margin: -0.5em 0 0.5em 0;
+}
+
+.pagination {
+  margin-top: 1em;
+}
+
+.pagination a, .pagination span {
+  margin: 0 0.25em;
+}
+
+.pagination span.prev_page, .pagination a.prev_page {
+  margin: 0 0.5em 0 0;
+}
+
+.pagination span.next_page, .pagination a.next_page {
+  margin: 0 0 0 0.5em;
 }

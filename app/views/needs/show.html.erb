@@ -1,6 +1,4 @@
 <div class="vtclearfix vtcontainer">
-	<h2><%= "#{link_to @venture.tag, venture_path(@venture)} &raquo;" rescue nil %> <%= @need.tag %></h2>
-
 	<div class="vtcolumn vtspan-5">
 		<%= render :partial => 'shared/twitter', :locals=>{:initial_value => @venture ? "#{@venture.tag} #{@need.tag}" : @need.tag} %>
 	</div>
@@ -67,6 +65,14 @@
 				<ul>
 				  <%- @contributors.each do |c| -%>
 					  <li><%= link_to c.screen_name, user_path(c) %></li>
+					<%- end -%>
+				</ul>
+			</div>
+			<div>
+				<h3>Associated ventures</h3>
+				<ul>
+				  <%- @ventures.each do |c| -%>
+					  <li><%= link_to c.tag, venture_path(c) %></li>
 					<%- end -%>
 				</ul>
 			</div>

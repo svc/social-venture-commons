@@ -2,7 +2,7 @@ class VenturesController < ApplicationController
   # GET /ventures
   # GET /ventures.xml
   def index
-    @svc_messages = Message.paginate(:order=>'created_at DESC',:page=>params[:page])
+    @svc_messages = Message.paginate(:order=>'created_at DESC',:page => params[:page])
 
 		@newest_ventures = Venture.all(:order=>'id DESC', :limit => 10)
     @top_ventures = Venture.with_message_counts(:limit=>10)
@@ -23,7 +23,7 @@ class VenturesController < ApplicationController
   def show
     @venture = Venture.find(params[:id])
     @venture_messages = @venture.messages.paginate(:order=>'created_at DESC',:page=>params[:page])
-    @contributors = @venture.messages.collect{|m| m.account}.uniq
+    @contributors = @venture.messages.tweets.collect{|m| m.account}.uniq
     
     respond_to do |format|
       format.html # show.html.erb
@@ -71,8 +71,10 @@ class VenturesController < ApplicationController
 
     respond_to do |format|
       if @venture.update_attributes(params[:venture])
-        flash[:notice] = 'Venture was successfully updated.'
-        format.html { redirect_to(@venture) }
+        format.html do
+          flash[:notice] = 'Venture was successfully updated.'
+          redirect_to(@venture) 
+        end
         format.xml  { head :ok }
 				format.part do
 					if params[:venture].key?(:tag)
@@ -83,6 +85,8 @@ class VenturesController < ApplicationController
 						value = @venture.url
 					elsif params[:venture].key?(:name)
 						value = @venture.name
+					elsif params[:venture].key?(:feed)
+						value = @venture.feed.url
 					end
 					render :partial => 'shared/editable_value', :locals => {:value => value}
 				end

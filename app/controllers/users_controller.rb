@@ -11,7 +11,11 @@ class UsersController < ApplicationController
 
   def show
     @user = Account.find_by_screen_name(params[:id],:include=>[:messages])
+    
+    render :action=>'user_not_found'and return unless @user 
+        
 		@user_messages = @user.messages.paginate(:order=>'created_at DESC',:page=>params[:page])
+		
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @user }

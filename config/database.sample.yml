@@ -1,0 +1,16 @@
+staging:
+  adapter: mysql
+  database: ventwits_staging
+  host: localhost
+  username: ventwits_staging
+  password: 'ventwits_staging'
+  encoding: utf8
+  
+  
+production:
+  adapter: mysql
+  database: ventwits_production
+  host: localhost
+  username: ventwits_pro
+  password: 'svc$$2009'
+  encoding: utf8

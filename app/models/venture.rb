@@ -1,4 +1,6 @@
 class Venture < ActiveRecord::Base
+  
+  has_many :feeds
 	
 	has_and_belongs_to_many :messages
 	has_and_belongs_to_many :needs
@@ -11,5 +13,18 @@ class Venture < ActiveRecord::Base
   
 	def to_s
 	 name || tag || ""
+	end
+	
+	# TODO: danw: Unhack this
+	def feed
+	 feeds[0] = feeds.create unless feeds[0]
+	 feeds[0]
+	end
+	
+	def feed=(feed_url)
+	  feeds[0] = Feed.new unless feeds[0]
+	  feed = feeds[0]
+	  feed.url = feed_url
+	  feed.save	  
 	end
 end

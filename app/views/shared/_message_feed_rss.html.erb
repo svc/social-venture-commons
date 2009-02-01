@@ -1,0 +1,7 @@
+<div class="tweet vtclearfix <%= cycle("odd", "even") %>">
+	<%= link_to image_tag('rss.png'), message.ventures[0] %>
+	<div class="tweet-content">
+		<%= "#{link_to message.ventures[0].tag, message.ventures[0]}, : #{message.text}" %>
+		<span class="tweet-meta"><%=time_ago_in_words(message.created_at)%> ago &middot; <%= link_to 'View Post',message.original_url,:target=>'_new' %></span>
+	</div>
+</div>
