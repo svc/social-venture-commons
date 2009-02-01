@@ -8,6 +8,6 @@
   require: []
   user: nginx
   group: nginx
-  servers: 6
+  servers: 2
   socket: /var/www/applications/www.ventwits.com/shared/sockets/thin.sock
   daemonize: true
