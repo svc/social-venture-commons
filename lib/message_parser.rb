@@ -1,8 +1,5 @@
 class MessageParser
   def self.parse(tweet)
-    require 'pp'
-    
-    pp tweet
 
     tweet.text.downcase!
         
