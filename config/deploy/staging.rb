@@ -36,12 +36,17 @@ namespace :deploy do
     run "cd #{deploy_to}/shared && mkdir sockets"
   end
   
+  task :copy_database_yml, :roles => :app do
+    db_config = "/var/www/applications/#{application}/shared/database.yml"
+    run "cp #{db_config} #{release_path}/config/database.yml"
+  end  
+  
+  task :before_finalize_update, :roles=>[:app] do
+    copy_database_yml
+  end
+  
   task :after_deploy, :roles=>[:app] do
-    cleanup
+    cleanup    
   end
 end
 
-task :copy_database_yml, :roles => :app do
-  db_config = "/var/www/applications/#{application}/shared/database.yml"
-  run "cp #{db_config} #{release_path}/config/database.yml"
-end
