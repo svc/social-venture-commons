@@ -79,11 +79,11 @@ caption {background:#eee;}
 .vtcolumn, div.vtspan-1, div.vtspan-2, div.vtspan-3, div.vtspan-4, div.vtspan-5, div.vtspan-6, div.vtspan-7, div.vtspan-8 {float:left;margin-right:15px;}
 .vtlast, div.vtlast {margin-right:0;}
 .vtspan-1 {width:80px;}
-.vtspan-2 {width:175px;}
+.vtspan-2 {width:267px;}
 .vtspan-3 {width:270px;}
 .vtspan-4 {width:365px;}
 .vtspan-5 {width:460px;}
-.vtspan-6 {width:555px;}
+.vtspan-6 {width:463px;}
 .vtspan-7 {width:650px;}
 .vtspan-8, div.vtspan-8 {width:745px;margin:0;}
 input.vtspan-1, textarea.vtspan-1, select.vtspan-1 {width:80px!important;}
@@ -120,7 +120,7 @@ div.vtcolborder {padding-right:71px;margin-right:72px;border-right:1px solid #ee
 .vtpull-8 {margin-left:-760px;}
 .vtpull-1, .vtpull-2, .vtpull-3, .vtpull-4, .vtpull-5, .vtpull-6, .vtpull-7, .vtpull-8 {float:left;position:relative;}
 .vtpush-1 {margin:0 -95px 1.5em 95px;}
-.vtpush-2 {margin:0 -190px 1.5em 190px;}
+.vtpush-2 {margin:0 -90px 1.5em 190px;}
 .vtpush-3 {margin:0 -285px 1.5em 285px;}
 .vtpush-4 {margin:0 -380px 1.5em 380px;}
 .vtpush-5 {margin:0 -475px 1.5em 475px;}
