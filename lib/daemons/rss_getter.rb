@@ -23,7 +23,7 @@ while($running) do
     v.feeds.each do |f|
       rss = SimpleRSS.parse open(f.url)
       rss.items.each do |i|
-        next if f.last_fetch &&  i.pubDate < f.last_fetch
+        next if (f.last_fetch || f.uri.nil?) &&  (i.pubDate < f.last_fetch)
         m = Message.new
         m.twitter_text = "#{i.title} :: #{i.description[0...140]}"[0...140]
         m.ventures << v
@@ -37,5 +37,5 @@ while($running) do
     end
   end
   
-  sleep 10
+  sleep 60
 end
