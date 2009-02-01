@@ -17,20 +17,23 @@ while($running) do
   log.debug("I'm still here #{Time.now}")
   require 'simple-rss'
   require 'open-uri'
-  require 'pp'
   
   Venture.all.each do |v|
     v.feeds.each do |f|
       rss = SimpleRSS.parse open(f.url)
       rss.items.each do |i|
-        next if (f.last_fetch || f.uri.nil?) &&  (i.pubDate < f.last_fetch)
-        m = Message.new
-        m.twitter_text = "#{i.title} :: #{i.description[0...140]}"[0...140]
-        m.ventures << v
-        m.message_type_id = 2
-        m.original_url = i.link
-        m.created_at = i.pubDate
-        m.save!
+        begin
+          next if (f.last_fetch &&  i.pubDate < f.last_fetch)
+          m = Message.new
+          m.twitter_text = "#{i.title} :: #{i.description[0...140]}"[0...140]
+          m.ventures << v
+          m.message_type_id = 2
+          m.original_url = i.link
+          m.created_at = i.pubDate
+          m.save!
+        rescue Exception => e
+          next
+        end
       end
       f.last_fetch = Time.now
       f.save

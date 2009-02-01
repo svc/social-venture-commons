@@ -12,6 +12,10 @@ Signal.trap("TERM") do
 end
 
 while($running) do  
-  MessageParser.get_messages_and_parse({:count=>200})   
+  begin
+    MessageParser.get_messages_and_parse({:count=>200}) 
+  rescue Twitter::CantConnect => e
+    
+  end    
   sleep 60
 end
