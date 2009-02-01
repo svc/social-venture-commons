@@ -1,5 +1,8 @@
 class MessageParser
   def self.parse(tweet)
+    require 'pp'
+    
+    pp tweet
 
     tweet.text.downcase!
         
@@ -23,7 +26,8 @@ class MessageParser
       account = Account.find_by_twitter_id(tweet.user.id)
       account = Account.create!(:twitter_id=>tweet.user.id,:name=>tweet.user.name,:screen_name=>tweet.user.screen_name,:url=>tweet.user.url,:description=>tweet.user.description,:profile_image_url=> tweet.user.profile_image_url,:account_type => AccountType.find_by_name('User')) unless account      
             
-      message = Message.new(:twitter_id=>tweet.id, :twitter_text=>tweet.text,:account_id=>account.id)
+      message = Message.new(:twitter_id=>tweet.id, :twitter_text=>tweet.text,:account_id=>account.id,:created_at=>tweet.created_at)
+      
       message.ventures << ventures
       message.needs << needs     
       
