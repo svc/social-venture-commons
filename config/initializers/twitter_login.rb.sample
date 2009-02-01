@@ -1,0 +1,13 @@
+if Rails.env.development?
+  TWITTER_USERNAME = 'username'
+  TWITTER_PASSWORD = 'password'
+elsif Rails.env.testing?
+  TWITTER_USERNAME = 'username'
+  TWITTER_PASSWORD = 'password'
+elsif Rails.env.staging?
+  TWITTER_USERNAME = 'username'
+  TWITTER_PASSWORD = 'password'
+elsif Rails.env.production?
+  TWITTER_USERNAME = 'username'
+  TWITTER_PASSWORD = 'password'
+end
