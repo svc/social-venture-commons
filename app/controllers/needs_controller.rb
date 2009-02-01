@@ -98,6 +98,6 @@ class NeedsController < ApplicationController
   
   protected
     def load_parent
-      @venture = Venture.find(params[:venture_id]) if params[:venture_id]
+      @venture = Venture.find_by_tag(params[:venture_id]) if params[:venture_id]
     end
 end
