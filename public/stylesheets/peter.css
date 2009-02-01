@@ -1,7 +1,7 @@
 body {background: url(/images/bodybg.png) repeat-x;}
 #header {padding:0;}
 h1#logo {background:url(/images/logo.png) no-repeat;width:410px; height:139px;text-indent:-9999px;margin-top:-30px;}
-#header #main-nav {margin-top:89px;}
+#header #main-nav {margin-top:87px;}
 #header #main-nav a:link, #header #main-nav a:visited {background: #7b3580; padding:5px 7px;color: #fff;display:block;float:left;text-align:center;border-right: #fff 1px solid; width:134px;}
 .margin10 a {margin:0 10px 0 0;}
 .system-messages {text-align:center;font-weight:bold;margin: 0 0 2em 0;}
