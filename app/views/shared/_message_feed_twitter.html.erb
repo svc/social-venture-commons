@@ -3,7 +3,6 @@
 	<div class="tweet-content">
 	  <%- 
 	    message.ventures.each do |v| %>
-	    <%=message.text%>
 	    <%
         message.text.gsub! /#{'\\' << v.tag}/i, link_to(v.tag, venture_path(v))
       end 
