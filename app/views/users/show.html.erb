@@ -9,6 +9,7 @@
 			<div class="data">
 			  <%- unless @user.description.empty? -%><p><span class="label">Bio</span> <%= @user.description %></p><%- end -%>
 			  <%- unless @user.url.empty? -%><p><span class="label">Url</span> <%= link_to @user.url,@user.url, :target => '_blank' %></p><%- end -%>
+			  <p><%= link_to "View on Twitter","http://twitter.com/#{@user.screen_name}", :target => '_blank' %></p>
 			</div>
 		</div>
 	</div>

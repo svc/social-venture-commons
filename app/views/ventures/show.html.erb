@@ -9,9 +9,10 @@
 			</h3>
 				
 			<%- if @venture.name.blank? %>
-				<p><%= link_to "Give this venture a full name", "", {:class => "editLinkVentureName", :id => "no-name-venture"} %></p>
+				<p><%= link_to "Give this venture a full name", "", {:class => "editLinkVentureName", :id => "no-name-venture"} if logged_in? %></p>
 			<%- end -%>
 				
+			<%- if logged_in? -%>
 			<script type="text/javascript" charset="utf-8">
 				$(document).ready(function() {
 				
@@ -25,7 +26,7 @@
 						$('.editLinkVentureName').hide();
 					});
 				
-					$("#venture_name").editable('/ventures/update/<%= @venture.id %>.part', $.extend({}, editableOpts, {
+					$("#venture_name").editable('/ventures/update/<%= @venture.tag %>.part', $.extend({}, editableOpts, {
 						name: "venture[name]",
 						callback: function() {
 							$('.editLinkVentureName').show();
@@ -41,9 +42,9 @@
 				
 				});
 			</script>
-		
+		  <%- end -%>
 			<%= render :partial => 'shared/editable_field', :locals => {:label => "Description", :name => "venture[description]", :value => @venture.description} %>
-			<%= render :partial => 'shared/editable_field', :locals => {:label => "Url", :name => "venture[url]", :value => @venture.url} %>
+			<%= render :partial => 'shared/editable_field', :locals => {:label => "Url", :name => "venture[url]", :value => link_to(@venture.url,@venture.url)} %>
 			<p><span class="label">Tag</span> <%= @venture.tag %></p>		
       <%= render :partial => 'shared/editable_field', :locals => {:label => "Feed", :name => "venture[feed]", :value => @venture.feed.url} %>		</div>
 	</div>
