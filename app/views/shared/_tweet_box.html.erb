@@ -1,5 +1,5 @@
 <%- form_tag('/tweet/create') do -%>
   <%= hidden_field_tag :redirect_to, request.request_uri %>
-	<%= text_area_tag('message', initial_value && initial_value.strip + " ", {:id => :twitter_message_box}) %>	
-	<p><%= submit_tag('Post') %></p>
+	<%= text_area_tag('message', initial_value && initial_value.strip + " ", {:id => :twitter_message_box,:maxlength=>140}) %>	
+	<p><%= submit_tag('Post',:id=>'twitter_post') %></p>
 <%- end -%>
