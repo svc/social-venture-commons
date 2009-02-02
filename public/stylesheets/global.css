@@ -214,6 +214,17 @@ p.tabs {
   margin: -0.5em 0 0.5em 0;
 }
 
+.counter {
+	text-align: right;
+	font-size: 1.2em;
+	font-style: italic; 
+}
+
+.counter span.toomuch {
+	font-weight: bold;
+	color: red;
+}
+
 .pagination {
   margin-top: 1em;
 }

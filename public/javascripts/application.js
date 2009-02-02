@@ -44,10 +44,11 @@ function checkMaxLength() {
 	var maxLength = this.getAttribute('maxlength');
 	var currentLength = this.value.length;
 	if (currentLength > maxLength) {
-		this.relatedElement.className = 'toomuch';
+		$('.counter span').addClass('toomuch');
+		// this.relatedElement.className = 'toomuch';
 		$("#twitter_post").attr("disabled", true); 
 	}	else {
-		this.relatedElement.className = '';
+		$('.counter span').removeClass('toomuch');
 		$("#twitter_post").attr("disabled", false); 
 	}
 	this.relatedElement.firstChild.nodeValue = maxLength - currentLength;
