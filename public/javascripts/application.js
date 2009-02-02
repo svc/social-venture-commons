@@ -30,7 +30,7 @@ function setMaxLength() {
 		if (x[i].getAttribute('maxlength')) {
 			var counterClone = counter.cloneNode(true);
 			counterClone.relatedElement = x[i];
-			counterClone.innerHTML = '<span>0</span>/'+x[i].getAttribute('maxlength');
+			counterClone.innerHTML = '<span>0</span>';
 			x[i].parentNode.insertBefore(counterClone,x[i].nextSibling);
 			x[i].relatedElement = counterClone.getElementsByTagName('span')[0];
 
@@ -50,6 +50,6 @@ function checkMaxLength() {
 		this.relatedElement.className = '';
 		$("#twitter_post").attr("disabled", false); 
 	}
-	this.relatedElement.firstChild.nodeValue = currentLength;
+	this.relatedElement.firstChild.nodeValue = maxLength - currentLength;
 	// not innerHTML
 }
