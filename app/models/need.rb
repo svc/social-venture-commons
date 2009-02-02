@@ -14,6 +14,10 @@ class Need < ActiveRecord::Base
     tag
   end
   
+  def to_param
+    tag
+  end
+  
   def to_s
     tag
   end

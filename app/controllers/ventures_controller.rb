@@ -67,7 +67,7 @@ class VenturesController < ApplicationController
   # PUT /ventures/1
   # PUT /ventures/1.xml
   def update
-    @venture = Venture.find(params[:id])
+    @venture = Venture.find_by_tag(params[:id])
 
     respond_to do |format|
       if @venture.update_attributes(params[:venture])
@@ -94,18 +94,6 @@ class VenturesController < ApplicationController
         format.html { render :action => "edit" }
         format.xml  { render :xml => @venture.errors, :status => :unprocessable_entity }
       end
-    end
-  end
-
-  # DELETE /ventures/1
-  # DELETE /ventures/1.xml
-  def destroy
-    @venture = Venture.find(params[:id])
-    @venture.destroy
-
-    respond_to do |format|
-      format.html { redirect_to(ventures_url) }
-      format.xml  { head :ok }
     end
   end
 end

@@ -1,5 +1,5 @@
 <div class="vtclearfix vtcontainer">
-	<%= render :partial => 'shared/twitter',:locals=>{:initial_value=>@user.screen_name} %>	
+	<%= render :partial => 'shared/twitter',:locals=>{:initial_value=>"@#{@user.screen_name}"} %>	
 
 	<div class="vtspan-3 vtlast vtclearfix">
 		<div id="profile">

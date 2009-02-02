@@ -15,7 +15,7 @@
       end
         
       -%>
-		<%= "#{message.account.screen_name}: #{message.text}" %>
+		<%= "#{link_to(message.account.screen_name,user_path(message.account))}: #{message.text}" %>
 		<%- reply_id = "reply#{srand}" -%>
 		<span class="tweet-meta"><%=time_ago_in_words(message.created_at)%> ago &middot; <%=link_to 'Reply',"?status=@#{message.account.screen_name}", {:id => reply_id} %> &middot; <%= link_to 'View Tweet',"http://www.twitter.com/#{message.account.screen_name}/statuses/#{message.twitter_id}" %></span>
 	</div>

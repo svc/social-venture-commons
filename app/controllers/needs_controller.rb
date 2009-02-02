@@ -15,7 +15,7 @@ class NeedsController < ApplicationController
   # GET /needs/1
   # GET /needs/1.xml
   def show
-    @need = Need.find(params[:id])
+    @need = Need.find_by_tag(params[:id])
     @need_messages = @need.messages.paginate(:order=>'created_at DESC',:page=>params[:page])
     @contributors = @need.messages.tweets.collect{|m| m.account}.uniq
     @ventures = @need.ventures
@@ -62,7 +62,7 @@ class NeedsController < ApplicationController
   # PUT /needs/1
   # PUT /needs/1.xml
   def update
-    @need = @venture.needs.find(params[:id])
+    @need = @venture.needs.find_by_tag(params[:id])
 
     respond_to do |format|
       if @need.update_attributes(params[:need])
@@ -81,18 +81,6 @@ class NeedsController < ApplicationController
         format.html { render :action => "edit" }
         format.xml  { render :xml => @need.errors, :status => :unprocessable_entity }
       end
-    end
-  end
-
-  # DELETE /needs/1
-  # DELETE /needs/1.xml
-  def destroy
-    @need = Need.find(params[:id])
-    @need.destroy
-
-    respond_to do |format|
-      format.html { redirect_to(venture_needs_url) }
-      format.xml  { head :ok }
     end
   end
   
