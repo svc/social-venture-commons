@@ -1,18 +1,16 @@
 class MessageParser
   def self.parse(tweet)
-
-    tweet.text.downcase!
-        
+      
     return false unless tweet.text =~ /\^/
     
-    venture_tags       = tweet.text.scan(/(\^[a-z0-9]+)/).uniq
+    venture_tags       = tweet.text.scan(/(\^[a-z0-9]+)/i).uniq
         
     ventures = venture_tags.collect do |vt|
       Venture.find_or_create_by_tag(vt.to_s)
     end
     
     if ventures.any?
-      need_tags  = tweet.text.scan(/![a-z0-9]+/).uniq
+      need_tags  = tweet.text.scan(/![a-z0-9]+/i).uniq
       
       needs = need_tags.collect do |nt|
         Need.find_or_create_by_tag(nt)

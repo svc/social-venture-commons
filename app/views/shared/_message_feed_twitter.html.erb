@@ -2,15 +2,17 @@
 	<%= link_to image_tag(message.account.profile_image_url), user_path(message.account) %>
 	<div class="tweet-content">
 	  <%- 
-	    message.ventures.each do |v| 
-        message.text.gsub! v.tag.downcase, link_to(v.tag, venture_path(v))
+	    message.ventures.each do |v| %>
+	    <%=message.text%>
+	    <%
+        message.text.gsub! /#{'\\' << v.tag}/i, link_to(v.tag, venture_path(v))
       end 
       
       message.needs.each do |n|
-        message.text.gsub! n.tag.downcase, link_to(n.tag, need_path(n))
+        message.text.gsub! /#{n.tag}/i, link_to(n.tag, need_path(n))
       end
       
-      message.text.scan(/(@[a-z0-9_-]+)/).each do |match|
+      message.text.scan(/(@[a-z0-9_-]+)/i).each do |match|
         message.text.gsub! match[0], link_to(match[0], user_path(match[0][1..match[0].length]))
       end
         
