@@ -18,7 +18,9 @@ class MessageParser
       
       needs.each {|n| ventures.each {|v| n.ventures << v unless n.ventures.include? v}}
       
-      account = Account.find_by_twitter_id(tweet.user.id)
+      account = Account.find_by_twitter_id(tweet.user.id)      
+      account.update_attribute(:profile_image_url,tweet.user.profile_image_url) if account
+      
       account = Account.create!(:twitter_id=>tweet.user.id,:name=>tweet.user.name,:screen_name=>tweet.user.screen_name,:url=>tweet.user.url,:description=>tweet.user.description,:profile_image_url=> tweet.user.profile_image_url,:account_type => AccountType.find_by_name('User')) unless account      
             
       message = Message.new(:twitter_id=>tweet.id, :twitter_text=>tweet.text,:account_id=>account.id,:created_at=>tweet.created_at)
@@ -34,9 +36,9 @@ class MessageParser
     end
   end
   
-  def self.get_messages_and_parse(options = Hash.new)
+  def self.get_messages_and_parse(options = {:count=>200})
     message_last_updated_at = Message.maximum(:updated_at)
-    # options[:since] = Message.maximum(:updated_at) unless options[:since] && message_last_updated_at.nil?
+    options[:since] = message_last_updated_at unless message_last_updated_at.nil?
     
     Twitter::Base.new(TWITTER_USERNAME,TWITTER_PASSWORD).timeline(:friends,options).each do |tweet|
       MessageParser.parse(tweet)      
