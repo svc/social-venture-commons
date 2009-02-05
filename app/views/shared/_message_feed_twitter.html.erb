@@ -2,6 +2,7 @@
 	<%= link_to image_tag(message.account.profile_image_url), user_path(message.account) %>
 	<div class="tweet-content">
 	  <%- 
+	    message.twitter_text = Hpricot(message.twitter_text, :xhtml_strict => true).to_plain_text
 	    message.ventures.each do |v| %>
 	    <%
         message.text.gsub! /#{'\\' << v.tag}/i, link_to(v.tag, venture_path(v))

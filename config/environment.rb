@@ -26,7 +26,7 @@ Rails::Initializer.run do |config|
   config.gem "twitter"
   config.gem 'mislav-will_paginate', :version => '~> 2.3.6', :lib => 'will_paginate', :source => 'http://gems.github.com'
   config.gem 'simple-rss'
-  # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
+  config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
   
