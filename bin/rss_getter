@@ -3,7 +3,7 @@
 # You might want to change this
 ENV["RAILS_ENV"] ||= "production"
 
-require File.dirname(__FILE__) + "/../../config/environment"
+require File.dirname(__FILE__) + "/../config/environment"
 
 require 'simple-rss'
 require 'open-uri'
